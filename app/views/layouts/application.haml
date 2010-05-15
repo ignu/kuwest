@@ -1,0 +1,21 @@
+!!! Strict
+%html
+  %head
+    %title Monitur - win!
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'application'
+
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+
+  %body
+    #messageDiv
+      #flashMessage
+        -if flash[:error]
+          .notice=flash[:error]
+        -if flash[:notice]
+          .error=flash[:notice]
+    #container
+      = yield

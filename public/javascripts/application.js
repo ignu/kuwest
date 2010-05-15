@@ -1,2 +1,38 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+
+var monitur = function() {
+  var self = {};
+  self.init =  function() {
+    monitur.winform.init();
+  };
+  return self;
+}();
+
+monitur.winform = function() {
+  var self = {};
+  self.init = function() {
+    $("#win").helpText();
+  };
+  return self;
+}();
+
+$(monitur.init);
+
+$.fn.helpText = function(text) {
+  if(!text) text = $(this).val();
+  $(this).val(text);
+  $(this).addClass("light")
+
+  $(this).click(function() {
+    if($(this).val() == text) {
+      $(this).val('');
+      $(this).removeClass("light");
+    }
+  });
+
+  $(this).blur(function() {
+    if(!$(this).val()) {
+      $(this).val(text);
+      $(this).addClass("light");
+    }
+  });
+};

@@ -1,0 +1,78 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
+// +blueprint
+
+//Recommended Blueprint configuration with scoping and semantic layout:
+@include blueprint-scaffolding("body.bp");
+
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+}
+
+form.bp {
+  @include blueprint-form; }
+body {
+  font-family:'Helvetica';
+  font-size: 14pt;
+  width:960px;
+  margin-left:auto;
+  margin-right:auto;
+}
+h1 {
+  font-size:24pt;
+  font-weight:bold;
+}
+
+input {
+  font-size: 18pt;
+  padding: 5px;
+  height: 30px;
+}
+button {
+  font-size: 14pt;
+  height: 46px;
+  margin-top:-2px;
+}
+
+div.standout {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.light {
+  color:#999;
+}
+#win {
+  width:800px;
+}
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body.two-col {
+  #container {
+    @include container; }
+  #header, #footer {
+    @include column($blueprint-grid-columns); }
+  #sidebar {
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 3);
+    @include column($sidebar-columns); }
+  #content {
+    // Two thirds of the grid columns, rounding up.
+    // With 24 cols, this is 16.
+    $content-columns: ceil(2 * $blueprint-grid-columns / 3);
+    // true means it's the last column in the row
+    @include column($content-columns, true); } }

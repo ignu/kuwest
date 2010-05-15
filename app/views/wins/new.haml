@@ -1,9 +1,10 @@
-%h1
-  New Win
--semantic_form_for :win, @win do |f|
-  -f.inputs do
-    =f.input :verb, :label=>"Verb"
-    =f.input :amount, :label=>"Amount", :input_html => { :size=>4, :class => 'number' }
-    =f.input :noun, :label=>"Noun"
-    =f.commit_button 
-
+.standout
+  %h1
+    Everyone has Goals
+  %h1
+    What did you do to achieve yours?
+%form{:method=>"POST", :action=>"/wins/create"}
+  .field
+    %input{:id=>"win", :type=>"text", :name=>"win", :value=>"(ex: ran 3.2 miles, read 10 pages )"}
+    %button{:type=>"submit"}
+      Track your Win!
