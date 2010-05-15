@@ -1,0 +1,9 @@
+%h1
+  New Win
+-semantic_form_for :win, @win do |f|
+  -f.inputs do
+    =f.input :verb, :label=>"Verb"
+    =f.input :amount, :label=>"Amount", :input_html => { :size=>4, :class => 'number' }
+    =f.input :noun, :label=>"Noun"
+    =f.commit_button 
+
