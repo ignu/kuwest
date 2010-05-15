@@ -1,0 +1,5 @@
+formtastic  
+rspec-rails  >= 1.2.0
+authlogic  
+compass  >= 0.10.1
+
