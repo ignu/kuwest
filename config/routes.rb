@@ -40,6 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.resource :wins
 	map.resource :account, :controller => :users
+	map.resource :user_session
 	map.resources :users
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
