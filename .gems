@@ -1,5 +1,5 @@
 formtastic  
 rspec-rails  >= 1.2.0
-authlogic  
+authlogic --version 2.1.3
 compass  >= 0.10.1
 
