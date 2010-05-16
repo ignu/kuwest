@@ -1,7 +1,14 @@
 class WinsController < ApplicationController
 
   def index
-    @wins = Win.all
+    @wins = Win.find(:all, :order=>"id desc", :limit=>10)
+    #TERRIBLE TEMP HACK  #HACK
+    @wins.each do |w|
+      if w.user.nil?
+        w.user = User.new
+        w.user.login = "ignu"
+      end
+    end
   end
 
   def new

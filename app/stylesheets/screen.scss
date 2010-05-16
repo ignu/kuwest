@@ -42,8 +42,11 @@ a, a.visited, a.hover {
 }
 .points {
   font-size:8pt;
-  color: LightGreen;
+  color: #999;
   margin-top:4px;
+}
+.detail {
+  padding: 10px;
 }
 h1 {
   font-size:24pt;
@@ -72,6 +75,13 @@ div.standout {
 #win {
   width:700px;
 }
+.user_profile {
+  float:left;
+}
+.clearfix {
+  clear:both;
+}
+
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col {
   #container {

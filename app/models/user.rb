@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :wins
+  
 	acts_as_authentic do |c|
 	end
 	
@@ -16,6 +18,6 @@ class User < ActiveRecord::Base
 
 	def self.find_by_persistence_token token
   	token =~ /^(.+)asdf$/
-    find $1
+    find token 
 	end
 end

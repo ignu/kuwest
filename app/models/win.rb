@@ -2,6 +2,7 @@ require 'rubygems'
 require 'google_chart'
 
 class Win < ActiveRecord::Base
+<<<<<<< HEAD
 	def self.scatter_data_for_month
 		chart = GoogleChart::ScatterChart.new('600x400',"Scatter Chart") do |sc|
       sc.data "Scatter Set", [[1,2,], [2,2], [3,3], [4,4], [2,4], [6,4]]
@@ -13,4 +14,7 @@ class Win < ActiveRecord::Base
     end
 		chart.to_url
 	end
+=======
+  belongs_to :user
+>>>>>>> e4573608757d09ee03aa9d4f35626cee8d70d5c2
 end
