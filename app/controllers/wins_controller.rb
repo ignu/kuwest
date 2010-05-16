@@ -1,7 +1,7 @@
 class WinsController < ApplicationController
 
   def index
-    @wins = Win.all
+    @wins = Win.find(:all, :order=>"id desc", :limit=>10)
   end
 
   def new
