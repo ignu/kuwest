@@ -16,6 +16,11 @@ class ApplicationController < ActionController::Base
 			@current_user_session = UserSession.find	
 		end
 		def current_user
+		  #HACK: uncle bob cries
+		  user = User.find_or_create_by_login("ignu")
+		  user.save! unless user.id > 0
+		  return user
+		  
 			return @current_user if defined?(@current_user)
 			@current_user = current_user_session && current_user_session.user
 		end
