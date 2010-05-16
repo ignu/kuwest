@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resource :account, :controller => :users
 	map.resource :user_sessions
 	map.resources :users
+	map.connect '/login', :controller => :user_sessions, :action => :new
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
