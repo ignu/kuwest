@@ -15,9 +15,12 @@ monitur.winform = function() {
   return self;
 }();
 
+monitur.winsDiv = function() { return $("#win_list");}
+
 $(monitur.init);
 
 $.fn.helpText = function(text) {
+  
   if(!text) text = $(this).val();
   $(this).val(text);
   $(this).addClass("light")
@@ -35,4 +38,22 @@ $.fn.helpText = function(text) {
       $(this).addClass("light");
     }
   });
+  
 };
+
+winUpdater = function() {
+  var template = "<div class=\"avatar\">&nbsp;</div><div class=\"win\"><a class=\"username\" href=\"/users/{{username}}\">{{username}}</a>: {{body}}<div class=\"points\"> (+5 pts)</div></div>"
+  var self = {
+    update:function() {
+      this.addWins(monitur.getWins());
+    }, 
+    addWins:function(wins) {
+      var dom = Mustache.to_html(template, wins);
+      monitur.winsDiv().prepend(dom);
+    }
+  };
+  return self;  
+}();
+
+
+
