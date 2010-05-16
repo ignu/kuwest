@@ -10,7 +10,26 @@ var monitur = function() {
 monitur.winform = function() {
   var self = {};
   self.init = function() {
-    $("#win").helpText();
+    var text = $("#win").val();
+    $("#win").helpText(text);
+    $("#submit_win").click(function() {
+      if ($("#win").val() == text) return false;
+      $.ajax({
+        url: '/wins/create',
+        type: "POST",
+        data: {
+          body: $("#win").val()
+        },
+        success: function(data) {
+          winUpdater.addWins(data);
+          $("#win").val(text);  // TODO: dry
+          $("#win").addClass("light");
+          return false;
+        }
+      })
+      return false;
+    })
+
   };
   return self;
 }();
@@ -24,7 +43,7 @@ $.fn.helpText = function(text) {
   if(!text) text = $(this).val();
   $(this).val(text);
   $(this).addClass("light")
-
+  $(this).data("helpText", text);
   $(this).click(function() {
     if($(this).val() == text) {
       $(this).val('');
