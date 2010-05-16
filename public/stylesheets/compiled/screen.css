@@ -526,24 +526,29 @@ a, a.visited, a.hover {
 /* line 43, ../../../app/stylesheets/screen.scss */
 .points {
   font-size: 8pt;
-  color: LightGreen;
+  color: #999;
   margin-top: 4px;
 }
 
 /* line 48, ../../../app/stylesheets/screen.scss */
+.detail {
+  padding: 10px;
+}
+
+/* line 51, ../../../app/stylesheets/screen.scss */
 h1 {
   font-size: 24pt;
   font-weight: bold;
 }
 
-/* line 53, ../../../app/stylesheets/screen.scss */
+/* line 56, ../../../app/stylesheets/screen.scss */
 input {
   font-size: 18pt;
   padding: 5px;
   height: 30px;
 }
 
-/* line 58, ../../../app/stylesheets/screen.scss */
+/* line 61, ../../../app/stylesheets/screen.scss */
 button {
   font-size: 14pt;
   height: 46px;
@@ -551,23 +556,33 @@ button {
   top: -2px;
 }
 
-/* line 65, ../../../app/stylesheets/screen.scss */
+/* line 68, ../../../app/stylesheets/screen.scss */
 div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* line 69, ../../../app/stylesheets/screen.scss */
+/* line 72, ../../../app/stylesheets/screen.scss */
 .light {
   color: #999;
 }
 
-/* line 72, ../../../app/stylesheets/screen.scss */
+/* line 75, ../../../app/stylesheets/screen.scss */
 #win {
   width: 700px;
 }
 
-/* line 77, ../../../app/stylesheets/screen.scss */
+/* line 78, ../../../app/stylesheets/screen.scss */
+.user_profile {
+  float: left;
+}
+
+/* line 81, ../../../app/stylesheets/screen.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 87, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -578,7 +593,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 79, ../../../app/stylesheets/screen.scss */
+/* line 89, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -589,7 +604,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 91, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -600,7 +615,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 85, ../../../app/stylesheets/screen.scss */
+/* line 95, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;

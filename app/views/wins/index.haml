@@ -1,10 +1,17 @@
 %h1 Win
 -@wins.each do |w|
-  .win 
-    =w.verb
-    %span.amount
-      =w.amount
-    =w.noun
-
-
+  %table.win   
+    %tr
+      %td.profile_picture
+        %img{:src=>"/images/user/#{w.user.login == "ignu" ? "ignu.png" : "megatron.jg"}"}
+      %td.detail
+        %a{:href=>"/users/#{w.user.login}", :class=>"username"} 
+        =w.user.login
+        =w.verb
+        %span.amount
+          =w.amount
+        =w.noun
+        .points
+          (+5pts)
+          %a.comment.link Comment
 
