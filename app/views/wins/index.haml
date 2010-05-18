@@ -3,10 +3,10 @@
   %table.win   
     %tr
       %td.profile_picture
-        %img{:src=>"/images/user/#{w.user.login == "ignu" ? "ignu.png" : "megatron.jg"}"}
+        %img{:src=>"/images/user/#{w.user.login == "ignu" ? "ignu.png" : "megatron.jg"}", :height=>42, :width=>42}
       %td.detail
         %a{:href=>"/users/#{w.user.login}", :class=>"username"} 
-        =w.user.login
+          =w.user.login
         =w.verb
         %span.amount
           =w.amount

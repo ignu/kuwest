@@ -3,13 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Win do
 
   before(:each) do
-    @user = User.find_or_create_by_login("megatron")
-    @user.email = "megatron@decepticons.com"
-    @user.password = @user.password_confirmation = "abc231&"
-    @user.persistance_token = "123234232"
-    @user.login_count = @user.failed_login_count = 0
-    @user.current_login_at = @user.last_login_at = @user.last_request_at = DateTime.new
-    @user.last_login_ip = @user.current_login_ip = "127.0.0.1"
+    @user = User.find_or_create_by_username("megatron")
     @user.save!
   end
 
