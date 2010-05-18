@@ -9,6 +9,7 @@ class WinsController < ApplicationController
         w.user.login = "ignu"
       end
     end
+
   end
 
   def new

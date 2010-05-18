@@ -1,12 +1,10 @@
 .standout
   %h1
-    Everyone has Goals
-  %h1
-    What did you do to achieve yours?
+    What have you done?
 %form{:id=>"win_form", :method=>"POST", :action=>"/wins/create"}
   .field
     %input{:id=>"win", :type=>"text", :name=>"body", :value=>"(ex: ran 3.2 miles, read 10 pages )"}
     %button{:type=>"submit", :id=>"submit_win"}
-      Track your win!
+      Go!
 #win_list
   &nbsp;
