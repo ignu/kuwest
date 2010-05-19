@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
   has_many :wins
   
-	acts_as_authentic do |c|
-	end
-	
+	devise 	:database_authenticatable,
+					:confirmable,
+					:recoverable,
+					:rememberable,
+					:trackable,
+					:validatable
+
 	def persistence_token #HACK
 	  @perishable_token
   end
@@ -35,5 +39,4 @@ class User < ActiveRecord::Base
     user.last_login_ip = user.current_login_ip = "127.0.0.1"
     user
   end
-
 end

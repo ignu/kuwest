@@ -1,3 +1,4 @@
 formtastic  
+devise
 rspec-rails  >= 1.2.0
 compass  >= 0.10.1
