@@ -9,6 +9,7 @@ class WinsController < ApplicationController
         w.user.login = "ignu"
       end
     end
+
   end
 
   def new
@@ -17,7 +18,7 @@ class WinsController < ApplicationController
   
   def create
     win_view_model = WinViewModel.new(
-      :user=>current_user,
+      :username=>current_user.login,
       :body=>params[:body])
     win_view_model.to_win.save!
     render :json => win_view_model.to_json

@@ -35,4 +35,5 @@ class User < ActiveRecord::Base
     user.last_login_ip = user.current_login_ip = "127.0.0.1"
     user
   end
+
 end
