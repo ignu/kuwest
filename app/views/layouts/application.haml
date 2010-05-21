@@ -18,5 +18,7 @@
           .notice=flash[:error]
         -if flash[:notice]
           .error=flash[:notice]
+        -if flash[:alert]
+          .alert=flash[:alert]
     #container
       = yield

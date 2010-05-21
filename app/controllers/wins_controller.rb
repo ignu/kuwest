@@ -1,4 +1,5 @@
 class WinsController < ApplicationController
+	before_filter :authenticate_user!, :except => [:show, :index] 
 
   def index
     @wins = Win.find(:all, :order=>"id desc", :limit=>10)

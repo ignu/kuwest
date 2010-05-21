@@ -2,11 +2,13 @@ class User < ActiveRecord::Base
   has_many :wins
   
 	devise 	:database_authenticatable,
-					:confirmable,
+					:registerable,
 					:recoverable,
 					:rememberable,
 					:trackable,
 					:validatable
+
+	attr_accessible :email, :password, :password_confirmation
 
 	def persistence_token #HACK
 	  @perishable_token
