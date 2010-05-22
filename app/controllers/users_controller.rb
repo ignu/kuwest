@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "Account registered!"
-      redirect_to users_url 
+      redirect_to "/users/#{@user.username}" 
     else
       render :action => :new
     end

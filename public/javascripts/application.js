@@ -3,6 +3,7 @@ var monitur = function() {
   var self = {};
   fadeoutAlerts = function() {
     $(".alert").fadeOut();
+    $(".notice").fadeOut();    
   };
   self.init =  function() {
     monitur.winform.init();
