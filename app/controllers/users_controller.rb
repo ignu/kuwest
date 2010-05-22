@@ -8,19 +8,23 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	@user.username = params[:user][:username] #HACK: wut
   	
-
     if @user.save
       flash[:notice] = "Account registered!"
-      redirect_to users_url 
+      redirect_to "/users/#{@user.username}" 
     else
       render :action => :new
     end
   end
   
   def show
-    throw "need a username" if params[:id].nil?
+    throw "need to supply a username" if params[:id].nil?
     @user = User.find_by_username params[:id]
-    @totals = Win.totals_for(@user)
+    if @user.nil?
+      flash[:error] = "Could not find User '#{params[:id]}'"
+      render(:template => "shared/error404", :status => "404") 
+    else
+      @totals = Win.totals_for(@user)
+    end
   end
 
   def edit

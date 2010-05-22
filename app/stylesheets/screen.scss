@@ -15,7 +15,11 @@
 
 //Recommended Blueprint configuration with scoping and semantic layout:
 @include blueprint-scaffolding("body.bp");
-
+.error {
+  color:#990000;
+  font-weight:bold;
+  padding:30px;
+}
 body.bp {
   @include blueprint-typography(true);
   @include blueprint-utilities;
