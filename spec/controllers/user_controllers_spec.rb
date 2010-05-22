@@ -4,10 +4,10 @@ describe UsersController do
   describe "getting a non existant user" do
     
     before(:each) do
-      get(:show, {:id=>"ignu"})
+      get(:show, {:id=>"notauser"})
     end
     
-    it { should respond_with(404) }
+    it { should respond_with(:not_found) }
     
   end
   describe "routing" do
