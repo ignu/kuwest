@@ -5,6 +5,10 @@ Feature: Build a way for users to comment on a status
 
 Scenario: A user can add a comment
 	Given I am logged in as "testy@mctester.com"
+		And a win exists 
+		And I go to the wins page 
+		And show me the page
+	
 	When I click on a "Comment" link
 	Then a Comment Box appears 
 		And the Comment Box has focus 

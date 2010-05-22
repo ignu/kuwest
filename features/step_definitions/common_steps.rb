@@ -18,3 +18,16 @@ Given /^I am logged in as (.*)$/ do |email|
 	fill_in("Password", :with => @password)
 	click_button("Sign in")
 end
+
+Given /^a win exists$/ do
+	@win = Win.new
+	@win.user 		= @current_user
+	@win.verb 		= "ran"
+	@win.noun 		= "mile"
+	@win.amount 	= 1
+	@win.save
+end
+
+When /^I click on a "([^\"]*)" link$/ do |link|
+	click_link(link)		
+end
