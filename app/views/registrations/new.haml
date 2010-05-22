@@ -1,7 +1,10 @@
 %h2 Sign Up
 .panel.small
-  -form_for resource_name, resource, :url => registration_path(resource_name) do |f|
+  -form_for @user,  :url => "/users/create" do |f|
     =f.error_messages
+    .field
+      %p=f.label :username 
+      %p=f.text_field :username
     .field
       %p=f.label :email 
       %p=f.text_field :email

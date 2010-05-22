@@ -1,0 +1,5 @@
+%h2 Sign Up
+.panel.small
+  -form_for @user,  :url => "/users/create" do |f|
+    =render :partial => "form", :locals => {:f=>f}
+    %p=f.submit "Sign up", {:class=>"button"}

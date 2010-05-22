@@ -6,7 +6,9 @@ class UsersController < ApplicationController
 
 	def create
   	@user = User.new(params[:user])
-		@user.reset_persistence_token
+  	@user.username = params[:user][:username] #HACK: wut
+  	
+
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_to users_url 
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    throw "need a username" if params[:id].nil?
     @user = User.find_by_username params[:id]
     @totals = Win.totals_for(@user)
   end
