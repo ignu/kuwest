@@ -8,9 +8,10 @@ class WinViewModel
    end
     
   def to_win
-    @user = User.find_or_create_by_username @username
+    @user = User.find_by_username @username
+    raise "Could not find user #{@username}" if @user.nil?
     return Win.new(:amount=>get_amount(body), :noun=>get_noun(body), 
-      :verb=>get_verb(body))
+      :verb=>get_verb(body), :user=>@user)
   end
   
   def get_verb(message)

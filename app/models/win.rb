@@ -7,6 +7,6 @@ class Win < ActiveRecord::Base
     raise "Need to Supply a User" if user.nil?
 
     find_by_sql(["SELECT SUM(amount) as total, verb, noun 
-      FROM wins GROUP BY verb, noun", user.id])
+      FROM wins WHERE user_id = #{user.id} GROUP BY verb, noun", user.id])
   end
 end
