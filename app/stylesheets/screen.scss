@@ -87,11 +87,19 @@ input {
   padding: 5px;
   height: 30px;
 }
-button {
+button, .button {
   font-size: 14pt;
   height: 46px;
-  position:relative;
-  top:-2px;
+  line-height: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+  text-shadow: 0 -1px 1px #222;
+  border-bottom: 1px solid #222;
+  position: relative;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 div.standout {
@@ -110,7 +118,6 @@ div.standout {
 .clearfix {
   clear:both;
 }
-
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col {
   #container {
