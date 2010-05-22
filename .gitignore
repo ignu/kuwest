@@ -1,6 +1,8 @@
 log/*.log
 tmp/**/*
 doc/api
+tmp/*
+*.swp
 doc/app
 .idea
 *.sqlite3
