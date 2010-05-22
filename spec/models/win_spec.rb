@@ -4,6 +4,9 @@ describe Win do
 
   before(:each) do
     @user = User.find_or_create_by_username("megatron")
+    @user.email = "megatron@decepticons.com"
+    @user.password = "ihateautobots"
+    @user.password_confirmation = "ihateautobots"    
     @user.save!
   end
 

@@ -1,7 +1,7 @@
 %div{:id=>'graph_container', :style=>"float:right"}
   .wrapper
-    %canvas{:id=>'details', :width=>'600', :height=>'400', :user=>@user.login}
-%h1=@user.login
+    %canvas{:id=>'details', :width=>'600', :height=>'400', :user=>@user.username}
+%h1=@user.username
 -@totals.each do |t|
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
 

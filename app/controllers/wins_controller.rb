@@ -7,7 +7,7 @@ class WinsController < ApplicationController
     @wins.each do |w|
       if w.user.nil?
         w.user = User.new
-        w.user.login = "ignu"
+        w.user.username = "ignu"
       end
     end
 
@@ -19,7 +19,7 @@ class WinsController < ApplicationController
   
   def create
     win_view_model = WinViewModel.new(
-      :username=>current_user.login,
+      :username=>current_user.username,
       :body=>params[:body])
     win_view_model.to_win.save!
     render :json => win_view_model.to_json

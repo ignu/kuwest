@@ -459,6 +459,19 @@ body.bp .removed {
 }
 
 /* line 38, ../../../app/stylesheets/screen.scss */
+.notice {
+  color: black;
+  background-color: #7280A7;
+  color: #222126;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+/* line 49, ../../../app/stylesheets/screen.scss */
 .panel {
   color: #DDD;
   background-color: #161d33;
@@ -468,22 +481,22 @@ body.bp .removed {
   margin: 15px 0px;
 }
 
-/* line 46, ../../../app/stylesheets/screen.scss */
+/* line 57, ../../../app/stylesheets/screen.scss */
 .errorExplanation {
   color: #EBC653;
 }
 
-/* line 49, ../../../app/stylesheets/screen.scss */
+/* line 60, ../../../app/stylesheets/screen.scss */
 .errorExplanation p {
   padding-top: 20px;
 }
 
-/* line 52, ../../../app/stylesheets/screen.scss */
+/* line 63, ../../../app/stylesheets/screen.scss */
 .errorExplanation ul {
   padding: 20px;
 }
 
-/* line 55, ../../../app/stylesheets/screen.scss */
+/* line 66, ../../../app/stylesheets/screen.scss */
 .small {
   width: 600px;
 }
@@ -550,7 +563,7 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 61, ../../../app/stylesheets/screen.scss */
+/* line 72, ../../../app/stylesheets/screen.scss */
 body {
   font-family: 'Helvetica';
   font-size: 16pt;
@@ -559,44 +572,44 @@ body {
   margin-right: auto;
 }
 
-/* line 68, ../../../app/stylesheets/screen.scss */
+/* line 79, ../../../app/stylesheets/screen.scss */
 a, a.visited, a.hover {
   text-decoration: none;
   font-weight: bold;
   color: #161d33;
 }
 
-/* line 73, ../../../app/stylesheets/screen.scss */
+/* line 84, ../../../app/stylesheets/screen.scss */
 .points {
   font-size: 8pt;
   color: #999;
   margin-top: 4px;
 }
 
-/* line 78, ../../../app/stylesheets/screen.scss */
+/* line 89, ../../../app/stylesheets/screen.scss */
 .detail {
   padding: 10px;
 }
 
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 92, ../../../app/stylesheets/screen.scss */
 h1 {
   font-size: 24pt;
   font-weight: bold;
 }
 
-/* line 85, ../../../app/stylesheets/screen.scss */
+/* line 96, ../../../app/stylesheets/screen.scss */
 .field {
   margin-top: 17px;
   margin-bottom: 7px;
 }
 
-/* line 90, ../../../app/stylesheets/screen.scss */
+/* line 101, ../../../app/stylesheets/screen.scss */
 label {
   padding-top: 7px;
   color: #DDD;
 }
 
-/* line 94, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 input {
   font-size: 18pt;
   padding: 5px;
@@ -604,7 +617,7 @@ input {
   border: 1px solid #161d33;
 }
 
-/* line 101, ../../../app/stylesheets/screen.scss */
+/* line 112, ../../../app/stylesheets/screen.scss */
 button, .button {
   font-size: 14pt;
   height: 46px;
@@ -620,33 +633,33 @@ button, .button {
   margin-top: 15px;
 }
 
-/* line 116, ../../../app/stylesheets/screen.scss */
+/* line 127, ../../../app/stylesheets/screen.scss */
 div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* line 120, ../../../app/stylesheets/screen.scss */
+/* line 131, ../../../app/stylesheets/screen.scss */
 .light {
   color: #999;
 }
 
-/* line 123, ../../../app/stylesheets/screen.scss */
+/* line 134, ../../../app/stylesheets/screen.scss */
 #win {
   width: 700px;
 }
 
-/* line 126, ../../../app/stylesheets/screen.scss */
+/* line 137, ../../../app/stylesheets/screen.scss */
 .user_profile {
   float: left;
 }
 
-/* line 129, ../../../app/stylesheets/screen.scss */
+/* line 140, ../../../app/stylesheets/screen.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 134, ../../../app/stylesheets/screen.scss */
+/* line 145, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -657,7 +670,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 136, ../../../app/stylesheets/screen.scss */
+/* line 147, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -668,7 +681,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 138, ../../../app/stylesheets/screen.scss */
+/* line 149, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -679,7 +692,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 142, ../../../app/stylesheets/screen.scss */
+/* line 153, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;

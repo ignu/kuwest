@@ -26,19 +26,5 @@ class User < ActiveRecord::Base
   	token =~ /^(.+)asdf$/
     find token 
 	end
-  
-  def self.find_or_create_by_username(login)  
-   hack_for_authlogic_defaults(find_or_create_by_login(login))
-  end
-  
-  def self.hack_for_authlogic_defaults(user)
-    puts "HACK FOR FIND BY USERNAME"   
-    user.email = "megatron@decepticons.com"
-    user.password = user.password_confirmation = "abc123!"
-    user.persistance_token = "123234232"
-    user.login_count = user.failed_login_count = 0
-    user.current_login_at = user.last_login_at = user.last_request_at = DateTime.new
-    user.last_login_ip = user.current_login_ip = "127.0.0.1"
-    user
-  end
+
 end

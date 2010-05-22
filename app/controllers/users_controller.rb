@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by_login params[:id]
+    @user = User.find_by_username params[:id]
     @totals = Win.totals_for(@user)
   end
 

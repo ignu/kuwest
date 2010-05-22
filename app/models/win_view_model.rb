@@ -8,7 +8,7 @@ class WinViewModel
    end
     
   def to_win
-    @user = User.find_or_create_by_login @username
+    @user = User.find_or_create_by_username @username
     return Win.new(:amount=>get_amount(body), :noun=>get_noun(body), 
       :verb=>get_verb(body))
   end
