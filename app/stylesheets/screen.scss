@@ -43,7 +43,16 @@ body.bp {
   padding: 30px;
   margin: 15px 0px;
 }
-.login {
+.errorExplanation {
+  color:#EBC653;
+}
+.errorExplanation p  {
+  padding-top:20px;
+}
+.errorExplanation ul{
+  padding:20px;
+}
+.small {
   width:600px;
 }
 form.bp {
@@ -86,7 +95,9 @@ input {
   font-size: 18pt;
   padding: 5px;
   height: 30px;
+  border: 1px solid #161d33;
 }
+
 button, .button {
   font-size: 14pt;
   height: 46px;

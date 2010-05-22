@@ -1,5 +1,5 @@
 %h2 Sign Up
-.panel
+.panel.small
   -form_for resource_name, resource, :url => registration_path(resource_name) do |f|
     =f.error_messages
     .field
@@ -12,5 +12,5 @@
       %p=f.label :password_confirmation
       %p=f.password_field :password_confirmation
 
-    %p=f.submit "Sign up", {:class=>"button"}  
+    %p=f.submit "Sign up", {:class=>"button"}
 =render :partial => "shared/devise_links" 

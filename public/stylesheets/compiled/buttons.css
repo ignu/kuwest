@@ -1,23 +1,23 @@
 /*
 Syntax error: Undefined mixin 'fancy-button-structure'.
-        on line 33 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss, in `fancy-button-structure'
-        from line 33 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss
+        on line 36 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss, in `fancy-button-structure'
+        from line 36 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss
 
-28: 
-29: @mixin invert-custom-fancy-gradient($color1, $color2) {
-30:   @include custom-fancy-gradient(lighten($color2, 10), lighten($color2, 25)); }
-31: 
-32: a.button, button {
-33:   @include fancy-button-structure;
-34:   @include fancy-button-colors;
-35:   margin: 0 2px;
-36:   vertical-align: middle;
-37:   &.light {
-38:     @include fancy-button-colors-matte(#dddddd); }
+31: .errorExplanation {
+32:   background-color:white;
+33:   color:red;
+34: }
+35: a.button, button {
+36:   @include fancy-button-structure;
+37:   @include fancy-button-colors;
+38:   margin: 0 2px;
+39:   vertical-align: middle;
+40:   &.light {
+41:     @include fancy-button-colors-matte(#dddddd); }
 
 Backtrace:
-/Users/ignu/code/megatron/app/stylesheets/buttons.scss:33:in `fancy-button-structure'
-/Users/ignu/code/megatron/app/stylesheets/buttons.scss:33
+/Users/ignu/code/megatron/app/stylesheets/buttons.scss:36:in `fancy-button-structure'
+/Users/ignu/code/megatron/app/stylesheets/buttons.scss:36
 /Library/Ruby/Gems/1.8/gems/haml-3.0.4/lib/sass/tree/mixin_node.rb:72:in `perform!'
 /Library/Ruby/Gems/1.8/gems/haml-3.0.4/lib/sass/tree/node.rb:301:in `_perform'
 /Library/Ruby/Gems/1.8/gems/haml-3.0.4/lib/sass/tree/node.rb:209:in `perform'
@@ -84,4 +84,4 @@ script/server:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'fancy-button-structure'.\A         on line 33 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss, in `fancy-button-structure'\A         from line 33 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss\A \A 28: \A 29: @mixin invert-custom-fancy-gradient($color1, $color2) {\A 30:   @include custom-fancy-gradient(lighten($color2, 10), lighten($color2, 25)); }\A 31: \A 32: a.button, button {\A 33:   @include fancy-button-structure;\A 34:   @include fancy-button-colors;\A 35:   margin: 0 2px;\A 36:   vertical-align: middle;\A 37:   &.light {\A 38:     @include fancy-button-colors-matte(#dddddd); }"; }
+  content: "Syntax error: Undefined mixin 'fancy-button-structure'.\A         on line 36 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss, in `fancy-button-structure'\A         from line 36 of /Users/ignu/code/megatron/app/stylesheets/buttons.scss\A \A 31: .errorExplanation {\A 32:   background-color:white;\A 33:   color:red;\A 34: }\A 35: a.button, button {\A 36:   @include fancy-button-structure;\A 37:   @include fancy-button-colors;\A 38:   margin: 0 2px;\A 39:   vertical-align: middle;\A 40:   &.light {\A 41:     @include fancy-button-colors-matte(#dddddd); }"; }
