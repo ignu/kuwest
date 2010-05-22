@@ -461,7 +461,7 @@ body.bp .removed {
 /* line 38, ../../../app/stylesheets/screen.scss */
 .panel {
   color: #DDD;
-  background-color: #283256;
+  background-color: #161d33;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   padding: 30px;
@@ -548,7 +548,7 @@ body {
 a, a.visited, a.hover {
   text-decoration: none;
   font-weight: bold;
-  color: #000066;
+  color: #161d33;
 }
 
 /* line 64, ../../../app/stylesheets/screen.scss */
