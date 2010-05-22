@@ -1,8 +1,12 @@
 
 var monitur = function() {
   var self = {};
+  fadeoutAlerts = function() {
+    $(".alert").fadeOut();
+  };
   self.init =  function() {
     monitur.winform.init();
+    setTimeout(fadeoutAlerts,5000);
   };
   return self;
 }();

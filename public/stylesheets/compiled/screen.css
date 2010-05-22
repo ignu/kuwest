@@ -445,6 +445,34 @@ body.bp .removed {
   color: white;
 }
 
+/* line 27, ../../../app/stylesheets/screen.scss */
+.alert {
+  color: black;
+  background-color: #7280A7;
+  color: #222126;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+/* line 38, ../../../app/stylesheets/screen.scss */
+.panel {
+  color: #DDD;
+  background-color: #283256;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 30px;
+  margin: 15px 0px;
+}
+
+/* line 46, ../../../app/stylesheets/screen.scss */
+.login {
+  width: 600px;
+}
+
 /* line 18, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.1/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form.bp label {
   font-weight: bold;
@@ -507,7 +535,7 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 31, ../../../app/stylesheets/screen.scss */
+/* line 52, ../../../app/stylesheets/screen.scss */
 body {
   font-family: 'Helvetica';
   font-size: 16pt;
@@ -516,39 +544,51 @@ body {
   margin-right: auto;
 }
 
-/* line 38, ../../../app/stylesheets/screen.scss */
+/* line 59, ../../../app/stylesheets/screen.scss */
 a, a.visited, a.hover {
   text-decoration: none;
   font-weight: bold;
   color: #000066;
 }
 
-/* line 43, ../../../app/stylesheets/screen.scss */
+/* line 64, ../../../app/stylesheets/screen.scss */
 .points {
   font-size: 8pt;
   color: #999;
   margin-top: 4px;
 }
 
-/* line 48, ../../../app/stylesheets/screen.scss */
+/* line 69, ../../../app/stylesheets/screen.scss */
 .detail {
   padding: 10px;
 }
 
-/* line 51, ../../../app/stylesheets/screen.scss */
+/* line 72, ../../../app/stylesheets/screen.scss */
 h1 {
   font-size: 24pt;
   font-weight: bold;
 }
 
-/* line 56, ../../../app/stylesheets/screen.scss */
+/* line 76, ../../../app/stylesheets/screen.scss */
+.field {
+  margin-top: 17px;
+  margin-bottom: 7px;
+}
+
+/* line 81, ../../../app/stylesheets/screen.scss */
+label {
+  padding-top: 7px;
+  color: #DDD;
+}
+
+/* line 85, ../../../app/stylesheets/screen.scss */
 input {
   font-size: 18pt;
   padding: 5px;
   height: 30px;
 }
 
-/* line 61, ../../../app/stylesheets/screen.scss */
+/* line 90, ../../../app/stylesheets/screen.scss */
 button {
   font-size: 14pt;
   height: 46px;
@@ -556,33 +596,33 @@ button {
   top: -2px;
 }
 
-/* line 68, ../../../app/stylesheets/screen.scss */
+/* line 97, ../../../app/stylesheets/screen.scss */
 div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* line 72, ../../../app/stylesheets/screen.scss */
+/* line 101, ../../../app/stylesheets/screen.scss */
 .light {
   color: #999;
 }
 
-/* line 75, ../../../app/stylesheets/screen.scss */
+/* line 104, ../../../app/stylesheets/screen.scss */
 #win {
   width: 700px;
 }
 
-/* line 78, ../../../app/stylesheets/screen.scss */
+/* line 107, ../../../app/stylesheets/screen.scss */
 .user_profile {
   float: left;
 }
 
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 110, ../../../app/stylesheets/screen.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 87, ../../../app/stylesheets/screen.scss */
+/* line 116, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -593,7 +633,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 89, ../../../app/stylesheets/screen.scss */
+/* line 118, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -604,7 +644,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 91, ../../../app/stylesheets/screen.scss */
+/* line 120, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -615,7 +655,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 95, ../../../app/stylesheets/screen.scss */
+/* line 124, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
