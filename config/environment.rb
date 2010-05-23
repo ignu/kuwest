@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   
 	config.gem 'devise'
+	config.gem 'chronic'
 	config.gem 'warden'
   config.gem 'formtastic'
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
