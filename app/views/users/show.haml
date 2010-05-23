@@ -5,3 +5,5 @@
 -@totals.each do |t|
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
 
+%h1=@can_update_status
+

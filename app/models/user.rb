@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
 					:validatable
 
 	attr_accessible :email, :password, :password_confirmation
+	validates_uniqueness_of :username
 
 end

@@ -28,7 +28,8 @@ Rails::Initializer.run do |config|
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
   config.gem 'shoulda'  
   config.gem 'haml'
-  config.gem 'not_a_mock'
+  config.gem 'mocha'
+  config.gem 'factory_girl'
   config.gem "compass", :version => ">= 0.10.1"
   
 
