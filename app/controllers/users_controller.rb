@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     else
       @totals = Win.totals_for(@user)
     end
+    @can_update_status = false
   end
 
   def edit
