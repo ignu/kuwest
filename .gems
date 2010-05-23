@@ -1,4 +1,5 @@
 shoulda
+chronic
 formtastic  
 warden
 devise 
