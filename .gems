@@ -4,5 +4,4 @@ formtastic
 warden
 devise 
 rspec-rails  >= 1.2.0
-rails = 2.3.5
 compass  >= 0.10.1
