@@ -3,7 +3,6 @@ var monitur = function() {
   var self = {};
   fadeoutAlerts = function() {
     $(".alert").fadeOut();
-    $(".notice").fadeOut();    
   };
   self.init =  function() {
     monitur.winform.init();
@@ -34,21 +33,6 @@ monitur.winform = function() {
       })
       return false;
     })
-
-		$("#submit_comment").click(function() {
-			if ($("#comment").val() == text) return false;
-			$.ajax({
-				url: '/wins/comments/' + id,
-				type: "POST",
-				data: {
-					body: $("#comment").val()
-				},
-				success: function(data) {
-					$("#comment").val(text);
-					$("#comment").addClass("light");
-					return false;
-				}
-		})
 
   };
   return self;
@@ -93,4 +77,6 @@ winUpdater = function() {
   };
   return self;  
 }();
+
+
 
