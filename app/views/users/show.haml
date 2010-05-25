@@ -1,10 +1,5 @@
-%div{:id=>'graph_container', :style=>"float:right"}
-  .wrapper
-    %canvas{:id=>'details', :width=>'600', :height=>'400', :user=>@user.username}
+-if @can_update_status
+  =render :partial => "shared/new_status"
 %h1=@user.username
 -@totals.each do |t|
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
-=@can_update_status
--if @can_update_status
-  =render :partial => "shared/new_status"
-=render :partial => "shared/new_status"
