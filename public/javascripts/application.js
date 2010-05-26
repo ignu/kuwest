@@ -35,10 +35,10 @@ monitur.winform = function() {
       return false;
     })
 
-		$("#submit_comment").click(function() {
+		$(".submit_comment").click(function() {
 			if ($("#comment").val() == text) return false;
 			$.ajax({
-				url: '/wins/comments/' + id,
+				url: '/wins/comment/' + id,
 				type: "POST",
 				data: {
 					body: $("#comment").val()

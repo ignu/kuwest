@@ -16,3 +16,6 @@
         .points
           (+5pts)
           %a.comment.link Comment
+          .comment{:class => "comment"} 
+            %input{:type => "text", :id => "comment_#{w.id}"} 
+            %input{:type => "submit", :class => "submit_comment", :value => "Add Comment"} 
