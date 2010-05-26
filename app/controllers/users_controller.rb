@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
-  
+  before_filter :authenticate_user!, :except => [:new, :show] 
   def new
     @user = User.new
   end
 
   def create
-  	@user = User.new(params[:user])
-  	@user.username = params[:user][:username]
+  	@user = User.create(params[:user])
+  	@user.update_attributes(params[:username])
+  	#@user.username = params[:user][:username]
   	
     if @user.save
       flash[:notice] = "Profile created!"

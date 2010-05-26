@@ -3,6 +3,8 @@ var monitur = function() {
   var self = {};
   fadeoutAlerts = function() {
     $(".alert").fadeOut();
+    $(".error").fadeOut();
+    $(".notice").fadeOut();
   };
   self.init =  function() {
     monitur.winform.init();
@@ -59,13 +61,12 @@ monitur.winform = function() {
 				}
 			})
       return false;
-		})
-
+		});
   };
   return self;
 }();
 
-monitur.winsDiv = function() { return $("#win_list");}
+monitur.winsDiv = function() { return $("#win_list");};
 
 $(monitur.init);
 

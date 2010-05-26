@@ -9,6 +9,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
 	config.gem 'devise'
+	config.gem 'paperclip'
 	config.gem 'chronic'
 	config.gem 'warden'
   config.gem 'formtastic'

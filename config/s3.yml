@@ -1,12 +1,12 @@
 development:
   access_key_id: 02D8HGYD1WMDGJZNKER2
   secret_access_key: VjgFt/L8c8o7QqNGBPq80iynmEYHAUVpM8viNI0N
-  bucket: dev_kuwest_profiles
+  bucket: kuwest.profiles.dev
 test:
   access_key_id: 02D8HGYD1WMDGJZNKER2
   secret_access_key: VjgFt/L8c8o7QqNGBPq80iynmEYHAUVpM8viNI0N
-  bucket: test_kuwest_profile
+  bucket: kuwest.profiles.test
 production:
   access_key_id: 02D8HGYD1WMDGJZNKER2
   secret_access_key: VjgFt/L8c8o7QqNGBPq80iynmEYHAUVpM8viNI0N
-  bucket: kuwest_profiles
+  bucket: kuwest.profiles.production

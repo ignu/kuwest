@@ -5,13 +5,13 @@
 .field
   %p=f.label :email 
   %p=f.text_field :email
-.field
-  %p=f.label :password 
-  %p=f.password_field :password
-.field
-  %p=f.label :password_confirmation
-  %p=f.password_field :password_confirmation
+-if @user.new_record?
+  .field
+    %p=f.label :password 
+    %p=f.password_field :password
+  .field
+    %p=f.label :password_confirmation
+    %p=f.password_field :password_confirmation
 .field
   %p=f.label :photo
-  %p=f.file_field :photo
-  eoeeeewww
+  %p=f.file_field :photo, {:class=>"file"}

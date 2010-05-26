@@ -18,7 +18,7 @@
     #messageDiv
       #flashMessage
         -if flash[:error] || @error  #HACK: clean this up
-          .notice=flash[:error] || @error
+          .error=flash[:error] || @error
         -if flash[:notice] || @notice
           .notice=flash[:notice] || @notice
         -if flash[:alert] || @alert

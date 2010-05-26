@@ -1,6 +1,7 @@
 -if @can_update_status
   =render :partial => "shared/new_status"
 %h1=@user.username
-=image_tag @user.photo.url
+-if @user.photo.exists?
+  =image_tag @user.photo.url
 -@totals.each do |t|
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"

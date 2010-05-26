@@ -1,14 +1,11 @@
 class User < ActiveRecord::Base
 
   has_many :wins
-	attr_accessible :email, :password, :password_confirmation
+	attr_accessible :username, :photo, :email, :password, :password_confirmation
 	validates_uniqueness_of :username
-
+  validates_presence_of :username
+  
   has_attached_file :photo,
-          :styles => {
-            :thumb   => "24x24",
-            :medium  => "64x64"
-           },
           :storage        => :s3,
           :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
           :path           => ":attachment/:id/:style.:extension"
