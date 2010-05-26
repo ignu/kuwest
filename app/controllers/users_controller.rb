@@ -4,12 +4,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-	def create
+  def create
   	@user = User.new(params[:user])
-  	@user.username = params[:user][:username] #HACK: wut
+  	@user.username = params[:user][:username]
   	
     if @user.save
-      flash[:notice] = "Account registered!"
+      flash[:notice] = "Profile created!"
       redirect_to "/users/#{@user.username}" 
     else
       render :action => :new
@@ -29,16 +29,18 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = @current_user
+    throw "You need to be logged in to see this page" if current_user.nil?
+    @user = current_user
   end
   
   def update
-    @user = @current_user
+    @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
-      redirect_to account_url
+      flash[:notice] = "Profile updated."
+      redirect_to "/users/#{@user.username}"
     else
       render :action => :edit
     end
   end
+
 end

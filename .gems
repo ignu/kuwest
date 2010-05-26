@@ -2,6 +2,8 @@ rails --version 2.3.7
 shoulda
 rails
 factory_girl
+paperclip
+aws-s3
 chronic
 formtastic  
 warden
