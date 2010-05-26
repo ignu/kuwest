@@ -34,6 +34,7 @@ monitur.winform = function() {
       return false;
     })
 
+<<<<<<< HEAD
 		$(".submit_comment").click(function() {
 			if ($("#comment").val() == text) return false;
 			$.ajax({
@@ -49,6 +50,8 @@ monitur.winform = function() {
 				}
 		})
 
+=======
+>>>>>>> e6d465bcc5ed36a5ad10e6e6d8984f2f2ea3e923
   };
   return self;
 }();

@@ -1,4 +1,7 @@
+rails --version 2.3.7
 shoulda
+rails
+factory_girl
 chronic
 formtastic  
 warden

@@ -8,9 +8,25 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
+<<<<<<< HEAD
+  # Add additional load paths for your own custom dirs
+  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+
+  # Specify gems that this application depends on and have them installed with rake gems:install
+  # config.gem "bj"
+  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
+  # config.gem "sqlite3-ruby", :lib => "sqlite3"
+  # config.gem "aws-s3", :lib => "aws/s3"
+
+	config.gem 'rails'
 	config.gem 'devise'
 	config.gem 'chronic'
 	config.gem 'warden'
+=======
+  config.gem 'devise'
+  config.gem 'chronic'
+  config.gem 'warden'
+>>>>>>> e6d465bcc5ed36a5ad10e6e6d8984f2f2ea3e923
   config.gem 'formtastic'
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
