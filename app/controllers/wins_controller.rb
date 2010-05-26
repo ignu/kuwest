@@ -24,5 +24,13 @@ class WinsController < ApplicationController
     win_view_model.to_win.save!
     render :json => win_view_model.to_json
   end
-  
+
+	def comment
+		comment = Comment.new(
+			:body => params[:body],
+			:win => Win.find_by_id(params[:id])
+		)				
+		comment.save
+		render :json => comment.to_json
+	end
 end

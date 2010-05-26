@@ -34,33 +34,24 @@ monitur.winform = function() {
       return false;
     })
 
-		$(".comment").click(function() {
-			$(this).siblings(".comment_box").show();
-			return false;
-		})
-	
-		$(".comment_description").focusout(function() {
-			if ($(this).val().length == 0) $(this).parent().hide();
-      return false;
-		});
-
+<<<<<<< HEAD
 		$(".submit_comment").click(function() {
-			if ($(this).siblings(".comment_description").val().length == 0) return false;
-			var id = $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
+			if ($("#comment").val() == text) return false;
 			$.ajax({
 				url: '/wins/comment/' + id,
 				type: "POST",
 				data: {
-					body: $(this).siblings(".comment_description").val()
+					body: $("#comment").val()
 				},
 				success: function(data) {
-					$(this).parent().hide();
+					$("#comment").val(text);
+					$("#comment").addClass("light");
 					return false;
 				}
-			})
-      return false;
 		})
 
+=======
+>>>>>>> e6d465bcc5ed36a5ad10e6e6d8984f2f2ea3e923
   };
   return self;
 }();
