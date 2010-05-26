@@ -34,19 +34,31 @@ monitur.winform = function() {
       return false;
     })
 
+		$(".comment").click(function() {
+			$(this).siblings(".comment_box").show();
+			return false;
+		})
+	
+		$(".comment_description").focusout(function() {
+			if ($(this).val().length == 0) $(this).parent().hide();
+      return false;
+		});
+
 		$(".submit_comment").click(function() {
-			if ($("#comment").val() == text) return false;
+			if ($(this).siblings(".comment_description").val().length == 0) return false;
+			var id = $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
 			$.ajax({
 				url: '/wins/comment/' + id,
 				type: "POST",
 				data: {
-					body: $("#comment").val()
+					body: $(this).siblings(".comment_description").val()
 				},
 				success: function(data) {
-					$("#comment").val(text);
-					$("#comment").addClass("light");
+					$(this).parent().hide();
 					return false;
 				}
+			})
+      return false;
 		})
 
   };

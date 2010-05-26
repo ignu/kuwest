@@ -30,7 +30,7 @@ class WinsController < ApplicationController
 			:body => params[:body],
 			:win => Win.find_by_id(params[:id])
 		)				
-		comment.save!
+		comment.save
 		render :json => comment.to_json
 	end
 end
