@@ -37,3 +37,16 @@ describe WinViewModel do
   end
 end
 
+describe WinGraphViewModel do
+  before(:each) do
+    @user = User.find_or_create_by_username("mrdowns")
+    win = Win.new {:amount=>3, :noun=>"Miles", :verb=>"ran"}
+    win.user = @user
+    win.save!
+  end
+
+  it "returns all distinct phrases for a user" do  
+    win_graph_view_model = WinGraphViewModel.new(user)
+  end
+end
+
