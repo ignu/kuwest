@@ -48,15 +48,18 @@ monitur.winform = function() {
 
 		$(".submit_comment").click(function() {
 			if ($(this).siblings(".comment_description").val().length == 0) return false;
-			var id = $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
+			var id 						= $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
+			var parent 				= $(this).parent();
+			var comment_desc 	= $(this).siblings(".comment_description");
 			$.ajax({
 				url: '/wins/comment/' + id,
 				type: "POST",
 				data: {
-					body: $(this).siblings(".comment_description").val()
+					body: comment_desc.val()
 				},
 				success: function(data) {
-					$(this).parent().hide();
+					comment_desc.val("");
+					parent.hide();
 					return false;
 				}
 			})
