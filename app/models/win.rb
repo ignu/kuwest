@@ -2,6 +2,7 @@ require 'rubygems'
 
 class Win < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
   
   def self.totals_for(user)
     raise "Need to Supply a User" if user.nil?

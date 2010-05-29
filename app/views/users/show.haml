@@ -1,20 +1,11 @@
--if @can_update_status
-  =render :partial => "shared/new_status"
 %h1=@user.username
 -if @user.photo.exists?
-  =image_tag @user.photo.url
--@totals.each do |t|
-  %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
 
-%table
-  %thead
-    %tr
-      %th Date
-      -@data.dates.each do |date|
-        %td=date
-  %tbody
-    -@data.activities.each do |activity|
-      %tr
-        %th=activity.phrase
-        -@data.dates.each do |date|
-          %td=activity.dates[date].nil? ? 0 : activity.dates[date]
+  =image_tag @user.photo.url(:small)
+#totals
+  -@totals.each do |t|
+    %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
+#pages
+  -@user.wins.reverse.each do |w|
+    .status
+      =render :partial => "shared/status", :locals => {:w=>w}

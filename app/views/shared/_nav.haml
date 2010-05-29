@@ -1,0 +1,19 @@
+#nav
+  -if user_signed_in?
+    %a{:href=>"/wins/new"}
+      new status
+    |
+    %a{:href=>"/users/#{current_user.username}"}
+      view profile
+    |
+    %a{:href=>'/profile'}
+      edit profile
+    |
+    %a{:href=>'/users/logout'}
+      logout
+  -else
+    %a{:href=>"/users/login"}
+      login
+    |
+    %a{:href=>"/users/new"}
+      signup
