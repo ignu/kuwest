@@ -24,7 +24,7 @@ window.onload = function () {
     // Grab the data
     var labels = [],
         data = [];
-    $("#data tfoot th").each(function () {
+    $("#data tfoot td").each(function () {
         labels.push($(this).html());
     });
     $("#data tbody td").each(function () {

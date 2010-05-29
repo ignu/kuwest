@@ -30,7 +30,7 @@ class WinGraphData
   private
   
   def phrase_for(win)
-    return "#{win.verb}_#{win.noun}"
+    return "#{win.verb} #{win.noun}"
   end
   
   def total_amount_for(wins, date)

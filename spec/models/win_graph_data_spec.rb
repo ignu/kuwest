@@ -33,11 +33,11 @@ describe WinGraphData, "a single activity" do
   end
   
   it "returns the phrase" do  
-    count_for("drove_buses").should == 1
+    count_for("drove buses").should == 1
   end
   
   it "returns the amount" do
-    activity_with_phrase("drove_buses").dates[@first_day.to_date].should == 3
+    activity_with_phrase("drove buses").dates[@first_day.to_date].should == 3
   end
 end
 
@@ -54,9 +54,9 @@ describe WinGraphData, "multiple activities on the same day" do
   end
   
   it "returns all phrases" do
-    count_for("drove_buses").should == 1
-    count_for("froze_torches").should == 1
-    count_for("bridged_rivers").should == 1
+    count_for("drove buses").should == 1
+    count_for("froze torches").should == 1
+    count_for("bridged rivers").should == 1
     activities.count.should == 3
   end
 end
@@ -74,14 +74,14 @@ describe WinGraphData, "multiple activities with the same phrase on the same day
   end
   
   it "returns distinct phrases" do
-    count_for("drove_buses").should == 1
-    count_for("froze_torches").should == 1
+    count_for("drove buses").should == 1
+    count_for("froze torches").should == 1
     activities.count.should == 2
   end
   
   it "returns amount totals for each phrase" do
-    activity_with_phrase("froze_torches").dates[@first_day.to_date].should == 8
-    activity_with_phrase("froze_torches").dates.keys.count.should == 1
+    activity_with_phrase("froze torches").dates[@first_day.to_date].should == 8
+    activity_with_phrase("froze torches").dates.keys.count.should == 1
   end
 end
 
@@ -109,33 +109,17 @@ describe WinGraphData, "multiple activities with the same phrase on different da
   end
   
   it "returns a collection of dates for each phrase" do
-    activity_with_phrase("froze_torches").dates.keys.count.should == 3
+    activity_with_phrase("froze torches").dates.keys.count.should == 3
   end
   
   it "contains correct amount at each date" do
-    activity_with_phrase("froze_torches").dates[@first_day.to_date].should == 3
-    activity_with_phrase("froze_torches").dates[@second_day.to_date].should == 5
-    activity_with_phrase("froze_torches").dates[@third_day.to_date].should == 7
-    activity_with_phrase("froze_torches").dates.keys.count.should == 3
+    activity_with_phrase("froze torches").dates[@first_day.to_date].should == 3
+    activity_with_phrase("froze torches").dates[@second_day.to_date].should == 5
+    activity_with_phrase("froze torches").dates[@third_day.to_date].should == 7
+    activity_with_phrase("froze torches").dates.keys.count.should == 3
   end
   
   it "contains all dates in top level collection" do
     @win_graph_data.dates.count.should == 3
   end
 end
-
-#describe WinGraphData "how to use it" do
-#  it "works" do
-#    user = User.find_by_username("mrdowns")
-#    data = WinGraphData.new user
-#    data.activities.each do |activity|
-#      write_activity_cell activity.phrase
-#      activity.dates.each do |win|
-#        write_graph_cell win.amount
-#      end
-#      data.dates.each do |date|
-#        write_date_cell date.format
-#      end
-#    end
-#  end
-#end

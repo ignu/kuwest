@@ -7,12 +7,14 @@
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
 
 %table
-  -@data.activities.each do |activity|
+  %thead
     %tr
-      %th=activity.phrase
+      %th Date
       -@data.dates.each do |date|
-        %td="&nbsp;#{activity.dates[date]}&nbsp;"
-  %tr
-    %td
-    -@data.dates.each do |date|
-      %td=date
+        %td=date
+  %tbody
+    -@data.activities.each do |activity|
+      %tr
+        %th=activity.phrase
+        -@data.dates.each do |date|
+          %td=activity.dates[date].nil? ? 0 : activity.dates[date]
