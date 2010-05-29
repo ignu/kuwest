@@ -90,8 +90,20 @@ a, a.visited, a.hover {
   color: #999;
   margin-top:4px;
 }
+.comments {
+  font-size:8pt;
+  color:#999;
+  margin:10px;
+}
 .detail {
   padding: 10px;
+  height:70px;
+  width:500px;
+  vertical-align:top;
+}
+.profile_picture {
+  vertical-align:top;
+  padding: 11px 0px;
 }
 h1 {
   font-size:24pt;
@@ -141,13 +153,40 @@ div.standout {
 .user_profile {
   float:left;
 }
+
 .clearfix {
   clear:both;
 }
+.comment-box{
+  background-color:white
+}
 
 input.file {
-width:200px;
-height:40px;
+  width:200px;
+  height:40px;
+}
+#nav {
+  font-size:12px;
+}
+#totals {
+  float:right;
+}
+
+.detail:hover {
+  background-color:#F2F2F2;
+}
+.detail:hover .actions {
+  display:block;
+}
+
+.action_wrapper {
+  height:7px;
+}
+.actions {
+  display:none;
+  font-size:10px;
+  vertical-align:text-bottom;
+  padding-top: 5px;
 }
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col {

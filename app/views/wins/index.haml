@@ -1,22 +1,6 @@
-%h1 Kuwest.com
-%h3 Pick a quest.  We dare you.
-
+.woah{:style=>"padding-top:10px; padding-bottom:-10px; font-size:32px; "} 
+  What have you done?
+=render :partial => "shared/new_status"
 -@wins.each do |w|
-  %table.win   
-    %tr
-      %td.profile_picture
-        %img{:src=>"/images/user/#{w.user.username == "ignu" ? "ignu.png" : "megatron.jg"}", :height=>42, :width=>42}
-      %td.detail
-        %a{:href=>"/users/#{w.user.username}", :class=>"username"} 
-          =w.user.username
-        =w.verb
-        %span.amount
-          =w.amount
-        =w.noun
-        .points
-          (+5pts)
-          %a.comment{:href => ""} Comment
-          .comment_box{:class => "comment"} 
-            %input{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"} 
-            %button{:type => "submit", :class => "submit_comment" } 
-              Add Comment
+  %table.win
+    =render :partial => "shared/status_tr", :locals => {:w=>w}
