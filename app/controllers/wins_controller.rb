@@ -12,7 +12,8 @@ class WinsController < ApplicationController
   def destroy
     win = Win.find(params[:id])
     throw "Can Not Delete Another's Status" unless win.user.id == current_user.id
-    win.destroy!
+    win.destroy
+    render :json => {:message => "Status deleted." }
   end 
 
   def update

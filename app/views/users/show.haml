@@ -1,7 +1,10 @@
--if @can_update_status
-  =render :partial => "shared/new_status"
 %h1=@user.username
 -if @user.photo.exists?
-  =image_tag @user.photo.url
--@totals.each do |t|
-  %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
+  =image_tag @user.photo.url(:thumb)
+#totals
+  -@totals.each do |t|
+    %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
+#pages
+  -@user.wins.each do |w|
+    .status
+      =render :partial => "shared/status", :locals => {:w=>w}

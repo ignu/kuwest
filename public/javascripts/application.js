@@ -1,4 +1,3 @@
-
 var monitur = function() {
   var self = {};
   fadeoutAlerts = function() {
@@ -8,16 +7,32 @@ var monitur = function() {
   };
   self.init =  function() {
     monitur.winform.init();
-    setTimeout(fadeoutAlerts,5000);
+    setTimeout(fadeoutAlerts, 5000);
   };
   return self;
 }();
 
 monitur.winform = function() {
+
   var self = {};
+  
   self.init = function() {
     var text = $("#win").val();
     $("#win").helpText(text);
+    
+    $(".delete").click(function() {
+      var delete_link = $(this);
+      $.ajax({
+        url: "/wins/destroy", 
+        type: "DELETE", 
+        data: {id: delete_link.attr("status")}, 
+        success: function() {
+          delete_link.parents(".status").fadeOut()
+        }
+      });
+      return false; 
+    });
+    
     $("#submit_win").click(function() {
       if ($("#win").val() == text) return false;
       $.ajax({
@@ -72,28 +87,6 @@ monitur.winform = function() {
 monitur.winsDiv = function() { return $("#win_list");};
 
 $(monitur.init);
-
-$.fn.helpText = function(text) {
-  
-  if(!text) text = $(this).val();
-  $(this).val(text);
-  $(this).addClass("light")
-  $(this).data("helpText", text);
-  $(this).click(function() {
-    if($(this).val() == text) {
-      $(this).val('');
-      $(this).removeClass("light");
-    }
-  });
-
-  $(this).blur(function() {
-    if(!$(this).val()) {
-      $(this).val(text);
-      $(this).addClass("light");
-    }
-  });
-  
-};
 
 winUpdater = function() {
   var template = "<div class=\"avatar\">&nbsp;</div><div class=\"win\"><a class=\"username\" href=\"/users/{{username}}\">{{username}}</a>: {{body}}<div class=\"points\"> (+5 pts)</div></div>"
