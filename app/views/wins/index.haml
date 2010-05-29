@@ -1,10 +1,6 @@
+.woah{:style=>"padding-top:10px; padding-bottom:-10px; font-size:32px; "} 
+  What have you done?
+=render :partial => "shared/new_status"
 -@wins.each do |w|
   %table.win
-    %tr.status
-      %td.profile_picture{:valign=>"top"}
-        =image_tag w.user.photo.url(:thumb)
-      %td.detail
-        %span.username
-          %a{:href=>"/users/#{w.user.username}", :class=>"username"}
-            =w.user.username
-        =render :partial => "shared/status", :locals => {:w=>w}
+    =render :partial => "shared/status_tr", :locals => {:w=>w}

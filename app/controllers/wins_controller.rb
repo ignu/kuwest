@@ -25,8 +25,9 @@ class WinsController < ApplicationController
     win_view_model = WinViewModel.new(
       :username=>current_user.username,
       :body=>params[:body])
-    win_view_model.to_win.save!
-    render :json => win_view_model.to_json
+    @win = win_view_model.to_win
+    @win.save!
+    render "shared/_status_tr", :layout=>false
   end
 
 	def comment
