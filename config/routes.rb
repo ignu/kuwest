@@ -9,8 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.create    'users/create', :controller=>"users", :action =>"create"
   map.user_show 'users/:id',    :controller=>"users", :action =>"show"
 
-  map.root                      :controller=>"actions", :action=>"index"
-  map.resource :actions
+  map.root                      :controller=>"wins", :action=>"index"
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

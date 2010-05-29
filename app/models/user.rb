@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :wins
+  has_many :comments
 	attr_accessible :username, :photo, :email, :password, :password_confirmation
 	validates_uniqueness_of :username
   validates_presence_of :username

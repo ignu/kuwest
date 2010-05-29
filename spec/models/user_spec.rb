@@ -21,5 +21,6 @@ describe User do
 	end
 
 	it {should have_many :wins}
+	it {should have_many :comments}
 	it {should validate_uniqueness_of :username}
 end
