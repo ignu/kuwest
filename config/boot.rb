@@ -2,7 +2,12 @@
 # Configure your app in config/environment.rb and config/environments/*.rb
 
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
-
+class Float
+  def pretty
+    return ("%.1f" % self).gsub(/(\d)(?=\d{3}+(\.\d*)?$)/, '\1,') if modulo(1) > 0
+    self.to_i.to_s
+  end
+end
 module Rails
   class << self
     def boot!

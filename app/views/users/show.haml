@@ -3,8 +3,8 @@
   =image_tag @user.photo.url(:small)
 #totals
   -@totals.each do |t|
-    %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
+    %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
 #pages
-  -@user.wins.each do |w|
+  -@user.wins.reverse.each do |w|
     .status
       =render :partial => "shared/status", :locals => {:w=>w}
