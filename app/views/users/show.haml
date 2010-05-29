@@ -5,3 +5,14 @@
   =image_tag @user.photo.url
 -@totals.each do |t|
   %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
+
+%table
+  -@data.activities.each do |activity|
+    %tr
+      %th=activity.phrase
+      -@data.dates.each do |date|
+        %td="&nbsp;#{activity.dates[date]}&nbsp;"
+  %tr
+    %td
+    -@data.dates.each do |date|
+      %td=date

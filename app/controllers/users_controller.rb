@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       render(:template => "shared/error404", :status => "404") 
     else
       @totals = Win.totals_for(@user)
+      @data = WinGraphData.new @user
       @can_update_status = !current_user.nil? && current_user.username == @user.username
     end
   end
