@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
           :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
           :path           => ":attachment/:id/:style.:extension",
           :styles         =>  {
-                              :thumb=> "32x32#",
-                              :small  => "150x150>" }
+                              :thumb=> "48x48#",
+                              :small  => "72x72>" }
   
   devise 	:database_authenticatable,
 					:registerable,

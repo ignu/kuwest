@@ -2,11 +2,18 @@
 %span.amount
   =w.amount
 =w.noun
+.comments
+  -w.comments.each do |c|
+    .comment
+      %a{:href=>"/users/#{c.user.username}"}
+        =c.user.username
+      =c.body
 .actions
-  -if (current_user.id == w.user.id)
+  -if (!current_user.nil? && current_user.id == w.user.id)
     %a.delete{:href=>"", :status=>w.id} Delete
-  %a.comment{:href => ""} Comment
-  .comment_box{:class => "comment"} 
-    %input{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"} 
-    %button{:type => "submit", :class => "submit_comment" } 
-      Add Comment
+  -if (!current_user.nil?)
+    %a.comment{:href => ""} Comment
+    .comment_box{:class => "comment"} 
+      %input{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"} 
+      %button{:type => "submit", :class => "submit_comment" } 
+        Add Comment

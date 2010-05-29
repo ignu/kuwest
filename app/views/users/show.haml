@@ -1,6 +1,6 @@
 %h1=@user.username
 -if @user.photo.exists?
-  =image_tag @user.photo.url(:thumb)
+  =image_tag @user.photo.url(:small)
 #totals
   -@totals.each do |t|
     %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total} #{t.noun}"
