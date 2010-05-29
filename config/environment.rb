@@ -8,10 +8,10 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-	config.gem 'devise'
-	config.gem 'paperclip'
-	config.gem 'chronic'
-	config.gem 'warden'
+  config.gem 'devise'
+  config.gem 'paperclip'
+  config.gem 'chronic'
+  config.gem 'warden'
   config.gem 'formtastic'
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"

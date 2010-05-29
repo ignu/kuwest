@@ -1,7 +1,7 @@
 -@wins.each do |w|
   %table.win
     %tr.status
-      %td.profile_picture
+      %td.profile_picture{:valign=>"top"}
         =image_tag w.user.photo.url(:thumb)
       %td.detail
         %span.username

@@ -101,6 +101,10 @@ a, a.visited, a.hover {
   width:500px;
   vertical-align:top;
 }
+.profile_picture {
+  vertical-align:top;
+  padding: 11px 0px;
+}
 h1 {
   font-size:24pt;
   font-weight:bold;
@@ -153,6 +157,9 @@ div.standout {
 .clearfix {
   clear:both;
 }
+.comment-box{
+  background-color:white
+}
 
 input.file {
   width:200px;
@@ -170,6 +177,9 @@ input.file {
   display:block;
 }
 
+.action_wrapper {
+  height:7px;
+}
 .actions {
   display:none;
   font-size:10px;
