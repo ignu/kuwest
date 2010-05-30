@@ -42,14 +42,12 @@ monitur.winform = function() {
           body: $("#win").val()
         },
         success: function(data) {
-          try{
           $("table.win").prepend(data);
           $("#win").val(text);  // TODO: dry
           $("#win").addClass("light");
           return false;
           winUpdater.addWins(data);
           return false;
-        }catch(w){console.log(w)}
         }
       })
       return false;

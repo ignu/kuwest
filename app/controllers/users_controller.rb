@@ -36,7 +36,9 @@ class UsersController < ApplicationController
   
   def update
     @user = current_user
+
     if @user.update_attributes(params[:user])
+      @user.save!
       flash[:notice] = "Profile updated."
       redirect_to "/users/#{@user.username}"
     else

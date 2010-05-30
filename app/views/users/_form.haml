@@ -13,5 +13,20 @@
     %p=f.label :password_confirmation
     %p=f.password_field :password_confirmation
 .field
+  %p=f.label :first_name
+  %p=f.text_field :first_name
+.field
+  %p=f.label :last_name
+  %p=f.text_field :last_name
+.field
+  %p=f.label :name_is_public
+  %p=f.check_box :public_name
+.field
+  %p=f.label :twitter
+  %p=f.text_field :twitter_name
+.field
+  %p=f.label :url
+  %p=f.text_field :url
+.field
   %p=f.label :photo
   %p=f.file_field :photo, {:class=>"file"}
