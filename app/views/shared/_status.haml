@@ -4,10 +4,7 @@
 =w.noun
 .comments
   -w.comments.each do |c|
-    .comment
-      %a{:href=>"/users/#{c.user.username}"}
-        =c.user.username
-      =c.body
+    =render :partial=>"shared/comment", :locals=>{:comment=>c}
 .action_wrapper
   .actions
     -if (!current_user.nil? && current_user.id == w.user.id)

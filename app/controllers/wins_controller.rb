@@ -37,7 +37,8 @@ class WinsController < ApplicationController
 			:body => params[:body],
 			:win => Win.find_by_id(params[:id]))				
 		comment.save
-		render :json => comment.to_json
+		@comment = comment
+		render "shared/_comment", :layout=>false
 	end
 
 end
