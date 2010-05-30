@@ -1,6 +1,18 @@
-%h1#username=@user.username
 -if @user.photo.exists?
-  =image_tag @user.photo.url(:small)
+  .profile_image
+    =image_tag @user.photo.url(:profile)
+%h1#username=@user.username
+-unless @user.location.nil?
+  %h2=@user.location
+-unless @user.first_name.nil? || !@user.public_name
+  %h2="#{@user.first_name} #{@user.last_name}"
+-unless @user.twitter_name.nil?
+  %a{:href=>"http://twitter.com/#{@user.twitter_name}"}
+    %h2="@#{@user.twitter_name}"
+-unless @user.url.nil?
+  %a{:href=>@user.url}
+    %h2=@user.url
+
 #totals
   -@totals.each do |t|
     %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"

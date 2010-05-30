@@ -7,12 +7,66 @@ var monitur = function() {
   };
   self.init =  function() {  
     monitur.winform.init();
+    monitur.comments.init();
     setTimeout(fadeoutAlerts, 5000);
     drawWinGraph("graph-container", "column", "normal");
   };
   return self;
 }();
 
+monitur.comments = function() {
+  var self = {};
+
+  self.init = function() {
+    var wrapper;
+
+    var expand_wrapper = function() {
+      wrapper.height(wrapper.height() + 140);
+    };
+
+    var collapse_wrapper = function() {
+      wrapper.height(wrapper.height() - 140);
+    };
+
+	$(".comment").click(function() {
+      var comment_box = $(this).siblings(".comment_box");
+      comment_box.show();
+      wrapper = $(this).parents(".action_wrapper");
+      expand_wrapper();
+      comment_box.find('.comment_description').focus();
+      return false;
+      });
+	
+	$(".comment_description").focusout(function() {
+			if ($(this).val().length == 0) $(this).parent().hide();
+      collapse_wrapper();
+      return false;
+		});
+
+		$(".submit_comment").click(function() {
+			if ($(this).siblings(".comment_description").val().length == 0) return false;
+			var id 						= $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
+			var parent 				= $(this).parent();
+			var comment_desc 	= $(this).siblings(".comment_description");
+			$.ajax({
+				url: '/wins/comment/' + id,
+				type: "POST",
+				data: {
+					body: comment_desc.val()
+				},
+				success: function(data) {
+					comment_desc.val("");
+					parent.hide();
+          wrapper.siblings(".comments").append(data);
+          collapse_wrapper();
+					return false;
+				}
+			})
+      return false;
+		});
+  };
+  return self;
+}();
 monitur.winform = function() {
 
   var self = {};
@@ -43,51 +97,20 @@ monitur.winform = function() {
           body: $("#win").val()
         },
         success: function(data) {
-          try{
           $("table.win").prepend(data);
           $("#win").val(text);  // TODO: dry
           $("#win").addClass("light");
           return false;
           winUpdater.addWins(data);
           return false;
-        }catch(w){console.log(w)}
         }
-      })
+      });
       return false;
-    })
-
-		$(".comment").click(function() {
-			$(this).siblings(".comment_box").show();
-			return false;
-		})
-	
-		$(".comment_description").focusout(function() {
-			if ($(this).val().length == 0) $(this).parent().hide();
-      return false;
-		});
-
-		$(".submit_comment").click(function() {
-			if ($(this).siblings(".comment_description").val().length == 0) return false;
-			var id 						= $(this).siblings(".comment_description").attr('id').replace(/comment_/i,''); 
-			var parent 				= $(this).parent();
-			var comment_desc 	= $(this).siblings(".comment_description");
-			$.ajax({
-				url: '/wins/comment/' + id,
-				type: "POST",
-				data: {
-					body: comment_desc.val()
-				},
-				success: function(data) {
-					comment_desc.val("");
-					parent.hide();
-					return false;
-				}
-			})
-      return false;
-		});
+    }); // submit win
   };
   return self;
 }();
+
 
 monitur.winsDiv = function() { return $("#win_list");};
 

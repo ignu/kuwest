@@ -39,6 +39,17 @@ body.bp {
   padding:10px;
   text-align:center;
 }
+.error {
+  color: black;
+  background-color: #550000;
+  color: #FFFFFF;
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  padding:10px;
+  text-align:center;
+}
 .notice {
   color: black;
   background-color: #7280A7;

@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
 
   has_many :wins
   has_many :comments
+
 	attr_accessible :username, :photo, :email, :password, :password_confirmation
+	attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url
 	validates_uniqueness_of :username
   validates_presence_of :username
   
@@ -12,7 +14,8 @@ class User < ActiveRecord::Base
           :path           => ":attachment/:id/:style.:extension",
           :styles         =>  {
                               :thumb=> "48x48#",
-                              :small  => "72x72>" }
+                              :small  => "72x72>",
+                              :profile => "248x248>" }
   
   devise 	:database_authenticatable,
 					:registerable,

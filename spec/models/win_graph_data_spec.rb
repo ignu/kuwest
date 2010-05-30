@@ -22,6 +22,20 @@ module WinGraphDataSpecHelpers
   end
 end
 
+describe WinGraphData, "nil wins" do
+  include WinGraphDataSpecHelpers
+  
+  before do
+    @user = User.find_or_create_by_username("mrdowns")
+    @win_graph_data = WinGraphData.new @user
+  end
+  
+  it "shouldn't return anything" do
+    @win_graph_data.dates.count.should == 0
+    @win_graph_data.activities.count.should == 0
+  end
+end
+
 describe WinGraphData, "a single activity" do
   include WinGraphDataSpecHelpers
 

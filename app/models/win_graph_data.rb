@@ -4,6 +4,8 @@ class WinGraphData
   def initialize (user)
     wins = Win.find_all_by_user_id user.id
     
+    wins = Array.new if wins.nil?
+    
     distinct_phrases = wins.collect{|w| phrase_for w}.to_a.uniq
     
     @activities = Activities.new
@@ -22,8 +24,10 @@ class WinGraphData
     @activities.max_date = dates.max
     
     @dates = Array.new
-    (@activities.min_date..@activities.max_date).each do |date|
-      @dates << date
+    if not @activities.min_date.nil? then
+      (@activities.min_date..@activities.max_date).each do |date|
+        @dates << date
+      end
     end
   end
   

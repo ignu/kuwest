@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 
+      return
     else
       @totals = Win.totals_for(@user)
       @data = WinGraphData.new @user
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 
+      return
     else
       @totals = Win.totals_for(@user)
       @data = WinGraphData.new @user
@@ -60,7 +62,9 @@ class UsersController < ApplicationController
   
   def update
     @user = current_user
+
     if @user.update_attributes(params[:user])
+      @user.save!
       flash[:notice] = "Profile updated."
       redirect_to "/users/#{@user.username}"
     else
