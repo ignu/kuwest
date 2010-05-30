@@ -1,10 +1,10 @@
-%h1=@user.username
+%h1#username=@user.username
 -if @user.photo.exists?
-
   =image_tag @user.photo.url(:small)
 #totals
   -@totals.each do |t|
     %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
+#graph-container{:style=>'width: 600px; height: 300px'}
 #pages
   -@user.wins.reverse.each do |w|
     .status

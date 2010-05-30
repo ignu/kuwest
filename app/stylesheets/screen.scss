@@ -168,8 +168,9 @@ input.file {
 #nav {
   font-size:12px;
 }
-#totals {
+#totals, #graph-container {
   float:right;
+  clear: right;
 }
 
 .detail:hover {

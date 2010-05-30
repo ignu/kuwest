@@ -27,6 +27,17 @@ class WinGraphData
     end
   end
   
+  def as_json(options={})
+    dates = (@activities.min_date..@activities.max_date).collect{|d| d }
+    
+    return { 
+      :activities => @activities.collect do |a| 
+        { :phrase => a.phrase, :amounts => dates.collect { |date| a.dates[date] or 0 } } 
+      end,
+      :dates => dates.collect {|d| d.strftime("%b %d") }
+    }
+  end
+  
   private
   
   def phrase_for(win)
