@@ -453,6 +453,25 @@ body.bp .removed {
 }
 
 /* line 31, ../../../app/stylesheets/screen.scss */
+.upload_form {
+  display: none;
+}
+
+/* line 34, ../../../app/stylesheets/screen.scss */
+.action_wrapper input, .action_wrapper input.file, .action_wrapper button {
+  font-size: 10px;
+  height: 24px;
+  width: 200px;
+}
+
+/* line 38, ../../../app/stylesheets/screen.scss */
+.action_wrapper input:submit {
+  font-size: 10px;
+  height: 24px;
+  width: 100px;
+}
+
+/* line 41, ../../../app/stylesheets/screen.scss */
 .alert {
   color: black;
   background-color: #7280A7;
@@ -465,7 +484,7 @@ body.bp .removed {
   text-align: center;
 }
 
-/* line 42, ../../../app/stylesheets/screen.scss */
+/* line 52, ../../../app/stylesheets/screen.scss */
 .error {
   color: black;
   background-color: #550000;
@@ -478,7 +497,7 @@ body.bp .removed {
   text-align: center;
 }
 
-/* line 53, ../../../app/stylesheets/screen.scss */
+/* line 63, ../../../app/stylesheets/screen.scss */
 .notice {
   color: black;
   background-color: #7280A7;
@@ -491,7 +510,7 @@ body.bp .removed {
   text-align: center;
 }
 
-/* line 64, ../../../app/stylesheets/screen.scss */
+/* line 74, ../../../app/stylesheets/screen.scss */
 .panel {
   color: #DDD;
   background-color: #161d33;
@@ -501,22 +520,22 @@ body.bp .removed {
   margin: 15px 0px;
 }
 
-/* line 72, ../../../app/stylesheets/screen.scss */
+/* line 82, ../../../app/stylesheets/screen.scss */
 .errorExplanation {
   color: #EBC653;
 }
 
-/* line 75, ../../../app/stylesheets/screen.scss */
+/* line 85, ../../../app/stylesheets/screen.scss */
 .errorExplanation p {
   padding-top: 20px;
 }
 
-/* line 78, ../../../app/stylesheets/screen.scss */
+/* line 88, ../../../app/stylesheets/screen.scss */
 .errorExplanation ul {
   padding: 20px;
 }
 
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 91, ../../../app/stylesheets/screen.scss */
 .small {
   width: 600px;
 }
@@ -583,7 +602,7 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 87, ../../../app/stylesheets/screen.scss */
+/* line 97, ../../../app/stylesheets/screen.scss */
 body {
   font-family: 'Helvetica';
   font-size: 16pt;
@@ -592,28 +611,28 @@ body {
   margin-right: auto;
 }
 
-/* line 94, ../../../app/stylesheets/screen.scss */
+/* line 104, ../../../app/stylesheets/screen.scss */
 a, a.visited, a.hover {
   text-decoration: none;
   font-weight: bold;
   color: #161d33;
 }
 
-/* line 99, ../../../app/stylesheets/screen.scss */
+/* line 109, ../../../app/stylesheets/screen.scss */
 .points {
   font-size: 8pt;
   color: #999;
   margin-top: 4px;
 }
 
-/* line 104, ../../../app/stylesheets/screen.scss */
+/* line 114, ../../../app/stylesheets/screen.scss */
 .comments {
   font-size: 8pt;
   color: #999;
   margin: 10px;
 }
 
-/* line 109, ../../../app/stylesheets/screen.scss */
+/* line 119, ../../../app/stylesheets/screen.scss */
 .detail {
   padding: 10px;
   height: 70px;
@@ -621,31 +640,31 @@ a, a.visited, a.hover {
   vertical-align: top;
 }
 
-/* line 115, ../../../app/stylesheets/screen.scss */
+/* line 125, ../../../app/stylesheets/screen.scss */
 .profile_picture {
   vertical-align: top;
   padding: 11px 0px;
 }
 
-/* line 119, ../../../app/stylesheets/screen.scss */
+/* line 129, ../../../app/stylesheets/screen.scss */
 h1 {
   font-size: 24pt;
   font-weight: bold;
 }
 
-/* line 123, ../../../app/stylesheets/screen.scss */
+/* line 133, ../../../app/stylesheets/screen.scss */
 .field {
   margin-top: 17px;
   margin-bottom: 7px;
 }
 
-/* line 128, ../../../app/stylesheets/screen.scss */
+/* line 138, ../../../app/stylesheets/screen.scss */
 label {
   padding-top: 7px;
   color: #DDD;
 }
 
-/* line 132, ../../../app/stylesheets/screen.scss */
+/* line 142, ../../../app/stylesheets/screen.scss */
 input {
   font-size: 18pt;
   padding: 5px;
@@ -653,7 +672,7 @@ input {
   border: 1px solid #161d33;
 }
 
-/* line 139, ../../../app/stylesheets/screen.scss */
+/* line 149, ../../../app/stylesheets/screen.scss */
 button, .button {
   font-size: 14pt;
   height: 46px;
@@ -669,69 +688,69 @@ button, .button {
   margin-top: 15px;
 }
 
-/* line 154, ../../../app/stylesheets/screen.scss */
+/* line 164, ../../../app/stylesheets/screen.scss */
 div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* line 158, ../../../app/stylesheets/screen.scss */
+/* line 168, ../../../app/stylesheets/screen.scss */
 .light {
   color: #999;
 }
 
-/* line 161, ../../../app/stylesheets/screen.scss */
+/* line 171, ../../../app/stylesheets/screen.scss */
 #win {
   width: 700px;
 }
 
-/* line 164, ../../../app/stylesheets/screen.scss */
+/* line 174, ../../../app/stylesheets/screen.scss */
 .user_profile {
   float: left;
 }
 
-/* line 168, ../../../app/stylesheets/screen.scss */
+/* line 178, ../../../app/stylesheets/screen.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 171, ../../../app/stylesheets/screen.scss */
+/* line 181, ../../../app/stylesheets/screen.scss */
 .comment-box {
   background-color: white;
 }
 
-/* line 175, ../../../app/stylesheets/screen.scss */
+/* line 185, ../../../app/stylesheets/screen.scss */
 input.file {
   width: 200px;
   height: 40px;
 }
 
-/* line 179, ../../../app/stylesheets/screen.scss */
+/* line 189, ../../../app/stylesheets/screen.scss */
 #nav {
   font-size: 12px;
 }
 
-/* line 182, ../../../app/stylesheets/screen.scss */
+/* line 192, ../../../app/stylesheets/screen.scss */
 #totals {
   float: right;
 }
 
-/* line 186, ../../../app/stylesheets/screen.scss */
+/* line 196, ../../../app/stylesheets/screen.scss */
 .detail:hover {
   background-color: #F2F2F2;
 }
 
-/* line 189, ../../../app/stylesheets/screen.scss */
+/* line 199, ../../../app/stylesheets/screen.scss */
 .detail:hover .actions {
   display: block;
 }
 
-/* line 193, ../../../app/stylesheets/screen.scss */
+/* line 203, ../../../app/stylesheets/screen.scss */
 .action_wrapper {
   height: 7px;
 }
 
-/* line 196, ../../../app/stylesheets/screen.scss */
+/* line 206, ../../../app/stylesheets/screen.scss */
 .actions {
   display: none;
   font-size: 10px;
@@ -739,7 +758,7 @@ input.file {
   padding-top: 5px;
 }
 
-/* line 204, ../../../app/stylesheets/screen.scss */
+/* line 214, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -750,7 +769,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 206, ../../../app/stylesheets/screen.scss */
+/* line 216, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -761,7 +780,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 208, ../../../app/stylesheets/screen.scss */
+/* line 218, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -772,7 +791,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 212, ../../../app/stylesheets/screen.scss */
+/* line 222, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;

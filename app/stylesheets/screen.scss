@@ -28,6 +28,16 @@ body.bp {
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 }
+.upload_form {
+  display:none;
+}
+.action_wrapper input, .action_wrapper input.file, .action_wrapper button {
+  font-size:10px; height:24px; width:200px;
+}
+
+.action_wrapper input:submit {
+  font-size:10px; height:24px; width:100px;
+}
 .alert {
   color: black;
   background-color: #7280A7;

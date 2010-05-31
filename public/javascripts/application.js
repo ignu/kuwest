@@ -26,7 +26,14 @@ monitur.comments = function() {
     var collapse_wrapper = function() {
       wrapper.height(wrapper.height() - 140);
     };
-
+  $(".upload").click(function() {
+      var upload_box = $(this).siblings(".upload_form");
+      upload_box.show();
+      wrapper = $(this).parents(".action_wrapper");
+      expand_wrapper();
+      upload_box.find(".file").focus();
+      return false;
+  });
 	$(".comment").click(function() {
       var comment_box = $(this).siblings(".comment_box");
       comment_box.show();
