@@ -2,10 +2,7 @@
 %span.amount
   =w.amount.pretty
 =w.noun
-
 =render :partial=>"shared/status_photo", :locals=>{:win=>w}
-
-
 .comments
   -w.comments.each do |c|
     =render :partial=>"shared/comment", :locals=>{:comment=>c}

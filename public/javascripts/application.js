@@ -19,7 +19,6 @@ var kuwest = function() {
     var div;
 
     me.start = function() {
-      log("starting ajax");
       div = appendMessageDiv("notice", "Loading...");
     };
 
@@ -49,7 +48,6 @@ var kuwest = function() {
 }();
 
 
-
 kuwest.comments = function() {
 
   var self = {};
@@ -60,10 +58,11 @@ kuwest.comments = function() {
           data:         {id: id.replace(/upload/, '')},
           autoSubmit:   true,
           responseType: false,
+
           onChange:     function(file, ext) {
-              if(ext && /(png|jpg|jpeg|gif)/.test(ext)) return true;
-              kuwest.error("You can only upload images!");
-              return false;
+                          if(ext && /(png|jpg|jpeg|gif)/.test(ext)) return true;
+                          kuwest.error("You can only upload images!");
+                          return false;
           },
           onSubmit:     function(file, ext) {
                           kuwest.ajax.start();
@@ -165,15 +164,18 @@ kuwest.winform = function() {
     });
     
     $("#submit_win").click(function() {
-      if ($("#win").val() == text) return false;
+      if ($("#win").val() == text) { kuwest.error("Please enter some text."); return false;}
+      kuwest.ajax.start();
       $.ajax({
         url:     '/wins/create',
         type:    "POST",
         data:    {body:   $("#win").val()},
         success: function(data) {
                   $("table.win").prepend(data);
+                  kuwest.comments.wire_upload_links();
                   $("#win").val(text);  // TODO: dry
                   $("#win").addClass("light");
+                  kuwest.ajax.end();
                   return false;
                  }
       });
