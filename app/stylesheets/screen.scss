@@ -38,6 +38,19 @@ body.bp {
 .action_wrapper input:submit {
   font-size:10px; height:24px; width:100px;
 }
+.status_image {
+  cursor: pointer;
+}
+.image_wrapper {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  top:0px;
+  height:0px;
+  background-color:black;
+  position:fixed;
+
+};
 .alert {
   color: black;
   background-color: #7280A7;
