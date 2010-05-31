@@ -21,3 +21,5 @@
   -@user.wins.reverse.each do |w|
     .status
       =render :partial => "shared/status", :locals => {:w=>w}
+= javascript_include_tag 'highcharts.src'
+= javascript_include_tag 'kuwest_graph'
