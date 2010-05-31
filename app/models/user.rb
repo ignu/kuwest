@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
           :styles         =>  {
                               :thumb=> "48x48#",
                               :small  => "72x72>",
-                              :profile => "248x248>" }
+                              :profile => "248x248>" },
+          :default_url    => "/images/:attachment/defaults/user_avatar_:style.gif"
   
   devise 	:database_authenticatable,
 					:registerable,

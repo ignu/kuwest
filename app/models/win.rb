@@ -8,7 +8,8 @@ class Win < ActiveRecord::Base
         :storage        => :s3,
         :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
         :path           => ":attachment/comment:id/:style.:extension",
-        :styles         =>  {:small  => "128x128>"}
+        :styles         =>  {:small  => "128x128>"},
+        :default_url    => ":attachment/defaults/clear.gif"
   
   def self.totals_for(user)
     raise "Need to Supply a User" if user.nil?

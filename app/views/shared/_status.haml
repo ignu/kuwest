@@ -2,6 +2,8 @@
 %span.amount
   =w.amount.pretty
 =w.noun
+%a.upload{:href=>"", :id=>"upload#{w.id}", :status=>w.id} Upload an Image
+=render :partial=>"shared/status_photo", :locals=>{:win=>w}
 .comments
   -w.comments.each do |c|
     =render :partial=>"shared/comment", :locals=>{:comment=>c}
@@ -9,14 +11,9 @@
   .actions
     -if (!current_user.nil? && current_user.id == w.user.id)
       %a.delete{:href=>"", :status=>w.id} Delete
-      %a.upload{:href=>"", :status=>w.id} Upload
     -if (!current_user.nil?)
       %a.comment{:href => ""} Comment
       .comment_box{:class => "comment"} 
         %input{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"}
         %button{:type => "submit", :class => "submit_comment" } 
           Add Comment
-      .upload_form
-        %input.file{:type=>"file", :name=>"win[file]"}
-        .save
-          %input{:type=>"submit", :value=>"upload"}
