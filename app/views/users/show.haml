@@ -1,7 +1,7 @@
 -if @user.photo.exists?
   .profile_image
     =image_tag @user.photo.url(:profile)
-%h1=@user.username
+%h1#username=@user.username
 -unless @user.location.nil?
   %h2=@user.location
 -unless @user.first_name.nil? || !@user.public_name
@@ -16,6 +16,7 @@
 #totals
   -@totals.each do |t|
     %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
+#graph-container{:style=>'width: 600px; height: 300px'}
 #pages
   -@user.wins.reverse.each do |w|
     .status

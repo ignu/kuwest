@@ -64,4 +64,3 @@ class String
     nil
   end
 end
-

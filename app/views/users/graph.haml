@@ -1,0 +1,9 @@
+%h1#username=@user.username
+-if @user.photo.exists?
+  =image_tag @user.photo.url(:small)
+#graph-options
+  %button#line-graph line graph
+  %button#column-graph column graph
+  %button#stacked-column-graph stacked column graph
+#graph-container{:style=>'width: 800px; height: 400px'}
+%div{:style=>'clear:both'}
