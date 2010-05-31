@@ -1,2 +1,6 @@
 -win ||= @win
-=image_tag win.photo.url(:small)
+-if (win.photo.exists?)
+  .status_image
+    =image_tag win.photo.url(:small)
+-else
+  %a.upload{:href=>"", :id=>"upload#{win.id}", :status=>win.id} Upload an Image

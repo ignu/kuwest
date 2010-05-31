@@ -1,15 +1,34 @@
 var kuwest = function() {
   var self = {};
 
+  var appendMessageDiv = function(class, message) {
+    return $("<div class=\"" + class + "\">")
+      .appendTo("body")
+      .text(message);
+    };
+
   var displayMessage = function(class) {
      return function(message) {
-     var div = $("<div class=\"" + class + "\">");
-     div.appendTo("body");
-     div.text(message);
-     setTimeout(function() {div.fadeOut();}, 3500);
+       var div = appendMessageDiv(class, message);
+       setTimeout(function() {div.fadeOut();}, 3500);
      };
   };
 
+  self.ajax = function(){
+    var me = {};
+    var div;
+
+    me.start = function() {
+      log("starting ajax");
+      div = appendMessageDiv("notice", "Loading...");
+    };
+
+    me.end = function() {
+      div.fadeOut();
+    };
+
+    return me;
+  }();
   self.error  = displayMessage("error");
   self.notice = displayMessage("notice");
   self.alert  = displayMessage("alert");
@@ -47,13 +66,16 @@ kuwest.comments = function() {
               return false;
           },
           onSubmit:     function(file, ext) {
+                          kuwest.ajax.start();
                           if(ext && /(png|jpg|jpeg|gif)/.test(ext)) return true;
                           kuwest.error("You can only upload images!");
                           return false; 
                         },
           onComplete:  function(file, response) {
-                          kuwest.notice(file + " uploaded");
+                          $("#" + id).fadeOut();
                           wrapper.prepend(response);
+                          kuwest.ajax.end();
+                          kuwest.notice(file + " uploaded");
                        }
         });
   };

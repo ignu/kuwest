@@ -2,8 +2,10 @@
 %span.amount
   =w.amount.pretty
 =w.noun
-%a.upload{:href=>"", :id=>"upload#{w.id}", :status=>w.id} Upload an Image
+
 =render :partial=>"shared/status_photo", :locals=>{:win=>w}
+
+
 .comments
   -w.comments.each do |c|
     =render :partial=>"shared/comment", :locals=>{:comment=>c}
