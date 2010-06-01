@@ -3,4 +3,5 @@
   .status_image
     =image_tag win.photo.url(:small)
 -else
-  %a.upload{:href=>"", :id=>"upload#{win.id}", :status=>win.id} Upload an Image
+  -if (current_user && current_user.id == win.user.id)
+    %a.upload{:href=>"", :id=>"upload#{win.id}", :status=>win.id} Upload an Image

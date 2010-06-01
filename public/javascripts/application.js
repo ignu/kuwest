@@ -17,15 +17,12 @@ var kuwest = function() {
   self.ajax = function(){
     var me = {};
     var div;
-
     me.start = function() {
       div = appendMessageDiv("notice", "Loading...");
     };
-
     me.end = function() {
       div.fadeOut();
     };
-
     return me;
   }();
   self.error  = displayMessage("error");
@@ -48,9 +45,15 @@ var kuwest = function() {
 }();
 
 kuwest.comments = function() {
-
+  var x = 1;
   var self = {};
   var wire_upload = function(id, wrapper) {
+      wrapper.append(x++);
+      if(!wrapper || wrapper.length < 1)
+      {
+          kuwest.error("ERROR")
+          throw("must include a wrapper")
+      }
       new AjaxUpload(id, {
           action:       '/wins/picture',
           name:         'photo',
@@ -71,6 +74,7 @@ kuwest.comments = function() {
                         },
           onComplete:  function(file, response) {
                           $("#" + id).fadeOut();
+                          log(response);
                           wrapper.prepend(response);
                           kuwest.ajax.end();
                           kuwest.notice(file + " uploaded");
