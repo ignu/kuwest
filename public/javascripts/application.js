@@ -47,7 +47,6 @@ var kuwest = function() {
   return self;
 }();
 
-
 kuwest.comments = function() {
 
   var self = {};
@@ -141,8 +140,6 @@ kuwest.comments = function() {
 }();
 
 
-
-
 kuwest.winform = function() {
   var self = {};
 
@@ -186,6 +183,14 @@ kuwest.winform = function() {
   return self;
 }();
 
+$('.status_image img').live('click', function() {
+    var url = $(this).attr("src").replace(/small/, 'original');
+    $.slimbox(url, '');
+});
+$('.profile_image img').live('click', function() {
+    var url = $(this).attr("src").replace(/\/profile/, '/original');
+    $.slimbox(url, '');
+});
 
 kuwest.winsDiv = function() { return $("#win_list");};
 

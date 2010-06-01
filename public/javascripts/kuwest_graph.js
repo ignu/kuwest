@@ -13,7 +13,14 @@ var drawWinGraph = function(containerId, type, stacking) {
     });
     winGraph = new Highcharts.Chart({
       chart: { renderTo: containerId, margin: [0,0,20,0] },
-      legend: { enabled: false },
+      legend: { 
+        enabled: true, 
+        style: { 
+          position: 'inline',
+          zIndex: 10,  
+          padding: '5px'
+        } 
+      },
       title: { text: '' },
       xAxis: { categories: dates, lineWidth: 0 },
       yAxis: { title: { text: '' }, gridLineWidth: 0, lineWidth: 0 },
