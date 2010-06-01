@@ -12,6 +12,10 @@ var kuwest = function() {
      };
   };
 
+  var give_first_input_focus = function() {
+    $("input:first").focus();
+  };
+
   self.ajax = function(){
     var me = {};
     var div;
@@ -36,6 +40,7 @@ var kuwest = function() {
   self.init =  function() {  
     kuwest.winform.init();
     kuwest.comments.init();
+    give_first_input_focus();
     setTimeout(fadeoutAlerts, 5000);
   };
 
@@ -163,13 +168,20 @@ kuwest.winform = function() {
         type:    "POST",
         data:    {body:   $("#win").val()},
         success: function(data) {
+                  alert(data)
                   $("table.win").prepend(data);
                   kuwest.comments.wire_upload_links();
                   $("#win").val(text);  // TODO: dry
                   $("#win").addClass("light");
                   kuwest.ajax.end();
                   return false;
-                 }
+                 },
+          error: function(request, type) {
+            kuwest.error(request.responseText);
+          },
+          complete: function(xhr) {
+              if(xhr.status == 302) {document.location="/users/new"}
+          }
       });
       return false;
     }); // submit win

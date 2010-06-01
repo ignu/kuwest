@@ -1,6 +1,6 @@
 class WinsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :create]
 
   def index
     @wins = Win.find(:all, :order=>"id desc", :limit=>10)
@@ -30,9 +30,11 @@ class WinsController < ApplicationController
   end
 
   def create
+
     if current_user.nil?
-      cookie[:status] = params[:body]
-      redirect_to "/users/new"      
+      cookies[:status] = params[:body]
+      render :text=> "Must log in", :status => 302
+      return
     end    
 
     win_view_model = WinViewModel.new(

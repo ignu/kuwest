@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:username])
   	
     if @user.save
+      sign_in :user, @user
+      win_view_model = WinViewModel.new(
+        :username=>@user.username,
+        :body=>cookies[:status])
+      win_view_model.to_win.save
       flash[:notice] = "Profile created!"
       redirect_to "/users/#{@user.username}" 
     else
