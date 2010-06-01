@@ -189,9 +189,23 @@ input.file {
 #nav {
   font-size:12px;
 }
-#totals, #graph-container {
-  float:right;
+#user-information{
+  float: left;
+  width: 248px;
+}
+#totals{
+  float: left;
+  margin-top: 10px;
+  width: auto;
+}
+#graph-container{
+  float: right;
+  width: 712px;
   clear: right;
+  margin-bottom: 10px;
+}
+#pages {
+  margin-left: 278px;
 }
 
 .detail:hover {

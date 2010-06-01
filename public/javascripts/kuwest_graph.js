@@ -12,11 +12,31 @@ var drawWinGraph = function(containerId, type, stacking) {
       series.push({type: type, name: value.phrase, data: value.amounts});
     });
     winGraph = new Highcharts.Chart({
-      chart: { renderTo: containerId },
-      title: { text: 'wins' },
-      xAxis: { categories: dates },
-      yAxis: { title: { text: '' } },
-      plotOptions: { column: { dataLabels: { enabled: true }, stacking: stacking } },
+      chart: { renderTo: containerId, margin: [0,0,20,0] },
+      legend: { enabled: false },
+      title: { text: '' },
+      xAxis: { categories: dates, lineWidth: 0 },
+      yAxis: { title: { text: '' }, gridLineWidth: 0, lineWidth: 0 },
+      tooltip: {
+        formatter: function(){
+          return this.series.name.replace(" ", " " + this.y + " ");
+        }
+      },
+      plotOptions: { 
+        column: { 
+          dataLabels: { 
+            enabled: true,
+            formatter: function(){ return this.y; },
+            y: 18,
+            style: { 
+              font: '20px bold Helvetica, Verdana, Arial, sans-serif',
+              color: '#fff'
+            }
+          },
+          groupPadding: .04,
+          stacking: stacking
+        } 
+      },
       credits: { enabled: false },
       series: series
     });
