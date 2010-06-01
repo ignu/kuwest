@@ -1,15 +1,13 @@
 var kuwest = function() {
   var self = {};
 
-  var appendMessageDiv = function(class, message) {
-    return $("<div class=\"" + class + "\">")
-      .appendTo("body")
-      .text(message);
+  var appendMessageDiv = function(klass, message) {
+    return $("<div class=\"" + klass + "\">").appendTo("body").text(message);
     };
 
-  var displayMessage = function(class) {
+  var displayMessage = function(klass) {
      return function(message) {
-       var div = appendMessageDiv(class, message);
+       var div = appendMessageDiv(klass, message);
        setTimeout(function() {div.fadeOut();}, 3500);
      };
   };
@@ -194,8 +192,8 @@ kuwest.winsDiv = function() { return $("#win_list");};
 $(kuwest.init);
 
 var winUpdater = function() {
-  var template = "<div class=\"avatar\">&nbsp;</div><div class=\"win\"><a class=\"username\" href=\"/users/{{username}}\">{{username}}</a>: {{body}}<div class=\"points\"> (+5 pts)</div></div>"
-  var self = {
+  var template = "<div class=\"avatar\">&nbsp;</div><div class=\"win\"><a class=\"username\" href=\"/users/{{username}}\">{{username}}</a>: {{body}}<div class=\"points\"> (+5 pts)</div></div>";
+  return  {
     update:function() {
       this.addWins(kuwest.getWins());
     }, 
@@ -204,7 +202,6 @@ var winUpdater = function() {
       kuwest.winsDiv().prepend(dom);
     }
   };
-  return self;  
 }();
 
 

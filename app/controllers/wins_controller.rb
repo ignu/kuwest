@@ -30,6 +30,11 @@ class WinsController < ApplicationController
   end
 
   def create
+    if current_user.nil?
+      cookie[:status] = params[:body]
+      redirect_to "/users/new"      
+    end    
+
     win_view_model = WinViewModel.new(
       :username=>current_user.username,
       :body=>params[:body])
