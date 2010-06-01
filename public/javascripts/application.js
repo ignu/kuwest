@@ -187,7 +187,10 @@ $('.status_image img').live('click', function() {
     var url = $(this).attr("src").replace(/small/, 'original');
     $.slimbox(url, '');
 });
-
+$('.profile_image img').live('click', function() {
+    var url = $(this).attr("src").replace(/\/profile/, '/original');
+    $.slimbox(url, '');
+});
 
 kuwest.winsDiv = function() { return $("#win_list");};
 
