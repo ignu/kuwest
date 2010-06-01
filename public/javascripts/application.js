@@ -48,12 +48,6 @@ kuwest.comments = function() {
   var x = 1;
   var self = {};
   var wire_upload = function(id, wrapper) {
-      wrapper.append(x++);
-      if(!wrapper || wrapper.length < 1)
-      {
-          kuwest.error("ERROR")
-          throw("must include a wrapper")
-      }
       new AjaxUpload(id, {
           action:       '/wins/picture',
           name:         'photo',
@@ -74,7 +68,6 @@ kuwest.comments = function() {
                         },
           onComplete:  function(file, response) {
                           $("#" + id).fadeOut();
-                          log(response);
                           wrapper.prepend(response);
                           kuwest.ajax.end();
                           kuwest.notice(file + " uploaded");
