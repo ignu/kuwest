@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new, :show, :create] 
+  
+  before_filter :authenticate_user!, :except => [:new, :show, :create]
+
   def new
     @user = User.new
   end
@@ -23,7 +25,7 @@ class UsersController < ApplicationController
   
   def show
     throw "Need to supply a username" if params[:id].nil?
-    @user = User.find_by_username params[:id]
+    @user = User.find_by_username(params[:id], :include=>{:wins=>{:comment=>:user}})
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 
