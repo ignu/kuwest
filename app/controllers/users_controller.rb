@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   
   def show
     throw "Need to supply a username" if params[:id].nil?
-    @user = User.find_by_username(params[:id], :include=>{:wins=>{:comment=>:user}})
+    @user = User.find_by_username(params[:id], :include=>{:wins=>{:comments=>:user}})
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 
