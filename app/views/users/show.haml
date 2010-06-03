@@ -18,8 +18,9 @@
   -@totals.each do |t|
     %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
 #pages
-  -@user.wins.reverse.each do |w|
+  -@wins.reverse.each do |w|
     .status
       =render :partial => "shared/status", :locals => {:w=>w}
+  = will_paginate @wins
 = javascript_include_tag 'highcharts.src'
 = javascript_include_tag 'kuwest_graph'

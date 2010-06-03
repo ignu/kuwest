@@ -18,14 +18,17 @@ class UsersController < ApplicationController
       win_view_model.to_win.save
       flash[:notice] = "Profile created!"
       redirect_to "/users/#{@user.username}" 
-    else
+    elseparams[:page]
       render :action => :new
     end
   end
   
   def show
     throw "Need to supply a username" if params[:id].nil?
-    @user = User.find_by_username(params[:id], :include=>{:wins=>{:comments=>:user}})
+    @user = User.find_by_username(params[:id])
+    @page = params[:page]
+    @page ||= 1
+    @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25}
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 

@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
   config.gem 'paperclip'
   config.gem 'chronic'
   config.gem 'warden'
+  config.gem 'will_paginate'
   config.gem 'formtastic'
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
