@@ -1,6 +1,7 @@
-rails --version 2.3.7
+rails --version 2.3.8
 shoulda
 rails
+will_paginate
 factory_girl
 paperclip
 aws-s3
