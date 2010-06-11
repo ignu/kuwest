@@ -1,4 +1,6 @@
 rails --version 2.3.8
+delayed_paperclip
+delayed_job
 shoulda
 rails
 will_paginate
