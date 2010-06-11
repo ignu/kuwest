@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       win_view_model.to_win.save
       flash[:notice] = "Profile created!"
       redirect_to "/users/#{@user.username}" 
-    elseparams[:page]
+    else
       render :action => :new
     end
   end
@@ -28,12 +28,12 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:id])
     @page = params[:page]
     @page ||= 1
-    @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25}
     if @user.nil?
       @error = "Could not find User '#{params[:id]}'"
       render(:template => "shared/error404", :status => "404") 
       return
     else
+      @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25}
       @totals = Win.totals_for(@user)
       @data = WinGraphData.new @user
       @can_update_status = !current_user.nil? && current_user.username == @user.username

@@ -168,7 +168,6 @@ kuwest.winform = function() {
         type:    "POST",
         data:    {body:   $("#win").val()},
         success: function(data) {
-                  alert(data)
                   $("table.win").prepend(data);
                   kuwest.comments.wire_upload_links();
                   $("#win").val(text);  // TODO: dry
