@@ -17,11 +17,13 @@ class User < ActiveRecord::Base
                               :small  => "72x72>",
                               :profile => "248x248>" },
           :default_url    => "/images/:attachment/defaults/user_avatar_:style.gif"
+
+  process_in_background :photo
   
   devise 	:database_authenticatable,
 					:registerable,
 					:recoverable,
 					:rememberable,
 					:trackable,
-					:validatable
+					:validatable  
 end

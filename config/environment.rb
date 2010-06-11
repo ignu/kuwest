@@ -11,6 +11,8 @@ Rails::Initializer.run do |config|
   config.gem 'devise'
   config.gem 'paperclip'
   config.gem 'chronic'
+  config.gem 'delayed_job'
+  config.gem 'delayed_paperclip'
   config.gem 'warden'
   config.gem 'will_paginate'
   config.gem 'formtastic'
