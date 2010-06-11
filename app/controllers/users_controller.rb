@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:new, :show, :create]
+  def add_stored_message 
+      return unless cookies[:status]
+      win_view_model = WinViewModel.new(
+        :username=>@user.username,
+        :body=>cookies[:status])
+      win_view_model.to_win.save
+  end 
 
   def new
     @user = User.new
@@ -12,11 +19,8 @@ class UsersController < ApplicationController
   	
     if @user.save
       sign_in :user, @user
-      win_view_model = WinViewModel.new(
-        :username=>@user.username,
-        :body=>cookies[:status])
-      win_view_model.to_win.save
-      flash[:notice] = "Profile created!"
+      add_stored_message
+      flash[:notice] = "Your account has been created!"
       redirect_to "/users/#{@user.username}" 
     else
       render :action => :new

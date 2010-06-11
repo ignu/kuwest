@@ -1,6 +1,16 @@
 var kuwest = function() {
   var self = {};
 
+
+  var reloadBrokenImages = function() {
+     $('img').each(function() {
+        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+          // image was broken, replace with your new image
+          this.src = 'http://a1.twimg.com/profile_images/838565074/Snapshot_of_me_1_bigger.png';
+        }
+      });
+  };
+
   var appendMessageDiv = function(klass, message) {
     return $("<div class=\"" + klass + "\">").appendTo("body").text(message);
     };
@@ -38,6 +48,7 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
+    //reloadBrokenImages();
     kuwest.winform.init();
     kuwest.comments.init();
     give_first_input_focus();

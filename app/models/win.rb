@@ -11,6 +11,8 @@ class Win < ActiveRecord::Base
         :styles         =>  {:small  => "240x180>"},
         :default_url    => ":attachment/defaults/clear.gif"
   
+  process_in_background :photo
+
   def self.totals_for(user)
     raise "Need to Supply a User" if user.nil?
 

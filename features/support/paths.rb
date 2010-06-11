@@ -13,6 +13,8 @@ module NavigationHelpers
 		when /the wins page/
 			'/wins/index'
     
+    when /the new user page/
+      '/users/new'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
