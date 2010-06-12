@@ -30,10 +30,16 @@ class WinsController < ApplicationController
   end
 
   def create
-
     if current_user.nil?
       cookies[:status] = params[:body]
-      render :text=> "Must log in", :status => 302
+      respond_to do |r|
+        r.json {render :text=> "Must log in", :status => 302}
+        r.html do
+          flash[:error] = "You have to be registered to do that"
+          redirect_to({:action=>"new", :controller=>"users"})
+        end
+      end
+
       return
     end    
 

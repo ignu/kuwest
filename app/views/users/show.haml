@@ -1,7 +1,6 @@
 #user-information
-  -if @user.photo.exists?
-    .profile_image
-      =image_tag @user.photo.url(:profile)
+  .profile_image
+    =image_tag @user.photo.url(:profile)
   %h1#username=@user.username
   -unless @user.location.nil?
     %h2=@user.location
