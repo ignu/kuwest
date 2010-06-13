@@ -20,6 +20,10 @@
   font-weight:bold;
   padding:30px;
 }
+.thumb { 
+ width:48px;
+ height:48px
+}
 body.bp {
   @include blueprint-typography(true);
   @include blueprint-utilities;

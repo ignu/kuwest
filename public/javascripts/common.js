@@ -1,4 +1,3 @@
-
 $.fn.helpText = function(text) {
   if(!text) text = $(this).val();
   $(this).val(text);

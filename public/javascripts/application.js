@@ -1,12 +1,12 @@
 var kuwest = function() {
   var self = {};
 
-
   var reloadBrokenImages = function() {
      $('img').each(function() {
         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-          // image was broken, replace with your new image
-          this.src = 'http://a1.twimg.com/profile_images/838565074/Snapshot_of_me_1_bigger.png';
+          var src = $(this).attr("src");
+          var new_src  = src.replace(/thumb|small/, "original"); 
+          $(this).attr("src", new_src);
         }
       });
   };
@@ -48,10 +48,10 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
-    //reloadBrokenImages();
     kuwest.winform.init();
     kuwest.comments.init();
     give_first_input_focus();
+    setTimeout(reloadBrokenImages, 1300);
     setTimeout(fadeoutAlerts, 5000);
   };
 

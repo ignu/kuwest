@@ -1,7 +1,7 @@
 -win ||= @win
 -if (win.photo.exists?)
   .status_image
-    =image_tag win.photo.url(:small)
+    =image_tag win.photo.url(:small), {:class=>"status"}
 -else
   -if (current_user && current_user.id == win.user.id)
     %a.upload{:href=>"", :id=>"upload#{win.id}", :status=>win.id} Upload an Image

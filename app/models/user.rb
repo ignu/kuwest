@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
           :path           => ":attachment/user/:id/:style.:extension",
           :styles         =>  {
                               :thumb=> "48x48#",
-                              :small  => "72x72>",
+                              :small  => "73x73#",
                               :profile => "248x248>" },
           :default_url    => "/images/:attachment/defaults/user_avatar_:style.gif"
 
