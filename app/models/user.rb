@@ -26,4 +26,33 @@ class User < ActiveRecord::Base
 					:rememberable,
 					:trackable,
 					:validatable  
+  
+  class << self
+
+    def populate(user)
+      user.password_confirmation = user.password = "abc123"
+      user.email = "twitter@twitter.com"
+      user.save!
+      puts "user populated"
+      puts "user id: #{user.id}"
+      user
+    end
+
+    # This will generate all the needed methods for devise
+    def find_or_generate_by_username(username)
+      user = find_or_create_by_username(username) 
+      populate(user) if (user.new_record?)
+      user
+    end
+
+ # TODO:dunno why this doesn't work
+ #  def find_or_create_by_username_with_populate(username)
+ #    user = find_or_create_by_username_without_populate(username)
+ #    user.password_confirmation = user.password = "abc123"
+ #    user
+ #  end
+
+ #  alias_method_chain :find_or_create_by_username, :populate
+  end
+
 end

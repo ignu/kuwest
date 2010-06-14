@@ -8,7 +8,7 @@ class WinViewModel
    end
     
   def to_win
-    @user = User.find_or_create_by_username @username
+    @user = User.find_or_generate_by_username @username
     raise "Could not find user #{@username}" if @user.nil?
     amount = get_amount body
     noun = get_noun(body, amount.to_s == "1") 
