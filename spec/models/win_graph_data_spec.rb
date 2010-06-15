@@ -26,7 +26,7 @@ describe WinGraphData, "nil wins" do
   include WinGraphDataSpecHelpers
   
   before do
-    @user = User.find_or_create_by_username("mrdowns")
+    @user = User.populate User.find_or_create_by_username("mrdowns")
     @win_graph_data = WinGraphData.new @user
   end
   
@@ -41,7 +41,7 @@ describe WinGraphData, "a single activity" do
 
   before do
     @first_day = Time.parse("2010-05-25 02:28:38")
-    @user = User.find_or_create_by_username("mrdowns")
+    @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     @win_graph_data = WinGraphData.new @user
   end
@@ -60,7 +60,7 @@ describe WinGraphData, "multiple activities on the same day" do
 
   before do
     @first_day = Time.parse("2010-05-25 02:28:38")
-    @user = User.find_or_create_by_username("mrdowns")
+    @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"rivers", :verb=>"bridged", :created_at=>@first_day})
@@ -80,7 +80,7 @@ describe WinGraphData, "multiple activities with the same phrase on the same day
   
   before do
     @first_day = Time.parse("2010-05-25 02:28:38")
-    @user = User.find_or_create_by_username("mrdowns")
+    @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
     add_win ({:amount=>5, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
@@ -106,7 +106,7 @@ describe WinGraphData, "multiple activities with the same phrase on different da
     @first_day = Time.parse("2010-05-25 02:28:38")
     @second_day = Time.parse("2010-05-26 02:28:38")
     @third_day = Time.parse("2010-05-27 02:28:38")
-    @user = User.find_or_create_by_username("mrdowns")
+    @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
     add_win ({:amount=>5, :noun=>"torches", :verb=>"froze", :created_at=>@second_day})

@@ -13,6 +13,12 @@ class Win < ActiveRecord::Base
   
   process_in_background :photo
 
+
+  def before_save
+    @user.xp ||= 0
+    @user.xp = @user.xp + 3
+    @user.save!
+  end
   def self.totals_for(user)
     raise "Need to Supply a User" if user.nil?
 

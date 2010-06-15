@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :comments
 
   attr_accessible :username, :photo, :email, :password, :password_confirmation
-  attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url
+  attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp
   validates_uniqueness_of :username
   validates_presence_of :username
   
