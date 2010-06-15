@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'devise'
   config.gem 'paperclip'
   config.gem 'chronic'
+  config.gem 'twitter'
   config.gem 'delayed_job'
   config.gem 'delayed_paperclip'
   config.gem 'warden'
@@ -23,5 +24,6 @@ Rails::Initializer.run do |config|
   config.gem 'mocha'
   config.gem 'factory_girl'
   config.gem "compass", :version => ">= 0.10.1"
-  
+  config.gem "mocha"
+ 
 end

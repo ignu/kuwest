@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
     def populate(user)
       user.password_confirmation = user.password = "abc123"
-      user.email = "twitter@twitter.com"
+      user.email = "twitter_#{user.username}@twitter.com"
       user.save!
       puts "user populated"
       puts "user id: #{user.id}"
