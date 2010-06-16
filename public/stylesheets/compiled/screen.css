@@ -631,30 +631,38 @@ body {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url(/images/background.jpg);
 }
 
-/* line 123, ../../../app/stylesheets/screen.scss */
+/* line 124, ../../../app/stylesheets/screen.scss */
+.bar {
+  background-color: #bce18a;
+  width: 100%;
+  height: 3px;
+}
+
+/* line 129, ../../../app/stylesheets/screen.scss */
 a, a.visited, a.hover {
   text-decoration: none;
   font-weight: bold;
   color: #161d33;
 }
 
-/* line 128, ../../../app/stylesheets/screen.scss */
+/* line 134, ../../../app/stylesheets/screen.scss */
 .points {
   font-size: 8pt;
   color: #999;
   margin-top: 4px;
 }
 
-/* line 133, ../../../app/stylesheets/screen.scss */
+/* line 139, ../../../app/stylesheets/screen.scss */
 .comments {
   font-size: 8pt;
   color: #999;
   margin: 10px;
 }
 
-/* line 138, ../../../app/stylesheets/screen.scss */
+/* line 144, ../../../app/stylesheets/screen.scss */
 .detail {
   padding: 10px;
   height: 70px;
@@ -662,31 +670,31 @@ a, a.visited, a.hover {
   vertical-align: top;
 }
 
-/* line 144, ../../../app/stylesheets/screen.scss */
+/* line 150, ../../../app/stylesheets/screen.scss */
 .profile_picture {
   vertical-align: top;
   padding: 11px 0px;
 }
 
-/* line 148, ../../../app/stylesheets/screen.scss */
+/* line 154, ../../../app/stylesheets/screen.scss */
 h1 {
   font-size: 24pt;
   font-weight: bold;
 }
 
-/* line 152, ../../../app/stylesheets/screen.scss */
+/* line 158, ../../../app/stylesheets/screen.scss */
 .field {
   margin-top: 17px;
   margin-bottom: 7px;
 }
 
-/* line 157, ../../../app/stylesheets/screen.scss */
+/* line 163, ../../../app/stylesheets/screen.scss */
 label {
   padding-top: 7px;
   color: #DDD;
 }
 
-/* line 161, ../../../app/stylesheets/screen.scss */
+/* line 167, ../../../app/stylesheets/screen.scss */
 input {
   font-size: 18pt;
   padding: 5px;
@@ -694,7 +702,7 @@ input {
   border: 1px solid #161d33;
 }
 
-/* line 168, ../../../app/stylesheets/screen.scss */
+/* line 174, ../../../app/stylesheets/screen.scss */
 button, .button {
   font-size: 14pt;
   height: 46px;
@@ -710,62 +718,62 @@ button, .button {
   margin-top: 15px;
 }
 
-/* line 183, ../../../app/stylesheets/screen.scss */
+/* line 189, ../../../app/stylesheets/screen.scss */
 div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* line 187, ../../../app/stylesheets/screen.scss */
+/* line 193, ../../../app/stylesheets/screen.scss */
 .light {
   color: #999;
 }
 
-/* line 190, ../../../app/stylesheets/screen.scss */
+/* line 196, ../../../app/stylesheets/screen.scss */
 #win {
   width: 700px;
 }
 
-/* line 193, ../../../app/stylesheets/screen.scss */
+/* line 199, ../../../app/stylesheets/screen.scss */
 .user_profile {
   float: left;
 }
 
-/* line 197, ../../../app/stylesheets/screen.scss */
+/* line 203, ../../../app/stylesheets/screen.scss */
 .clearfix {
   clear: both;
 }
 
-/* line 200, ../../../app/stylesheets/screen.scss */
+/* line 206, ../../../app/stylesheets/screen.scss */
 .comment-box {
   background-color: white;
 }
 
-/* line 204, ../../../app/stylesheets/screen.scss */
+/* line 210, ../../../app/stylesheets/screen.scss */
 input.file {
   width: 200px;
   height: 40px;
 }
 
-/* line 208, ../../../app/stylesheets/screen.scss */
+/* line 214, ../../../app/stylesheets/screen.scss */
 #nav {
   font-size: 12px;
 }
 
-/* line 211, ../../../app/stylesheets/screen.scss */
+/* line 217, ../../../app/stylesheets/screen.scss */
 #user-information {
   float: left;
   width: 248px;
 }
 
-/* line 215, ../../../app/stylesheets/screen.scss */
+/* line 221, ../../../app/stylesheets/screen.scss */
 #totals {
   float: left;
   margin-top: 10px;
   width: auto;
 }
 
-/* line 220, ../../../app/stylesheets/screen.scss */
+/* line 226, ../../../app/stylesheets/screen.scss */
 #graph-container {
   float: right;
   width: 712px;
@@ -773,28 +781,28 @@ input.file {
   margin-bottom: 10px;
 }
 
-/* line 226, ../../../app/stylesheets/screen.scss */
+/* line 232, ../../../app/stylesheets/screen.scss */
 #pages {
   margin-left: 278px;
 }
 
-/* line 230, ../../../app/stylesheets/screen.scss */
+/* line 236, ../../../app/stylesheets/screen.scss */
 .detail:hover {
   background-color: #F2F2F2;
 }
 
-/* line 233, ../../../app/stylesheets/screen.scss */
+/* line 239, ../../../app/stylesheets/screen.scss */
 .detail:hover .actions {
   display: block;
 }
 
-/* line 237, ../../../app/stylesheets/screen.scss */
+/* line 243, ../../../app/stylesheets/screen.scss */
 .action_wrapper {
   padding-bottom: 10px;
   height: 17px;
 }
 
-/* line 241, ../../../app/stylesheets/screen.scss */
+/* line 247, ../../../app/stylesheets/screen.scss */
 .actions {
   display: none;
   font-size: 10px;
@@ -802,7 +810,7 @@ input.file {
   padding-top: 5px;
 }
 
-/* line 249, ../../../app/stylesheets/screen.scss */
+/* line 255, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -813,7 +821,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 251, ../../../app/stylesheets/screen.scss */
+/* line 257, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -824,7 +832,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 253, ../../../app/stylesheets/screen.scss */
+/* line 259, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -835,7 +843,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 257, ../../../app/stylesheets/screen.scss */
+/* line 263, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
