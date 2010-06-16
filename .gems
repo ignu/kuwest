@@ -1,5 +1,6 @@
 rails --version 2.3.8
 delayed_paperclip
+twitter
 delayed_job
 shoulda
 rails
