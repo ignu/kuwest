@@ -250,6 +250,12 @@ input.file {
   vertical-align:text-bottom;
   padding-top: 5px;
 }
+table {
+  background-color:white;
+}
+td {
+  border-bottom:1px dashed #EEE;
+}
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.two-col {
   #container {

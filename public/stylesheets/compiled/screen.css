@@ -810,7 +810,17 @@ input.file {
   padding-top: 5px;
 }
 
-/* line 255, ../../../app/stylesheets/screen.scss */
+/* line 253, ../../../app/stylesheets/screen.scss */
+table {
+  background-color: white;
+}
+
+/* line 256, ../../../app/stylesheets/screen.scss */
+td {
+  border-bottom: 1px dashed #EEE;
+}
+
+/* line 261, ../../../app/stylesheets/screen.scss */
 body.two-col #container {
   width: 950px;
   margin: 0 auto;
@@ -821,7 +831,7 @@ body.two-col #container {
 body.two-col #container {
   display: block;
 }
-/* line 257, ../../../app/stylesheets/screen.scss */
+/* line 263, ../../../app/stylesheets/screen.scss */
 body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
@@ -832,7 +842,7 @@ body.two-col #header, body.two-col #footer {
 * html body.two-col #header, * html body.two-col #footer {
   overflow-x: hidden;
 }
-/* line 259, ../../../app/stylesheets/screen.scss */
+/* line 265, ../../../app/stylesheets/screen.scss */
 body.two-col #sidebar {
   display: inline;
   float: left;
@@ -843,7 +853,7 @@ body.two-col #sidebar {
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 263, ../../../app/stylesheets/screen.scss */
+/* line 269, ../../../app/stylesheets/screen.scss */
 body.two-col #content {
   display: inline;
   float: left;
