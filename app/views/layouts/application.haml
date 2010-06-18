@@ -16,9 +16,21 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body
-    .head
-      %a{:href=>"/"}
-        %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
+    .header
+      #logo
+        %a{:href=>"/"}
+          %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
+      #topnav
+        #socialmedia
+          %a{:href=>"http://twitter.com/kuwest", :title=>"Kuwest twitter feed for your goal tracking fun"}
+            %img{:src=>"/images/twitter.png", :border=>0}
+          %a{:href=>"http://facebook.com/kuwest", :title=>"Facebook for your goal tracking fun"}
+            %img{:src=>"/images/facebook.png", :border=>0}
+        #login
+          Already a member? Login:
+          %input{:type=>"text"}
+          %input{:type=>"password"}
+    .clearFix 
     .bar
     #messageDiv
       #flashMessage
