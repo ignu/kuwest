@@ -84,9 +84,9 @@ body.bp {
 }
 @mixin subtleForm {
   border:1px solid #DDD;
-  font-size:12px;
-  height:18px;
-  width:80px;
+  font-size:11px;
+  height:13px;
+  width:68px;
   color:#999;
   padding:3px;
 }
@@ -130,6 +130,7 @@ form.bp {
 
 body {
   @include center;
+  background-attachment:fixed;
   font-family:'Helvetica';
   font-size: 16pt;
   width:960px;
@@ -264,11 +265,11 @@ input.file {
   vertical-align:text-bottom;
   padding-top: 5px;
 }
+noborder {
+  border:none;
+}
 table {
   background-color:white;
-}
-td {
-  border-bottom:1px dashed #EEE;
 }
 .clearFix {
   clear:both;
@@ -283,7 +284,8 @@ body {
   }
 
   #logo {
-    @include column(floor(($blueprint-grid-columns/2)))
+    @include column(floor(($blueprint-grid-columns/2)));
+    margin-top:10px;
   }
 
   #topnav {
@@ -292,22 +294,34 @@ body {
 
   #socialmedia {
     padding-top:5px;
-    padding-right:20px;
+    padding-right:13px;
     float:left;
   }
 
   #login {
-    padding:10px;
+    padding:2px;
+    margin-right:0px;
     @include roundedBottom(6px);
     background-color:white;
     border:1px solid #DDD;
     float:left;
-    font-size:12px;
+    font-size:11px;
     color:#999;
+    vertical-align:top;
+    width:366px;
   }
-  #login input {
+  #login table {
+    margin-left:16px;
+  }
+  #login input[type="text"], #login input[type="password"] {
     @include subtleForm;
+    margin-right:5px;
   }
+  #login input[type="image"] {
+    height:auto;
+    width:auto;
+    border:none;
+  } 
   
   #sidebar {
     // One third of the grid columns, rounding down. With 24 cols, this is 8.

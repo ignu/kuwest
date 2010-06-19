@@ -24,12 +24,21 @@
         #socialmedia
           %a{:href=>"http://twitter.com/kuwest", :title=>"Kuwest twitter feed for your goal tracking fun"}
             %img{:src=>"/images/twitter.png", :border=>0}
-          %a{:href=>"http://facebook.com/kuwest", :title=>"Facebook for your goal tracking fun"}
+          %a{:href=>"http://www.facebook.com/pages/Kuwest/123391054359447", :title=>"Facebook for your goal tracking fun"}
             %img{:src=>"/images/facebook.png", :border=>0}
         #login
-          Already a member? Login:
-          %input{:type=>"text"}
-          %input{:type=>"password"}
+          %form.login
+            %table 
+              %tr
+                %td
+                  Already a member? Login:&nbsp;
+                %td
+                  %input.hint{:type=>"text", :title=>"username"}
+                %td
+                  %input.hint{:type=>"password", :title=>"password"}
+                %td
+                  %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
+          
     .clearFix 
     .bar
     #messageDiv
