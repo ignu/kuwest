@@ -40,18 +40,19 @@
                   %td
                     %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
           -else
-            #links 
-              %a{:href=>"/wins/new"}
-                new status
-              |
-              %a{:href=>"/users/#{current_user.username}"}
-                profile
-              |
-              %a{:href=>'/profile'}
-                edit profile
-              |
-              %a{:href=>'/users/logout'}
-                logout
+            %ul#links 
+              %li.first
+                %a{:href=>"/wins/new"}
+                  new status
+              %li
+                %a{:href=>"/users/#{current_user.username}"}
+                  profile
+              %li
+                %a{:href=>'/profile'}
+                  edit profile
+              %li
+                %a{:href=>'/users/logout'}
+                  logout
 
               
     .clearFix 
@@ -68,8 +69,13 @@
       = yield
     #footer
       .content
-        &copy; 2010 Kuwest.  
-        %a{:href=>"/terms"}
-          Terms of Use.
+        %a.soon{:href=>"/terms"}
+          Terms of Use
+        %a.soon{:href=>"/terms"}
+          Developers 
+        %a.soon{:href=>"/terms"}
+          Business 
+        %a.soon{:href=>""}
+          About
     =render :partial => "shared/google_analytics"
     =render :partial => "shared/feedback"

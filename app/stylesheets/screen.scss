@@ -6,7 +6,7 @@
 
 $lightGreen : #e7f9e2;
 $red:#990000;
-$green:green;
+$green:#bce18a;
 .error {
   color:$red;
   font-weight:bold;
@@ -113,6 +113,7 @@ body {
   font-family:'Helvetica';
   font-size: 16pt;
   background-image:url(/images/background.jpg);
+  height:100%;
 }
 .content {
   width:960px;
@@ -259,13 +260,21 @@ table {
 body {
   #container {
     @include container; }
+
   #header, #footer {
     @include column($blueprint-grid-columns);
     height:100px;
+    text-align:center;
   } 
+  #footer a, #footer a:visited, #footer a:active {
+    color:white;
+    padding:0px 10px;}
+  
 
   #footer {
-    padding:100px;
+    font-size:12px;
+    padding-top:20px;
+    width:100%;
     background-color:#176482;
     color:#DDD;
   }
@@ -307,8 +316,21 @@ body {
     margin-left:16px;
   }
   #links {
-    padding:10px;
-}  
+    padding:10px 35px;
+    float:right;
+ }
+  #links li { 
+    border-left:1px solid #CCCCCC;
+    border-right:1px solid #FFFFFF;
+    float:left;
+    font-size:12px;
+    list-style:none outside none;
+    padding: 0px 9px;
+  }  
+  #links li.first { 
+    border-left:none;
+    border-right:none;
+  }  
   #login input[type="text"], #login input[type="password"] {
     @include subtleForm;
     margin-right:5px;
