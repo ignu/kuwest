@@ -16,7 +16,7 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body
-    .header
+    .header.content
       #logo
         %a{:href=>"/"}
           %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
@@ -27,18 +27,33 @@
           %a{:href=>"http://www.facebook.com/pages/Kuwest/123391054359447", :title=>"Facebook for your goal tracking fun"}
             %img{:src=>"/images/facebook.png", :border=>0}
         #login
-          %form.login
-            %table 
-              %tr
-                %td
-                  Already a member? Login:&nbsp;
-                %td
-                  %input.hint{:type=>"text", :title=>"username"}
-                %td
-                  %input.hint{:type=>"password", :title=>"password"}
-                %td
-                  %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
-          
+          -if !user_signed_in?
+            %form.login{:method=>"post", :action=>"/users/login"}
+              %table 
+                %tr
+                  %td
+                    Already a member? Login:&nbsp;
+                  %td
+                    %input.hint{:type=>"text", :name=>"user[email]", :title=>"email"}
+                  %td
+                    %input.hint{:type=>"password", :name=>"user[password]", :title=>"password"}
+                  %td
+                    %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
+          -else
+            #links 
+              %a{:href=>"/wins/new"}
+                new status
+              |
+              %a{:href=>"/users/#{current_user.username}"}
+                profile
+              |
+              %a{:href=>'/profile'}
+                edit profile
+              |
+              %a{:href=>'/users/logout'}
+                logout
+
+              
     .clearFix 
     .bar
     #messageDiv
@@ -49,8 +64,12 @@
           .notice=flash[:notice] || @notice
         -if flash[:alert] || @alert
           .alert=flash[:alert] || @alert
-    #container
+    #container.content
       = yield
+    #footer
+      .content
+        &copy; 2010 Kuwest.  
+        %a{:href=>"/terms"}
+          Terms of Use.
     =render :partial => "shared/google_analytics"
     =render :partial => "shared/feedback"
-    =render :partial => "shared/nav"

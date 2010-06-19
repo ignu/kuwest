@@ -23,7 +23,7 @@ var kuwest = function() {
   };
 
   var give_first_input_focus = function() {
-    $("input:first").focus();
+    $("input.focus:first").focus();
   };
 
   self.ajax = function(){

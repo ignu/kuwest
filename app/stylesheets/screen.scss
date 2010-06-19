@@ -1,69 +1,50 @@
-// This import applies a global reset to any page that imports this stylesheet.
 @import "blueprint/reset";
-
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base";
-
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
 
-// Import the non-default scaffolding module.
-@import "blueprint/scaffolding";
-
-// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
-// +blueprint
-
-//Recommended Blueprint configuration with scoping and semantic layout:
-@include blueprint-scaffolding("body.bp");
+$lightGreen : #e7f9e2;
+$red:#990000;
+$green:green;
 .error {
-  color:#990000;
+  color:$red;
   font-weight:bold;
-  padding:30px;
-}
+  padding:30px;}
+
 .thumb { 
  width:48px;
- height:48px
-}
+ height:48px}
+
 @mixin center {
   margin-left:auto;
-  margin-right:auto;
-}
+  margin-right:auto;}
+
 @mixin roundedBottom($radius = 4px) {
   border-bottom-right-radius:$radius;
   -moz-border-radius-bottomright:$radius;
   -webkit-border-bottom-right-radius:$radius;
   border-bottom-left-radius:$radius;
   -moz-border-radius-bottomleft:$radius;
-  -webkit-border-bottom-left-radius:$radius;
-}
+  -webkit-border-bottom-left-radius:$radius;}
+
 @mixin rounded($radius = 4px) {
   border-radius:$radius;
   -moz-border-radius:$radius;
-  -webkit-border-radius:$radius;
-}
-body.bp {
-  @include blueprint-typography(true);
-  @include blueprint-utilities;
-  @include blueprint-debug;
-  @include blueprint-interaction;
-  // Remove the scaffolding when you're ready to start doing visual design.
-  // Or leave it in if you're happy with how blueprint looks out-of-the-box
-}
+  -webkit-border-radius:$radius; }
 
 .upload_form {
-  display:none;
-}
+  display:none;}
 
 .action_wrapper input, .action_wrapper input.file, .action_wrapper button {
-  font-size:10px; height:24px; width:200px;
-}
+  font-size:10px; height:24px; width:200px;}
 
 .action_wrapper input:submit {
-  font-size:10px; height:24px; width:100px;
-}
+  font-size:10px; height:24px; width:100px; }
+
 .status_image, .profile_image {
-  cursor: pointer;
-}
+  cursor: pointer; }
+
 .image_wrapper {
   padding:0px;
   margin:0px;
@@ -71,8 +52,7 @@ body.bp {
   top:0px;
   height:0px;
   background-color:black;
-  position:fixed;
-};
+  position:fixed; };
 
 @mixin message {
   position: fixed;
@@ -80,8 +60,8 @@ body.bp {
   left:0px;
   width:100%;
   padding:10px;
-  text-align:center;
-}
+  text-align:center; }
+
 @mixin subtleForm {
   border:1px solid #DDD;
   font-size:11px;
@@ -106,10 +86,9 @@ body.bp {
   color: #222126;
 }
 .panel {
-  color:#DDD;
-  background-color: #161d33;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+  @include rounded(10px);
+  color:#444;
+  background-color: $lightGreen;
   padding: 30px;
   margin: 15px 0px;
 }
@@ -133,11 +112,14 @@ body {
   background-attachment:fixed;
   font-family:'Helvetica';
   font-size: 16pt;
-  width:960px;
   background-image:url(/images/background.jpg);
 }
+.content {
+  width:960px;
+  @include center;
+}
 .bar {
-  background-color:#bce18a;
+  background-color:$green;
   width:100%;
   height:3px;
 }
@@ -177,7 +159,6 @@ h1 {
 
 label {
   padding-top:7px;
-  color:#DDD;
 }
 input {
   font-size: 18pt;
@@ -281,7 +262,14 @@ body {
   #header, #footer {
     @include column($blueprint-grid-columns);
     height:100px;
+  } 
+
+  #footer {
+    padding:100px;
+    background-color:#176482;
+    color:#DDD;
   }
+
 
   #logo {
     @include column(floor(($blueprint-grid-columns/2)));
@@ -298,6 +286,10 @@ body {
     float:left;
   }
 
+  #login a, #login a:visited, #login a:active {
+    color:#999;
+  }
+
   #login {
     padding:2px;
     margin-right:0px;
@@ -309,10 +301,14 @@ body {
     color:#999;
     vertical-align:top;
     width:366px;
+    text-align:center;
   }
   #login table {
     margin-left:16px;
   }
+  #links {
+    padding:10px;
+}  
   #login input[type="text"], #login input[type="password"] {
     @include subtleForm;
     margin-right:5px;
