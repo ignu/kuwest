@@ -3,12 +3,14 @@
 @import "partials/base";
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
+
 $lightGreen:#e7f9e2;
 $green:#83c12d;
 $red:#990000;
 $green:#bce18a;
 $lightBlue:#eef9fa;
 $darkGreen:#245900;
+
 .error {
   color:$red;
   font-weight:bold;
@@ -39,10 +41,10 @@ $darkGreen:#245900;
   background-color:$green; 
   @include rounded(4px);
   text-align:center;
-  width:145px;
+  width:140px;
   display: inline-block; 
-  margin:10px;
-  padding: 15px 8px;
+  margin:4px;
+  padding: 14px 8px;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -55,9 +57,7 @@ $darkGreen:#245900;
   position: relative;
   cursor: pointer;
   background-image: -moz-linear-gradient(100% 100% 90deg, $green, $darkGreen);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));
-
-}
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));}
 
 
 .upload_form {
@@ -101,8 +101,8 @@ $darkGreen:#245900;
 }
 
 .quests {
-  padding-left:150px;
-  padding-top:71px;
+  padding-left:139px;
+  padding-top:62px;
   height:91px;
 }
 .form {
@@ -112,15 +112,14 @@ $darkGreen:#245900;
 #what {
   color:#727c80;
   font-weight:bold;
-  margin-top:25px;
-  padding-bottom:0px;
-  margin-bottom:-9px;
+  padding-top:21px;
+  margin-bottom:-10px;
   padding-left:25px;}
 
 #ku_form { 
   background-image: url(/images/ku-panel.jpg);
-  height:294px;
-  width: 726px;
+  height:268px;
+  width: 664px;
 }
 .alert {
   @include message;
@@ -244,7 +243,7 @@ div.standout {
 }
 #win {
   margin-left:20px;
-  width:600px;
+  width:540px;
 }
 .user_profile {
   float:left;
@@ -320,10 +319,10 @@ body {
     height:100px;
     text-align:center;
   } 
+
   #footer a, #footer a:visited, #footer a:active {
     color:white;
     padding:0px 10px;}
-  
 
   #footer {
     font-size:12px;
@@ -394,16 +393,23 @@ body {
     width:auto;
     border:none;
   } 
-  
-  #sidebar {
+  #container  {
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    $sidebar-columns: floor($blueprint-grid-columns / 3);
-    @include column($sidebar-columns); }
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+  #sidebar {
+    padding-top:35px;
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 3) - 1;
+    @include column($sidebar-columns, true); }
   #content {
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
-    $content-columns: ceil(2 * $blueprint-grid-columns / 3);
+    $content-columns: ceil(($blueprint-grid-columns /3)*2) + 1;
     // true means it's the last column in the row
-    @include column($content-columns, true); } 
+    @include column($content-columns); } 
 }
 

@@ -65,7 +65,11 @@
         -if flash[:alert] || @alert
           .alert=flash[:alert] || @alert
     #container.content
-      = yield
+      #content
+        = yield
+      #sidebar
+        %a{:href=>"/users/new", :title=>"sign up"}
+          %img{:src=>"/images/signup.png", :border=>0} 
     #footer
       .content
         %a.soon{:href=>"/terms"}
