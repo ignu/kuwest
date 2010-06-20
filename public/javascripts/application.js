@@ -157,7 +157,7 @@ kuwest.winform = function() {
 
   self.init = function() {
     var text = $("#win").val();
-    $("#status_form").inputHintOverlay(2, 8, {color:"#999"});
+    $("#status_form").inputHintOverlay(2, 25, {color:"#999"});
     $("form.login").inputHintOverlay(-3,5);
     $(".delete").click(function() {
       var delete_link = $(this);

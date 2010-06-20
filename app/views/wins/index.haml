@@ -1,6 +1,9 @@
-.woah{:style=>"padding-top:10px; padding-bottom:-10px; font-size:32px; "} 
-  What have you done?
-=render :partial => "shared/new_status"
+#ku_form
+  .quests
+  #what
+    Or just log what have you done...
+  .form
+    =render :partial => "shared/new_status"
 %table.win
   -@wins.each do |w|
     =render :partial => "shared/status_tr", :locals => {:w=>w}

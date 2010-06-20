@@ -7,6 +7,8 @@
 $lightGreen : #e7f9e2;
 $red:#990000;
 $green:#bce18a;
+$lightBlue:#eef9fa;
+
 .error {
   color:$red;
   font-weight:bold;
@@ -71,6 +73,27 @@ $green:#bce18a;
   width:68px;
   color:#999;
   padding:3px;
+}
+
+.quests {
+  height:160px;
+}
+.form {
+  padding-top:0px;
+}
+
+#what {
+  color:#727c80;
+  font-weight:bold;
+  margin-top:25px;
+  padding-bottom:0px;
+  margin-bottom:-9px;
+  padding-left:25px;}
+
+#ku_form { 
+  background-image: url(/images/ku-panel.jpg);
+  height:294px;
+  width: 726px;
 }
 .alert {
   @include message;
@@ -193,7 +216,8 @@ div.standout {
   color:#999;	
 }
 #win {
-  width:700px;
+  margin-left:20px;
+  width:600px;
 }
 .user_profile {
   float:left;
@@ -261,6 +285,7 @@ table {
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body {
   #container {
+    background-color:$lightBlue;
     @include container; }
 
   #header, #footer {
