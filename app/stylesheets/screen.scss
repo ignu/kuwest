@@ -8,6 +8,7 @@ $green:#83c12d;
 $red:#990000;
 $green:#bce18a;
 $lightBlue:#eef9fa;
+$darkGreen:#245900;
 .error {
   color:$red;
   font-weight:bold;
@@ -36,6 +37,7 @@ $lightBlue:#eef9fa;
 
 .green {
   background-color:$green; 
+  @include rounded(4px);
   text-align:center;
   width:145px;
   display: inline-block; 
@@ -45,12 +47,16 @@ $lightBlue:#eef9fa;
   text-decoration: none;
   font-weight: bold;
   line-height: 1;
+  box-shadow: 0 1px 3px #999;
   -moz-box-shadow: 0 1px 3px #999;
   -webkit-box-shadow: 0 1px 3px #999;
   text-shadow: 0 -1px 1px #222;
   border-bottom: 1px solid #222;
   position: relative;
   cursor: pointer;
+  background-image: -moz-linear-gradient(100% 100% 90deg, $green, $darkGreen);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));
+
 }
 
 
