@@ -154,7 +154,7 @@ describe WinGraphData, "more than seven days of activity" do
     @sixth_day = Time.parse("2010-01-30 02:28:38")
     @seventh_day = Time.parse("2010-01-31 02:28:38")
     @eigth_day = Time.parse("2010-02-01 02:28:38")
-    Timecop.freeze(@eigth_day)
+    Timecop.freeze(@eigth_day + 5.days)
     @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@second_day})

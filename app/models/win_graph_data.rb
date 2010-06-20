@@ -3,7 +3,9 @@ class WinGraphData
 
   def initialize (user)
     #don't quite know why, but this range gives us the last seven days
-    start_date = Time.now - 6.days
+    latest_date_with_activity = Win.maximum(:created_at, :conditions => ['user_id = ?', user.id])
+    latest_date_with_activity = Time.now if latest_date_with_activity.nil?
+    start_date = latest_date_with_activity - 6.days
   
     wins = Win.all(:conditions => {
       :created_at => (start_date.midnight)..(Time.now + 1.minute),
