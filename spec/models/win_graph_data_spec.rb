@@ -39,8 +39,9 @@ end
 describe WinGraphData, "a single activity" do
   include WinGraphDataSpecHelpers
 
-  before do
+  before do  
     @first_day = Time.parse("2010-05-25 02:28:38")
+    Timecop.freeze(@first_day)
     @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     @win_graph_data = WinGraphData.new @user
@@ -60,6 +61,7 @@ describe WinGraphData, "multiple activities on the same day" do
 
   before do
     @first_day = Time.parse("2010-05-25 02:28:38")
+    Timecop.freeze(@first_day)
     @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
@@ -80,6 +82,7 @@ describe WinGraphData, "multiple activities with the same phrase on the same day
   
   before do
     @first_day = Time.parse("2010-05-25 02:28:38")
+    Timecop.freeze(@first_day)
     @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
@@ -106,6 +109,7 @@ describe WinGraphData, "multiple activities with the same phrase on different da
     @first_day = Time.parse("2010-05-25 02:28:38")
     @second_day = Time.parse("2010-05-26 02:28:38")
     @third_day = Time.parse("2010-05-27 02:28:38")
+    Timecop.freeze(@third_day)
     @user = User.populate User.find_or_create_by_username("mrdowns")
     add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
     add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@first_day})
@@ -135,5 +139,40 @@ describe WinGraphData, "multiple activities with the same phrase on different da
   
   it "contains all dates in top level collection" do
     @win_graph_data.dates.count.should == 3
+  end
+end
+
+describe WinGraphData, "more than seven days of activity" do
+  include WinGraphDataSpecHelpers
+  
+  before do
+    @first_day = Time.parse("2010-01-25 02:28:38")
+    @second_day = Time.parse("2010-01-26 02:28:38")
+    @third_day = Time.parse("2010-01-27 02:28:38")
+    @fourth_day = Time.parse("2010-01-28 02:28:38")
+    @fifth_day = Time.parse("2010-01-29 02:28:38")
+    @sixth_day = Time.parse("2010-01-30 02:28:38")
+    @seventh_day = Time.parse("2010-01-31 02:28:38")
+    @eigth_day = Time.parse("2010-02-01 02:28:38")
+    Timecop.freeze(@eigth_day)
+    @user = User.populate User.find_or_create_by_username("mrdowns")
+    add_win ({:amount=>3, :noun=>"buses", :verb=>"drove", :created_at=>@first_day})
+    add_win ({:amount=>3, :noun=>"torches", :verb=>"froze", :created_at=>@second_day})
+    add_win ({:amount=>5, :noun=>"torches", :verb=>"froze", :created_at=>@third_day})
+    add_win ({:amount=>7, :noun=>"torches", :verb=>"froze", :created_at=>@fourth_day})
+    add_win ({:amount=>7, :noun=>"torches", :verb=>"froze", :created_at=>@fifth_day})
+    add_win ({:amount=>7, :noun=>"torches", :verb=>"froze", :created_at=>@sixth_day})
+    add_win ({:amount=>7, :noun=>"torches", :verb=>"froze", :created_at=>@seventh_day})
+    add_win ({:amount=>7, :noun=>"torches", :verb=>"froze", :created_at=>@eigth_day})
+    @win_graph_data = WinGraphData.new @user
+  end
+  
+  it "returns the most recent seven days" do
+    activities.min_date.should == @second_day.to_date
+    activities.max_date.should == @eigth_day.to_date
+  end
+  
+  it "contains all seven most recent days" do
+    @win_graph_data.dates.count.should == 7
   end
 end

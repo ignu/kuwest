@@ -25,5 +25,6 @@ Rails::Initializer.run do |config|
   config.gem 'factory_girl'
   config.gem "compass", :version => ">= 0.10.1"
   config.gem "mocha"
+  config.gem "timecop"
  
 end

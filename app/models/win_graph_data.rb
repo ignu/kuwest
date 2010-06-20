@@ -2,7 +2,13 @@ class WinGraphData
   attr_accessor :activities, :dates
 
   def initialize (user)
-    wins = Win.find_all_by_user_id user.id
+    #don't quite know why, but this range gives us the last seven days
+    start_date = Time.now.midnight - 6.days
+  
+    wins = Win.all(:conditions => {
+      :created_at => (start_date)..(Time.now),
+      :user_id => user.id 
+      })
     
     wins = Array.new if wins.nil?
     
