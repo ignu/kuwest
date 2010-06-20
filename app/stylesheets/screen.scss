@@ -3,12 +3,11 @@
 @import "partials/base";
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
-
-$lightGreen : #e7f9e2;
+$lightGreen:#e7f9e2;
+$green:#83c12d;
 $red:#990000;
 $green:#bce18a;
 $lightBlue:#eef9fa;
-
 .error {
   color:$red;
   font-weight:bold;
@@ -34,6 +33,26 @@ $lightBlue:#eef9fa;
   border-radius:$radius;
   -moz-border-radius:$radius;
   -webkit-border-radius:$radius; }
+
+.green {
+  background-color:$green; 
+  text-align:center;
+  width:145px;
+  display: inline-block; 
+  margin:10px;
+  padding: 15px 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+  text-shadow: 0 -1px 1px #222;
+  border-bottom: 1px solid #222;
+  position: relative;
+  cursor: pointer;
+}
+
 
 .upload_form {
   display:none;}
@@ -76,7 +95,9 @@ $lightBlue:#eef9fa;
 }
 
 .quests {
-  height:160px;
+  padding-left:150px;
+  padding-top:71px;
+  height:91px;
 }
 .form {
   padding-top:0px;
