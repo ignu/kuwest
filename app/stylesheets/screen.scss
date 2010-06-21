@@ -84,9 +84,9 @@ $darkGreen:#245900;
 
 @mixin message {
   position: fixed;
-  top:0px;
+  top:-100px;
   left:0px;
-  width:100%;
+  width:743px;
   padding:10px;
   z-index:9999;
   text-align:center; }
@@ -159,8 +159,11 @@ h2 {
 }
 .panel {
   @include rounded(10px);
+  -moz-box-shadow: 1px 1px 3px #999;
+  -webkit-box-shadow: 1px 1px 3px #999;
   color:#444;
-  background-color: $lightGreen;
+  border:1px solid $green;
+  background-color: white;
   padding: 30px;
   margin: 15px 0px;
 }

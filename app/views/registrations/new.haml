@@ -1,19 +1,5 @@
-%h2 Sign Up
-.panel.small
-  -form_for @user,  :url => "/users/create" do |f|
-    =f.error_messages
-    .field
-      %p=f.label :username 
-      %p=f.text_field :username
-    .field
-      %p=f.label :email 
-      %p=f.text_field :email
-    .field
-      %p=f.label :password 
-      %p=f.password_field :password
-    .field
-      %p=f.label :password_confirmation
-      %p=f.password_field :password_confirmation
-
+.panel
+  %h3 Register now to begin your quest(s)! 
+  -form_for @user,  :url => "/users/create", :html => {:multipart => true} do |f|
+    =render :partial => "/users/form", :locals => {:f=>f}
     %p=f.submit "Sign up", {:class=>"button"}
-=render :partial => "shared/devise_links" 
