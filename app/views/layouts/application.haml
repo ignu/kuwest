@@ -8,6 +8,7 @@
     = javascript_include_tag 'common'
     = javascript_include_tag 'jquery.upload'
     = javascript_include_tag 'slimbox2'
+    = javascript_include_tag 'jquery.tweet'
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/application.css'
@@ -70,6 +71,13 @@
       #sidebar
         %a{:href=>"/users/new", :title=>"sign up"}
           %img{:src=>"/images/signup.png", :border=>0} 
+        .details
+          %h2 How Kuwest works
+          .info
+            Kuwest allows you to break down personal goals into quests.  Quests are composed of small, quantifiable and bite-sized tasks and lets you share this with your friends for both support and competition. 
+          %p
+          %h2 Twitter Feed
+          .tweets
     #footer
       .content
         %a.soon{:href=>"/terms"}

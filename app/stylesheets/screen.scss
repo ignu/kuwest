@@ -9,6 +9,7 @@ $green:#83c12d;
 $red:#990000;
 $green:#bce18a;
 $lightBlue:#eef9fa;
+$blue:#1183b0;
 $darkGreen:#245900;
 
 .error {
@@ -126,6 +127,9 @@ $darkGreen:#245900;
   background-color: #7280A7;
   color: #222126;
 }
+h2 {
+  color:$blue;
+}
 .error {
   @include message;
   background-color: #550000;
@@ -200,7 +204,13 @@ a, a.visited, a.hover {
   vertical-align:top;
   padding: 11px 0px;
 }
+.info {
+  font-size:10pt;
+  border-top:2px solid #EEE;
+  padding:5px 0px 12px 0px;
+}
 h1 {
+  font-weight:bold;
   font-size:24pt;
   font-weight:bold;
 }
@@ -400,11 +410,20 @@ body {
     margin-right:auto;
 }
 
+  .details {
+    padding: 5px 11px;
+  }
   #sidebar {
-    padding-top:35px;
+    box-shadow: 0 1px 3px #CCC;
+    -moz-box-shadow: 0 1px 3px #CCC;
+    -webkit-box-shadow: 0 1px 3px #CCC;
+    font-size:13pt;
+    margin-top:35px;
+    background-color:white;
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     $sidebar-columns: floor($blueprint-grid-columns / 3) - 1;
     @include column($sidebar-columns, true); }
+
   #content {
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
