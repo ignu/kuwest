@@ -144,6 +144,7 @@ $darkGreen:#245900;
   color: #222126;
 }
 h2 {
+  padding-top:9px;
   color:$blue;
 }
 .error {
@@ -222,7 +223,7 @@ a, a.visited, a.hover {
   padding: 11px 0px;
 }
 .info {
-  font-size:10pt;
+  font-size:9pt;
   border-top:2px solid #EEE;
   padding:5px 0px 12px 0px;
 }
