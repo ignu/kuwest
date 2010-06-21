@@ -15,7 +15,8 @@
       auto_join_text_reply: "i replied to",   // [string]   auto tense for replies: "i replied to" @someone "with"
       auto_join_text_url: "i was looking at", // [string]   auto tense for urls: "i was looking at" http:...
       loading_text: null,                     // [string]   optional loading text, displayed while tweets load
-      query: null                             // [string]   optional search query
+      query: null,                             // [string]   optional search query
+      compose_tweet: function(avatar, date, join, text) {return avatar + date + join + text;}
     };
     
     if(o) $.extend(s, o);
@@ -148,7 +149,7 @@
           var text = '<span class="tweet_text">' +$([item.text]).linkUrl().linkUser().linkHash().makeHeart().capAwesome().capEpic()[0]+ '</span>';
 
           // until we create a template option, arrange the items below to alter a tweet's display.
-          list.append('<li>' + avatar + date + join + text + '</li>');
+          list.append('<li>' + s.compose_tweet(avatar, date, join, text) + '</li>');
 
           list.children('li:first').addClass('tweet_first');
           list.children('li:odd').addClass('tweet_even');

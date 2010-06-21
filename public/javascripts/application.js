@@ -48,6 +48,19 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
+
+  $(".tweets").tweet({
+      username: "kuwest",
+      count: 3,
+      auto_join_text_default: "we said,",
+      auto_join_text_ed: "we",
+      auto_Rjoin_text_ing: "we were",
+      auto_join_text_reply: "we replied to",
+      auto_join_text_url: "we were checking out",
+      loading_text: "loading tweets...", 
+      compose_tweet: function(avatar, date, join, text) { return text + '<div class="date">' + date + "</date>"}
+    });
+
     kuwest.winform.init();
     kuwest.comments.init();
     give_first_input_focus();

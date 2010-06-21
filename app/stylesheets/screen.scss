@@ -128,6 +128,7 @@ $darkGreen:#245900;
   width:620px;
   background-color:white;
   background: -webkit-gradient(linear, 0 0, 0 120, from($lightBlue), to(white));  
+  background: -moz-linear-gradient(top, $green 120, white);
   margin-top:20px;
   margin-left:2px;
   margin-bottom:10px;
@@ -168,6 +169,7 @@ h2 {
 .errorExplanation p  {
   padding-top:20px;
 }
+
 .errorExplanation ul{
   padding:20px;
 }
@@ -197,7 +199,7 @@ body {
 a, a.visited, a.hover {
   text-decoration:none;
   font-weight:bold;
-  color:#161d33;
+  color:$blue;
 }
 .points {
   font-size:8pt;
@@ -394,6 +396,10 @@ body {
     padding:10px 35px;
     float:right;
  }
+  li {
+    list-style: none outside none;
+    padding:10px 4px;
+}
   #links li { 
     border-left:1px solid #CCCCCC;
     border-right:1px solid #FFFFFF;
