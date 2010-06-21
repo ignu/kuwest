@@ -122,6 +122,16 @@ $darkGreen:#245900;
   height:268px;
   width: 664px;
 }
+#everyones_updates {
+  padding:20px;
+  width:622px;
+  background-color:white;
+  margin-top:20px;
+  -moz-box-shadow: 1px 1px 3px -2px #AAA;
+  -webkit-box-shadow: 1px 1px 3px -2px #AAA;
+}
+.rocket {float:left;}
+.others { float:left; padding:16px 5px;} 
 .alert {
   @include message;
   background-color: #7280A7;
@@ -228,7 +238,7 @@ input {
   height: 30px;
   border: 1px solid #161d33;
 }
-
+.clear {clear:both;}
 button, .button {
   font-size: 14pt;
   height: 46px;

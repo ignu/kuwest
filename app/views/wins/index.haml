@@ -7,6 +7,12 @@
     Or just log what have you done...
   .form
     =render :partial => "shared/new_status"
-%table.win
-  -@wins.each do |w|
-    =render :partial => "shared/status_tr", :locals => {:w=>w}
+#everyones_updates
+  .rocket
+    %img{:src=>"/images/rocket.png"}
+  .others
+    %h2 What others are doing right now:
+  .clear 
+  %table.win
+    -@wins.each do |w|
+      =render :partial => "shared/status_tr", :locals => {:w=>w}
