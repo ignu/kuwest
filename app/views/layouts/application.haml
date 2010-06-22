@@ -71,17 +71,7 @@
       #content
         = yield
       #sidebar
-        %a{:href=>"/users/new", :title=>"sign up"}
-          %img{:src=>"/images/signup.png", :border=>0} 
-        .details
-          %a.soon{:href=>"/about"}
-            %h2 How Kuwest works
-          .info
-            Kuwest allows you to break down personal goals into quests.  Quests are composed of small, quantifiable and bite-sized tasks and lets you share this with your friends for both support and competition. 
-            %p
-          %a{:href=>"http://twitter.com/kuwest", :target=>"_new"}
-            %h2 Twitter Feed
-          .tweets.info
+        = yield :sidebar
     #footer
       .content
         %a.soon{:href=>"/terms"}

@@ -55,7 +55,7 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
-
+  if ($("#user-information").length) { $("#content").css("float", "right") };
   $(".tweets").tweet({
       username: "kuwest",
       count: 3,

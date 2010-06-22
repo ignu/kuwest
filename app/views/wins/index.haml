@@ -16,3 +16,6 @@
   %table.win
     -@wins.each do |w|
       =render :partial => "shared/status_tr", :locals => {:w=>w}
+-content_for :sidebar do
+  = render :partial => 'shared/homesidebar'
+

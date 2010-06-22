@@ -34,10 +34,9 @@ var drawWinGraph = function(containerId, type, stacking) {
           dataLabels: { 
             enabled: true,
             formatter: function(){ return this.y; },
-            y: 18,
+            y: 30,
             style: { 
               font: '20px bold Helvetica, Verdana, Arial, sans-serif',
-              color: '#fff'
             }
           },
           groupPadding: .04,
