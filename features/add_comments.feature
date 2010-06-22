@@ -4,7 +4,7 @@ Feature: Build a way for users to comment on a status
 	Should add a comment to their status
 
 Scenario: A user can add a comment
-	Given I am logged in as "testy@mctester.com"
+	Given I am logged in as "testy@test.com"
 		And a win exists 
 		And I go to the wins page 
 	
