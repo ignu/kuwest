@@ -17,12 +17,14 @@
       =@user.bio
     -unless @user.location.nil?
       %h2=@user.location
-  %p
-  %h2 Totals
-  #totals
-    -@totals.each do |t|
-      %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
+    %p
+    %h2 Totals
+    #totals
+      -@totals.each do |t|
+        %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
 #graph-container{:style=>'width: 680px; height: 270px'}
+%h1 Activity
+.info
 #pages
   -@wins.reverse.each do |w|
     .status
