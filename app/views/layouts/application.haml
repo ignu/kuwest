@@ -1,7 +1,9 @@
 !!! Strict
 %html
   %head
-    %title Kuwest.com - meet your real life quests.
+    - @title ||= "Kuwest.com - meet your real life quests."
+    %title 
+      =@title
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'jquery-ui-1.8'
     = javascript_include_tag 'mustache'     

@@ -423,7 +423,7 @@ a, a.visited, a.hover {
 /* line 233, ../../../app/stylesheets/screen.scss */
 h1 {
   font-weight: bold;
-  font-size: 24pt;
+  font-size: 32pt;
   font-weight: bold;
 }
 
@@ -514,26 +514,22 @@ input.file {
 #user-information {
   float: left;
   width: 248px;
+  padding: 10px;
 }
 
-/* line 301, ../../../app/stylesheets/screen.scss */
+/* line 302, ../../../app/stylesheets/screen.scss */
 #totals {
   float: left;
   margin-top: 10px;
   width: auto;
 }
 
-/* line 306, ../../../app/stylesheets/screen.scss */
+/* line 307, ../../../app/stylesheets/screen.scss */
 #graph-container {
   float: right;
   width: 712px;
   clear: right;
   margin-bottom: 10px;
-}
-
-/* line 312, ../../../app/stylesheets/screen.scss */
-#pages {
-  margin-left: 278px;
 }
 
 /* line 316, ../../../app/stylesheets/screen.scss */

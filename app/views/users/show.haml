@@ -1,8 +1,8 @@
 -content_for :sidebar do 
   #user-information
+    %h1#username=@user.username
     .profile_image
       =image_tag @user.photo.url(:profile)
-    %h1#username=@user.username
     -unless @user.location.nil?
       %h2=@user.location
     -unless @user.first_name.nil? || !@user.public_name

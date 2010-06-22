@@ -232,7 +232,7 @@ a, a.visited, a.hover {
 }
 h1 {
   font-weight:bold;
-  font-size:24pt;
+  font-size:32pt;
   font-weight:bold;
 }
 .field {
@@ -297,6 +297,7 @@ input.file {
 #user-information{
   float: left;
   width: 248px;
+  padding: 10px;
 }
 #totals{
   float: left;
@@ -310,7 +311,6 @@ input.file {
   margin-bottom: 10px;
 }
 #pages {
-  margin-left: 278px;
 }
 
 .detail:hover {

@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def show
     throw "Need to supply a username" if params[:id].nil?
     @user = User.find_by_username(params[:id])
+    @title = "#{@user.username}'s profile [kuwest.com]"
     @page = params[:page]
     @page ||= 1
     if @user.nil?
