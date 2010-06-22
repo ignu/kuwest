@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user])
     @user.update_attributes(params[:username])
-  	
+	
     if @user.save
       sign_in :user, @user
       add_stored_message
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
   def show
     throw "Need to supply a username" if params[:id].nil?
     @user = User.find_by_username(params[:id])
-    @title = "#{@user.username}'s profile [kuwest.com]"
     @page = params[:page]
     @page ||= 1
     if @user.nil?
@@ -38,6 +37,7 @@ class UsersController < ApplicationController
       render(:template => "shared/error404", :status => "404") 
       return
     else
+      @title = "#{@user.username}'s profile [kuwest.com]"      
       @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25}
       @totals = Win.totals_for(@user)
       @data = WinGraphData.new @user
