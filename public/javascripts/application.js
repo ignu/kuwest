@@ -126,6 +126,11 @@ kuwest.comments = function() {
 
     self.wire_upload_links();
 
+  $("#expand_profile").toggle(function() {
+    $(".profile").fadeIn();
+    $(this).text("Hide Profile Details...");
+  }, function() {$(".profile").fadeOut(); $(this).text("Show Profile Details...")}).css("pointer", "cursor");
+
 	$(".comment").click(function() {
       var comment_box = $(this).siblings(".comment_box");
       comment_box.show();

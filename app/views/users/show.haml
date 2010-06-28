@@ -1,6 +1,7 @@
 -content_for :sidebar do 
   #user-information
     %h1#username=@user.username
+    #xp_bar
     .profile_image
       =image_tag @user.photo.url(:profile)
     -unless @user.location.nil?

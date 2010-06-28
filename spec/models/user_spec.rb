@@ -6,7 +6,7 @@ describe User do
     Factory(:user)
   end
 
-	it "can be persisted with valid attributes" do
+  it "can be persisted with valid attributes" do
 		valid_hash = {
 			:email 							=> "test@test.com",
 			:password						=> "megatron",

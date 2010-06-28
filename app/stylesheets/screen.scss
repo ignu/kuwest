@@ -37,7 +37,14 @@ $darkGreen:#245900;
   border-radius:$radius;
   -moz-border-radius:$radius;
   -webkit-border-radius:$radius; }
-
+#new_user input[type="text"], #new_user input[type="password"] {
+  @include rounded(2px);
+  height:20px;
+  width:250px;
+}
+#new_user .profile { 
+  display:none;
+}
 .green {
   background-color:$green; 
   @include rounded(4px);
@@ -60,7 +67,6 @@ $darkGreen:#245900;
   background-image: -moz-linear-gradient(100% 100% 90deg, $green, $darkGreen);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));}
 
-
 .upload_form {
   display:none;}
 
@@ -72,7 +78,7 @@ $darkGreen:#245900;
 
 .status_image, .profile_image {
   cursor: pointer; }
-
+a { cursor:pointer;}
 .image_wrapper {
   padding:0px;
   margin:0px;
@@ -122,6 +128,7 @@ $darkGreen:#245900;
   height:268px;
   width: 664px;
 }
+
 #everyones_updates {
   padding:20px;
   @include rounded(5px);
@@ -136,6 +143,7 @@ $darkGreen:#245900;
   box-shadow: 1px 1px 2px 0px #BBB;
   -webkit-box-shadow: 1px 1px 2px 1px #BBB;
 }
+
 .rocket {float:left;}
 .others { float:left; padding:16px 5px;} 
 .alert {
@@ -250,14 +258,12 @@ input[type="text"], input[type="password"] {
   border: 1px solid #161d33;
 }
 .clear {clear:both;}
+
 button, .button {
+  @include rounded;
   font-size: 14pt;
   height: 46px;
   line-height: 1;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-box-shadow: 0 1px 3px #999;
-  -webkit-box-shadow: 0 1px 3px #999;
   text-shadow: 0 -1px 1px #222;
   border-bottom: 1px solid #222;
   position: relative;
