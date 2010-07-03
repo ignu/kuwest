@@ -61,7 +61,10 @@
               
     .clearFix 
     .bar
-    #messageDiv
+    #messageDiv{:css=>"background-color:white"}
+      #flashBubble{:style=>"display:none"}
+        %pre{:class=>"tip"}
+          ="{ deltaDirection: 'left' }"
       #flashMessage
         -if flash[:error] || @error  #HACK: clean this up
           .error=flash[:error] || @error

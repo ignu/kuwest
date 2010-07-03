@@ -11,21 +11,32 @@ var kuwest = function() {
       });
   };
 
+  var setupBubbleTip = function() {
+    $('<div id="stupidDiv">').css({position:"absolute", left:"-9999"}).appendTo($("body"));
+
+    $("#stupidDiv").bubbletip($("#flashBubble"), {
+      deltaDirection: 'right',
+      positionAtElement: $("#logo img"),
+      bindShow:"click"
+    });
+  };
+
   var appendMessageDiv = function(klass, message) {
     return $("<div class=\"" + klass + "\">").appendTo("body").text(message);
     };
 
-  var positionMessageDiv = function(div) {
-    div.css({ position:"absolute", 
-      left: $("#logo img").position().left + $("#logo img").width() + 4,
-      top:"0px"
-      });
+  var showMessage = function(message) {
+      $(".bubbletip").show();
+      $("#flashBubble").html(message);
+      $("#stupidDiv").trigger("click");
+  };
+  var hideMessage = function() {
+    $(".bubbletip").fadeOut()
   };
   var displayMessage = function(klass) {
      return function(message) {
-       var div = appendMessageDiv(klass, message);
-       positionMessageDiv(div);
-       setTimeout(function() {div.fadeOut();}, 3500);
+      showMessage(message);
+      setTimeout(function() {hideMessage}, 3500);
      };
   };
 
@@ -37,10 +48,10 @@ var kuwest = function() {
     var me = {};
     var div;
     me.start = function() {
-      div = appendMessageDiv("notice", "Loading...");
+      displayMessage("notice", "Loading...");
     };
     me.end = function() {
-      div.fadeOut();
+      hideMessage();
     };
     return me;
   }();
@@ -55,6 +66,7 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
+    setupBubbleTip();
   if ($("#user-information").length) { $("#content").css("float", "right");  };
   $(".tweets").tweet({
       username: "kuwest",
