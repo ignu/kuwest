@@ -7,6 +7,13 @@ var kuwest = function() {
           var src = $(this).attr("src");
           var new_src  = src.replace(/thumb|small/, "original"); 
           $(this).attr("src", new_src);
+
+          var fixSizes = function() {
+            $("img.thumb").css("max-width", "73px");
+            $("img.profile").css("max-width", "248px");
+            $("img.status").css("max-width", "180px");
+          };
+          setTimeout(fixSizes, 100);
         }
       });
   };

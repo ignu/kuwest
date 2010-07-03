@@ -310,7 +310,7 @@ h2 {
   width: 600px;
 }
 
-/* line 192, ../../../app/stylesheets/screen.scss */
+/* line 191, ../../../app/stylesheets/screen.scss */
 .bubbletip {
   font-size: 10pt;
 }
@@ -377,7 +377,7 @@ form.bp textarea {
   height: 250px;
 }
 
-/* line 196, ../../../app/stylesheets/screen.scss */
+/* line 195, ../../../app/stylesheets/screen.scss */
 body {
   margin-left: auto;
   margin-right: auto;
@@ -386,6 +386,11 @@ body {
   font-size: 16pt;
   background-image: url(/images/background.jpg);
   height: 100%;
+}
+
+/* line 203, ../../../app/stylesheets/screen.scss */
+img.status {
+  max-width: 240px, max-height:180px;
 }
 
 /* line 204, ../../../app/stylesheets/screen.scss */

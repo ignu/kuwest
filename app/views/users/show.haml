@@ -3,7 +3,7 @@
     %h1#username=@user.username
     #xp_bar
     .profile_image
-      =image_tag @user.photo.url(:profile)
+      =image_tag @user.photo.url(:profile), :class=>"profile"
     -unless @user.location.nil?
       %h2=@user.location
     -unless @user.first_name.nil? || !@user.public_name
