@@ -17,7 +17,16 @@ var kuwest = function() {
         }
       });
   };
-
+ 
+  var setupLevelMeter = function() {
+    var bar= $("#xp_bar");
+    if(!bar.length) return;
+    var percent_complete = $('<div class="complete">');
+    bar.append(percent_complete);
+    var w = bar.attr("progress") * bar.width();
+    log(w)
+    percent_complete.css("width", w);
+  };
   var setupBubbleTip = function() {
     $('<div id="stupidDiv">').css({position:"absolute", left:"-9999"}).appendTo($("body"));
 
@@ -73,6 +82,7 @@ var kuwest = function() {
   };
 
   self.init =  function() {  
+    setupLevelMeter();
     setupBubbleTip();
   if ($("#user-information").length) { $("#content").css("float", "right");  };
   $(".tweets").tweet({

@@ -1,7 +1,10 @@
 -content_for :sidebar do 
   #user-information
+    #level
+      Level 
+      =@user.level
     %h1#username=@user.username
-    #xp_bar
+    #xp_bar{:progress=>@user.level_progress}
     .profile_image
       =image_tag @user.photo.url(:profile), :class=>"profile"
     -unless @user.location.nil?
@@ -18,27 +21,30 @@
       =@user.bio
     -unless @user.location.nil?
       %h2=@user.location
-    %p
-      = link_to 'Follow', follow_path(:following_id => @user.id)
+    -if user_signed_in?
+      %p
+        = link_to 'Follow', follow_path(:following_id => @user.id)
     %h2 Totals
     #totals
       -@totals.each do |t|
         %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
+    .clear
+    -if @user.followers && @user.followers.length > 0
+      %h2 Follower
+
+      %ul#followers
+        -@user.followers.each do |follower|
+          %li
+            %img{:src => follower.photo.url(:thumb)}
+    -if @user.followings && @user.followings.length > 0
+      %h2 Following
+          
+      %ul#followings
+        -@user.followings.each do |following|
+          %li
+            %img{:src => following.photo.url(:thumb)}
 #graph-container{:style=>'width: 680px; height: 270px'}
 
-%h1 Follower
-
-%ul#followers
-  -@user.followers.each do |follower|
-    %li
-      %img{:src => follower.photo.url(:thumb)}
-
-%h1 Following
-    
-%ul#followings
-  -@user.followings.each do |following|
-    %li
-      %img{:src => following.photo.url(:thumb)}
       
 %h1 Activity
 .info
