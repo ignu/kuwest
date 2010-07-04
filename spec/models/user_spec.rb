@@ -26,14 +26,37 @@ describe User do
 end
 
 describe User, "xp" do
-  before(:all) do
+  before(:each) do
     User.delete_all("username='galvatron'")
     @user = Factory.create(:user)
+    @user.save!
+    @win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3})
+    @win.user = @user
+    @win.save!
   end
   
   it "should add 3 xp for each status update" do
-    win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3, :user=>@user})
-    win.save!
+    @win.save!
     @user.xp.should == 3
   end
+
+  it "should add 5xp for first comment" do 
+    @user.xp.should  == 3
+    @user.wins.length.should > 0
+    comment = Comment.new
+    comment.user, comment.body =  @user, "test"
+    @user.wins.first.comments << comment
+    comment.save!
+    comment.save!
+    @user.xp.should == 8
+  end
+
+  it "should be able to calculate levels" do 
+    u = User.new
+    User.xp_limits.each_index do |i| 
+      u.xp = User.xp_limits[i]
+      u.level.should == i
+    end
+  end
+
 end

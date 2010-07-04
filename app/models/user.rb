@@ -26,9 +26,17 @@ class User < ActiveRecord::Base
 					:rememberable,
 					:trackable,
 					:validatable  
-  
-  class << self
+   
+  def level
+    User.xp_limits.each_index do |i|
+      return i if User.xp_limits[i] >= xp
+    end
+  end
 
+  class << self
+    def xp_limits
+      [15, 20, 45, 80, 110, 150, 200, 275, 375, 500, 750, 1000, 1275, 1600, 1900, 2300]
+    end
     def populate(user)
       user.password_confirmation = user.password = "abc123"
       user.email = "twitter_#{user.username}@twitter.com"
