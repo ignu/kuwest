@@ -1,6 +1,6 @@
 =w.verb
 %span.amount
-  =w.amount.pretty
+  =w.amount && w.amount.pretty
 =w.noun
 =render :partial=>"shared/status_photo", :locals=>{:win=>w}
 .comments

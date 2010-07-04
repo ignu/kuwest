@@ -58,7 +58,8 @@ class WinGraphData
   
   def total_amount_for(wins, date)
     wins_on_date = wins.select{|win| win.created_at.to_date == date}
-    return wins_on_date.collect{|w| w.amount}.inject {|a,x| a + x}
+    wins_on_date.inject(0) {|sum, w| sum + w.amount.to_i}
+#    return wins_on_date.collect{|w| w.amount}.inject {|a,x| a + x}
   end
 end
 

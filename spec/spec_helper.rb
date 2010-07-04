@@ -13,3 +13,12 @@ Spec::Runner.configure do |config|
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
   config.mock_with :mocha
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+  def signin_as(email, username, password)
+    user = User.create(:email => email, :password => password, :password_confirmation => password, :username => username)
+    sign_in user
+    user
+  end
+end
