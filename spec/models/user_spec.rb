@@ -55,8 +55,14 @@ describe User, "xp" do
     u = User.new
     User.xp_limits.each_index do |i| 
       u.xp = User.xp_limits[i]
-      u.level.should == i
+      u.level.should == i-1
     end
   end
 
+  it "can calculate percent to next level" do 
+    u = User.new
+    u.xp = User.xp_limits[3] + 10
+    u.level.should == 3
+    u.level_progress.should == 10/(User.xp_limits[4] - User.xp_limits[3]).to_f
+  end
 end

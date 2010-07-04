@@ -37,13 +37,20 @@ class User < ActiveRecord::Base
    
   def level
     User.xp_limits.each_index do |i|
-      return i if User.xp_limits[i] >= xp
+      puts "level #{i} : #{User.xp_limits[i]}"
+      return i-1 if User.xp_limits[i] >= xp
     end
+  end
+
+  def level_progress 
+    extra_xp = xp - User.xp_limits[level] 
+    puts "#{level} |  #{xp} |#{extra_xp} | #{User.xp_limits[level] }** "
+    extra_xp/(User.xp_limits[level+1]-User.xp_limits[level]).to_f
   end
 
   class << self
     def xp_limits
-      [15, 20, 45, 80, 110, 150, 200, 275, 375, 500, 750, 1000, 1275, 1600, 1900, 2300]
+      [-1, 15, 20, 45, 80, 110, 150, 200, 275, 375, 500, 750, 1000, 1275, 1600, 1900, 2300]
     end
     def populate(user)
       user.password_confirmation = user.password = "abc123"
