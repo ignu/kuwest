@@ -34,8 +34,9 @@ class User < ActiveRecord::Base
 					:rememberable,
 					:trackable,
 					:validatable  
-   
+
   def level
+    return 0 if not xp
     User.xp_limits.each_index do |i|
       puts "level #{i} : #{User.xp_limits[i]}"
       return i-1 if User.xp_limits[i] >= xp
@@ -44,7 +45,6 @@ class User < ActiveRecord::Base
 
   def level_progress 
     extra_xp = xp - User.xp_limits[level] 
-    puts "#{level} |  #{xp} |#{extra_xp} | #{User.xp_limits[level] }** "
     extra_xp/(User.xp_limits[level+1]-User.xp_limits[level]).to_f
   end
 
