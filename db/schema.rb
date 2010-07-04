@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100615043002) do
+ActiveRecord::Schema.define(:version => 20100704085144) do
 
   create_table "comments", :force => true do |t|
     t.string   "body"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(:version => 20100615043002) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "followings", :force => true do |t|
+    t.integer  "follower_id",  :null => false
+    t.integer  "following_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "quests", :force => true do |t|
     t.string   "name"

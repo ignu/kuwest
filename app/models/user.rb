@@ -2,7 +2,15 @@ class User < ActiveRecord::Base
 
   has_many :wins
   has_many :comments
-
+  
+  has_many :follows, :class_name => 'Following', :foreign_key => "follower_id"
+  has_many :followed_by, :class_name => 'Following', :foreign_key => "following_id"
+  
+  has_many :followers, :through => :followed_by
+  has_many :followings, :through => :follows
+  
+  
+  
   attr_accessible :username, :photo, :email, :password, :password_confirmation
   attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp
   validates_uniqueness_of :username

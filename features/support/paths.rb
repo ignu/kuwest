@@ -15,6 +15,12 @@ module NavigationHelpers
     
     when /the new user page/
       '/users/new'
+    when /login page/
+      new_user_session_path
+    when /^(.*)'s profile page/
+      user_show_path(:id => $1)
+    when /my profile page/
+      user_show_path(:id => @current_user.username)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

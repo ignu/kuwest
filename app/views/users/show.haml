@@ -19,11 +19,27 @@
     -unless @user.location.nil?
       %h2=@user.location
     %p
+      = link_to 'Follow', follow_path(:following_id => @user.id)
     %h2 Totals
     #totals
       -@totals.each do |t|
         %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
 #graph-container{:style=>'width: 680px; height: 270px'}
+
+%h1 Follower
+
+%ul#followers
+  -@user.followers.each do |follower|
+    %li
+      %img{:src => follower.photo.url(:thumb)}
+
+%h1 Following
+    
+%ul#followings
+  -@user.followings.each do |following|
+    %li
+      %img{:src => following.photo.url(:thumb)}
+      
 %h1 Activity
 .info
 #pages
