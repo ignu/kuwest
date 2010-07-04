@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def level_progress 
+    return 0 if xp.nil?
     extra_xp = xp - User.xp_limits[level] 
     extra_xp/(User.xp_limits[level+1]-User.xp_limits[level]).to_f
   end
