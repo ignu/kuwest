@@ -2,6 +2,7 @@
 %span.amount
   =w.amount && w.amount.pretty
 =w.noun
+=days_ago(w.created_at.to_date)
 =render :partial=>"shared/status_photo", :locals=>{:win=>w}
 .comments
   -w.comments.each do |c|
