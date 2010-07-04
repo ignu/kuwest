@@ -25,4 +25,5 @@ class Win < ActiveRecord::Base
     find_by_sql(["SELECT SUM(amount) as total, verb, noun 
       FROM wins WHERE user_id = #{user.id} GROUP BY verb, noun", user.id])
   end
+  
 end
