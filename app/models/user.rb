@@ -34,7 +34,11 @@ class User < ActiveRecord::Base
 					:rememberable,
 					:trackable,
 					:validatable  
-
+					
+  def following?(user)
+    followings.include?(user)
+  end
+  
   def level
     return 0 if not xp
     User.xp_limits.each_index do |i|

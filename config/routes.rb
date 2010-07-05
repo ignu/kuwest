@@ -15,4 +15,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
   
   map.follow 'follow', :controller => 'followings', :action => 'create'
+  map.unfollow 'unfollow', :controller => 'followings', :action => 'destroy'
 end
