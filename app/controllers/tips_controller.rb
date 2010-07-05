@@ -11,4 +11,9 @@ class TipsController < ApplicationController
      render :layout => !request.xhr? 
   end
 
+  def post_from_twitter_ajax
+     @show_sidebar = false 
+     render '/tips/post_from_twitter', :layout => false
+  end
+
 end
