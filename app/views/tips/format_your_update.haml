@@ -1,0 +1,13 @@
+.tip_detail
+  %h1 Format your update
+  .paragraph
+    We're getting better at figuring out what you mean every day! But for now you'll need to use this format: 
+  %blockquote
+    [action] [amount] [object]
+  .paragraph
+    Examples "ran 5 miles", "read 100 pages", "did one pomodoro"
+  .paragraph
+    Give it a try! 
+-if @show_sidebar
+  -content_for :sidebar do
+    = render :partial => 'shared/homesidebar'

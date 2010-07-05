@@ -12,12 +12,63 @@ $lightBlue:#eef9fa;
 $blue:#1183b0;
 $darkGreen:#245900;
 $gray:#EAEAEA;
+.tip_detail {
+  height:500px;
+  padding:40px;
+}
+#tip .tip_detail {
+  height:400px;
+  padding:0px;
+}
 #xp_bar {  
   width:100%;
   height:7px;
   background-color: $lightBlue;
   margin-bottom: 10px;
 }
+blockquote {
+  margin-top:10px;
+  margin-left:40px;
+}
+#washout { 
+  position:fixed; 
+  height:1800px; 
+  width:3000px; 
+  display:none;
+  filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+  background-color:$lightBlue; top:0px; right:0px;z-index:3500;}
+
+#tip { 
+  display:none;
+  box-shadow: 1 2px 3px #CCC;
+  -moz-box-shadow: 1 2px 3px #CCC;
+  -webkit-box-shadow: 1 2px 3px #CCC;
+  background-image: url(/images/tip-background.jpg);
+  height: 500px;
+  width: 439px;
+  font-size:1.2em;
+  color:white;
+  position:absolute;
+  top:5px;
+  padding-top:2px;
+  margin-right:auto;
+  margin-left:auto;
+  z-index:9999;
+}
+#tip .close {
+  width:435px;
+  text-align:right;
+  cursor:pointer;
+}
+#tip .tip {
+  padding:20px;
+  width:400px;
+}
+div.tip_detail h2 { padding-bottom:2px;}
+div.tip_detail .paragraph { margin-top:11px;}
 #level { 
   float:right;
   padding-top:3px;
@@ -135,7 +186,7 @@ a { cursor:pointer;}
   font-size:11px;
 }
 #tos h2 { 
-  margin-bottom:3px;
+  margin-bottom:4px;
   color: black;
   font-size:12px;
   font-weight:bold;

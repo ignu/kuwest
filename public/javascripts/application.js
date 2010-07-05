@@ -80,7 +80,13 @@ var kuwest = function() {
     $(".notice").fadeOut();
   };
 
+
+  var loadTypeKit = function() {
+    try{Typekit.load();}catch(e){}
+  };
+
   self.init =  function() {  
+    loadTypeKit();
     setupLevelMeter();
     setupBubbleTip();
   if ($("#user-information").length) { $("#content").css("float", "right");  };
@@ -90,7 +96,7 @@ var kuwest = function() {
       loading_text: "loading tweets...", 
       compose_tweet: function(avatar, date, join, text) { return text + '<div class="date">' + date + "</date>"}
     });
-
+    kuwest.tip.init();
     kuwest.winform.init();
     kuwest.comments.init();
     give_first_input_focus();
@@ -258,6 +264,36 @@ $('.profile_image img').live('click', function() {
     $.slimbox(url, '');
 });
 
+kuwest.tip = function() { 
+  var tip, washout;
+  var self = {};
+  self.show = function(message) {
+    washout.show();
+    tip.find(".tip").html(message);
+    tip.center();
+    tip.fadeIn(80);
+  };
+  self.init = function() {
+    tip = $("#tip");
+    washout = $("#washout");
+    $(".close").click(function() {
+      washout.hide();
+      tip.fadeOut(90);
+    });
+   $("a.tip").click(function() {
+      $.ajax({
+         url: $(this).attr("href"), 
+         type: 'get', 
+         dataType: 'html', 
+         success: function(html) {
+          self.show(html);
+         }
+        });
+      return false;
+      });
+  };
+  return self;
+}();
 kuwest.winsDiv = function() { return $("#win_list");};
 
 $(kuwest.init);

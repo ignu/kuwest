@@ -18,10 +18,13 @@
     = stylesheet_link_tag 'slimbox/slimbox2'
     = stylesheet_link_tag 'bubbletip/bubbletip'
     = stylesheet_link_tag 'smoothness/jquery-ui-1.8.custom'
+    = javascript_include_tag  'http://use.typekit.com/wrf8sur.js'
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body
     .header.content
+      #washout
+        &nbsp;
       #logo
         %a{:href=>"/", :title=>"Kuwest.com"}
           %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
@@ -61,6 +64,9 @@
               
     .clearFix 
     .bar
+    #tip.chalk
+      .close X
+      .tip
     #messageDiv{:css=>"background-color:white"}
       #flashBubble{:style=>"display:none"}
         %pre{:class=>"tip"}
