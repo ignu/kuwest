@@ -1,4 +1,4 @@
-Then /^I should be in (.*)'s followers list$/ do |following|
+Then /^I should be in (.*)'s follower list$/ do |following|
   response.should have_selector('ul#followers li img', :src => @current_user.photo.url(:thumb)) 
 end
 
@@ -23,3 +23,13 @@ end
 Then /^I should not see any followings$/ do
   response.should_not have_selector('ul#followings li') 
 end
+
+Given /^I have followed (.*)$/ do |following|
+  Following.create(:follower => @current_user, :following => User.find_by_username(following))
+end
+
+Then /^I should not be in bob's follower list$/ do
+  response.should_not have_selector('ul#followers li img', :src => @current_user.photo.url(:thumb)) 
+end
+
+

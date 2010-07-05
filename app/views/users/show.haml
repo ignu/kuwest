@@ -23,20 +23,23 @@
       %h2=@user.location
     -if user_signed_in?
       %p
-        = link_to 'Follow', follow_path(:following_id => @user.id)
+        -if current_user.following?(@user)
+          = link_to 'Unfollow', unfollow_path(:id => current_user.follows.find_by_following_id(@user.id))
+        -else
+          = link_to 'Follow', follow_path(:following_id => @user.id)
     %h2 Totals
     #totals
       -@totals.each do |t|
         %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
     .clear
-    -if @user.followers && @user.followers.length > 0
+    -unless @user.followers.empty?
       %h2 Follower
 
       %ul#followers
         -@user.followers.each do |follower|
           %li
             %img{:src => follower.photo.url(:thumb)}
-    -if @user.followings && @user.followings.length > 0
+    -unless @user.followings.empty?
       %h2 Following
           
       %ul#followings

@@ -7,3 +7,4 @@ doc/app
 .idea
 *.sqlite3
 db/*.sqlite3
+rerun.txt

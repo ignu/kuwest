@@ -8,7 +8,7 @@ Feature: Follow
     And I am signed in as "sean@example.com/111111"
     When I am on bob's profile page
     And I follow "Follow"
-    Then I should be in bob's followers list
+    Then I should be in bob's follower list
     And bob should be in my following list
   
   Scenario: No followers
@@ -22,6 +22,17 @@ Feature: Follow
     And I am not following anyone
     When I am on my profile page
     Then I should not see any followings
+  
+  Scenario: Unfollow
+    Given bob signed up as "bob@example.com/111111"
+    And I am signed in as "sean@example.com/111111"
+    And I have followed bob
+    When I am on bob's profile page
+    Then I should be in bob's follower list
+    When I follow "Unfollow"
+    Then I should not be in bob's follower list
+    
+  
   
   
   
