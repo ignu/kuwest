@@ -12,7 +12,6 @@ class TipsController < ApplicationController
   end
 
   def post_from_twitter_ajax
-     @show_sidebar = false 
      render '/tips/post_from_twitter', :layout => 'bare'
   end
 
