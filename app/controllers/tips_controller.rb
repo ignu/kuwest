@@ -2,7 +2,7 @@ class TipsController < ApplicationController
 
   def post_from_twitter
      @show_sidebar = !request.xhr? 
-     render :layout => false
+     render :layout => 'bare'
   end
 
   def format_your_update
