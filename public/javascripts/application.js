@@ -24,7 +24,6 @@ var kuwest = function() {
     var percent_complete = $('<div class="complete">');
     bar.append(percent_complete);
     var w = bar.attr("progress") * bar.width();
-    log(w)
     percent_complete.css("width", w);
   };
   var setupBubbleTip = function() {
