@@ -128,7 +128,18 @@ a { cursor:pointer;}
   color:#999;
   padding:3px;
 }
-
+#tos { 
+  padding: 18px 0px;
+  text-align:justify;
+  text-justify:newspaper;
+  font-size:11px;
+}
+#tos h2 { 
+  margin-bottom:3px;
+  color: black;
+  font-size:12px;
+  font-weight:bold;
+}
 .quests {
   padding-left:139px;
   padding-top:62px;
