@@ -6,4 +6,6 @@ end
 def business
 end
 
+def tos
+end
 end

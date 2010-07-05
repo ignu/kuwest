@@ -35,7 +35,13 @@ div.complete {
 .thumb { 
  width:48px;
  height:48px}
-
+#pick { 
+  font-size:24pt;
+  color:$blue;
+  margin-left:125px;
+  margin-top:11px;
+  margin-bottom:-39px;
+}
 @mixin center {
   margin-left:auto;
   margin-right:auto;}
@@ -61,6 +67,7 @@ div.complete {
   display:none;
 }
 .green {
+  font-size:16pt;
   background-color:$green; 
   @include rounded(4px);
   text-align:center;
@@ -139,6 +146,7 @@ a { cursor:pointer;}
   padding-left:25px;}
 
 #ku_form { 
+  font-size:16pt;
   background-image: url(/images/ku-panel.jpg);
   height:268px;
   width: 664px;
@@ -211,7 +219,7 @@ body {
   @include center;
   background-attachment:fixed;
   font-family:'Helvetica';
-  font-size: 16pt;
+  font-size: 12pt;
   background-image:url(/images/background.jpg);
   height:100%;
 }
@@ -292,9 +300,11 @@ div.standout {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 .light {
   color:#999;	
 }
+
 #win {
   margin-left:20px;
   width:540px;
