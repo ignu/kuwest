@@ -281,14 +281,10 @@ kuwest.tip = function() {
       tip.fadeOut(90);
     });
    $("a.tip").click(function() {
-      $.ajax({
-         url: $(this).attr("href"), 
-         type: 'get', 
-         dataType: 'html', 
-         success: function(html) {
+      $.get($(this).attr("href"), 
+         function(html) {
           self.show(html);
-         }
-        });
+         });
       return false;
       });
   };
