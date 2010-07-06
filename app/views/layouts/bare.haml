@@ -1,60 +1,9 @@
-!!! Strict
+!!!
 %html
   %head
-    - @title ||= "Kuwest.com - meet your real life quests."
-    %title 
-      =@title
-    = javascript_include_tag 'jquery'
-    = javascript_include_tag 'jquery-ui-1.8'
-    = javascript_include_tag 'mustache'     
-    = javascript_include_tag 'common'
-    = javascript_include_tag 'jquery.upload'
-    = javascript_include_tag 'slimbox2'
-    = javascript_include_tag 'jquery.tweet'
-    = javascript_include_tag 'bubble'
-    = javascript_include_tag 'application'
-    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'compiled/application.css'
-    = stylesheet_link_tag 'slimbox/slimbox2'
-    = stylesheet_link_tag 'bubbletip/bubbletip'
-    = stylesheet_link_tag 'smoothness/jquery-ui-1.8.custom'
-    = javascript_include_tag  'http://use.typekit.com/wrf8sur.js'
-    /[if lt IE 8]
-      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    %title awesome
   %body
-    .header.content
-      #washout
-        &nbsp;
-      #logo
-        %a{:href=>"/", :title=>"Kuwest.com"}
-          %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
-      #topnav
-        #socialmedia
-          %a{:href=>"http://twitter.com/kuwest", :title=>"Kuwest twitter feed for your goal tracking fun"}
-            %img{:src=>"/images/twitter.png", :border=>0}
-          %a{:href=>"http://www.facebook.com/pages/Kuwest/123391054359447", :title=>"Facebook for your goal tracking fun"}
-            %img{:src=>"/images/facebook.png", :border=>0}
-        #login
-          -if !user_signed_in?
-            %form.login{:method=>"post", :action=>"/users/login"}
-              %table 
-                %tr
-                  %td
-                    Already a member? Login:&nbsp;
-                  %td
-                    %input.hint{:type=>"text", :name=>"user[email]", :title=>"email"}
-                  %td
-                    %input.hint{:type=>"password", :name=>"user[password]", :title=>"password"}
-                  %td
-                    %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
-          -else
-            %ul#links 
-              %li.first
-                %a{:href=>"/wins/new"}
-                  new status
-              %li
-                %a{:href=>"/users/#{current_user.username}"}
-                  profile
-              %li
-                %a{:href=>'/profile'}
-
+    #content
+      = yield
+    #sidebar
+      = yield :sidebar
