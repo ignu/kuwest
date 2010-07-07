@@ -24,9 +24,10 @@
     -if user_signed_in?
       %p
         -if current_user.following?(@user)
-          = link_to 'Unfollow', unfollow_path(:id => current_user.follows.find_by_following_id(@user.id))
+          = link_to 'Unfollow', following_path(:id => current_user.follows.find_by_following_id(@user.id)), :method => 'delete'
         -else
-          = link_to 'Follow', follow_path(:following_id => @user.id)
+          = link_to 'Follow', followings_path(:following_id => @user.id), :method => 'post'
+          
     %h2 Totals
     #totals
       -@totals.each do |t|

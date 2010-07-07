@@ -12,9 +12,13 @@ ActionController::Routing::Routes.draw do |map|
   map.about     'about',        :controller=>"home",  :action =>"about"
   map.tips      'tips/:action', :controller=>"tips"
   map.root                      :controller=>"wins", :action=>"index"
+  
+  
+  map.resources :followings, :only => [:create, :destroy]
+  
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   
-  map.follow 'follow', :controller => 'followings', :action => 'create'
-  map.unfollow 'unfollow', :controller => 'followings', :action => 'destroy'
+  #map.follow 'follow', :controller => 'followings', :action => 'create'
+  #map.unfollow 'unfollow', :controller => 'followings', :action => 'destroy'
 end
