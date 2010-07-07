@@ -23,6 +23,11 @@ Feature: Follow
     When I am on my profile page
     Then I should not see any followings
   
+  Scenario: Follow myself
+    Given I am signed in as "sean@example.com/111111"
+    When I am on my profile page
+    Then I should not see "Follow"
+  
   Scenario: Unfollow
     Given bob signed up as "bob@example.com/111111"
     And I am signed in as "sean@example.com/111111"
