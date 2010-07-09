@@ -241,6 +241,11 @@ div.complete {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bce18a), to(#245900));
 }
 
+/* line 142, ../../../app/stylesheets/screen.scss */
+.xp_value {
+  display: none;
+}
+
 /* line 143, ../../../app/stylesheets/screen.scss */
 #flashBubble {
   font-size: 12px;

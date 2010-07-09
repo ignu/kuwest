@@ -25,5 +25,5 @@ Rails::Initializer.run do |config|
   config.gem "compass", :version => ">= 0.10.1"
   config.gem "mocha"
   config.gem "timecop"
-  config.active_record.observers = [:win_observer, :comment_observer]
+  config.active_record.observers = [:win_observer, :comment_observer, :user_observer]
 end

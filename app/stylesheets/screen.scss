@@ -139,7 +139,7 @@ div.complete {
   cursor: pointer;
   background-image: -moz-linear-gradient(100% 100% 90deg, $green, $darkGreen);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));}
-
+.xp_value {display:none;}
 #flashBubble { font-size:12px;}
 #sales { 
   height:400px;

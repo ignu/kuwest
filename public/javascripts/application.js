@@ -1,3 +1,16 @@
+var xpHint = function() {
+  $(".xp").each(function() {
+    var tipId = $(this).attr("id") + "xp";
+    log(tipId)
+    $(this).bubbletip($("#" +tipId), {
+      deltaDirection: "left" 
+    });
+    $(this).fadeOut().fadeIn();
+   })
+}
+
+$(xpHint);
+
 var kuwest = function() {
   var self = {};
 
