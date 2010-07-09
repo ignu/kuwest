@@ -25,6 +25,7 @@ class WinsController < ApplicationController
   def update
     win = Win.find(params[:id])
     win.update_attributes(params[:win])
+    redirect_to({:action=>"index", :controller=>"wins"})
   end
   
   def picture

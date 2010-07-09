@@ -11,6 +11,7 @@
   .actions
     -if (!current_user.nil? && current_user.id == w.user.id)
       %a.delete{:href=>"", :status=>w.id} Delete
+      %a.edit{:href=>"/wins/edit/#{w.id}", :status=>w.id} Edit
     -if (!current_user.nil?)
       %a.comment.xp{:id=>"cl#{w.id}", :href => ""} Comment
       .xp_value{:id=>"cl#{w.id}xp"} 5 XP
