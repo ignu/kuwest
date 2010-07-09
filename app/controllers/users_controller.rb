@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def top
-    @users = User.find(:all, :order=>" xp DESC")
+    @users = User.find(:all, :order=>"xp DESC", :limit=>10)
   end
 
   def create
