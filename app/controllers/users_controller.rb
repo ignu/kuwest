@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def top
+  end
+
   def create
     @user = User.create(params[:user])
     @user.update_attributes(params[:username])

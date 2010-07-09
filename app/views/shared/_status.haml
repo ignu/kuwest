@@ -14,6 +14,6 @@
     -if (!current_user.nil?)
       %a.comment{:href => ""} Comment
       .comment_box{:class => "comment"} 
-        %input{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"}
+        %textarea{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"}
         %button{:type => "submit", :class => "submit_comment" } 
           Add Comment

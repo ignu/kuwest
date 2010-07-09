@@ -100,7 +100,8 @@ var kuwest = function() {
     kuwest.winform.init();
     kuwest.comments.init();
     give_first_input_focus();
-    $(".soon").click(function() { self.notice("Coming Soon."); return false;}); 
+    $(".soon").click(function() { self.notice("Coming Soon.  But <a href=\"/users/new\">sign up now</a> and start leveling up!"); return false;}); 
+    $("#bubbleTip").click(function() { window.location("/users/new");})
     setTimeout(reloadBrokenImages, 1300);
     setTimeout(fadeoutAlerts, 5000);
   };

@@ -140,14 +140,22 @@ div.complete {
   background-image: -moz-linear-gradient(100% 100% 90deg, $green, $darkGreen);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($green), to($darkGreen));}
 
-.upload_form {
-  display:none;}
+#flashBubble { font-size:12px;}
+#sales { 
+  height:400px;
+}
+.upload_form { display:none;}
 
 .action_wrapper input, .action_wrapper input.file, .action_wrapper button {
   font-size:10px; height:24px; width:200px;}
 
 .action_wrapper input:submit {
   font-size:10px; height:24px; width:100px; }
+
+.comment_description { 
+  width:450px;
+  height:50px;
+}
 
 .status_image, .profile_image {
   cursor: pointer; }
@@ -530,12 +538,18 @@ body {
   .details {
     padding: 5px 11px;
   }
+  #signup {
+    margin-bottom:10px;
+    box-shadow: 1 4px 3px #CCC;
+    -moz-box-shadow: 1 4px 3px #CCC;
+    -webkit-box-shadow: 1 4px 3px #CCC;
+  }
   #sidebar {
     box-shadow: 0 1px 3px #CCC;
     -moz-box-shadow: 0 1px 3px #CCC;
     -webkit-box-shadow: 0 1px 3px #CCC;
     font-size:13pt;
-    margin-top:35px;
+    margin-top:15px;
     background-color:white;
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     $sidebar-columns: floor($blueprint-grid-columns / 3) - 1;

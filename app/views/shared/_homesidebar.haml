@@ -1,5 +1,6 @@
-%a{:href=>"/users/new", :title=>"sign up"}
+%a#signup{:href=>"/users/new", :title=>"sign up"}
   %img{:src=>"/images/signup.png", :border=>0} 
+
 .details
   %a.soon{:href=>"/about"}
     %h2 How Kuwest works
@@ -14,6 +15,12 @@
     .paragraph
       %a.tip{:href=>"/tips/post_from_twitter.htm"}
         Post from Twitter
+  %a
+    %h2{:css=>"font-weight:bold"}Contest
+  .info
+    Players who reach at least level 5 by September 15 are elgible to win 1 of 10 laptop stickers from  
+    %a{:href=>"http://www.etsy.com/shop/CraftyGalDecals", :target=>"new"}
+      Crafty Gal Decals
   %a{:href=>"http://twitter.com/kuwest", :target=>"_new"}
     %h2 Twitter Feed
   .tweets.info
