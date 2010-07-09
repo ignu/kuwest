@@ -1,4 +1,6 @@
 #sales.panel
+  %h1 About Kuwest
+  .info
   Email
   %a{:href=>"mailto:sales@kuwest.com"}
     sales@kuwest.com 
@@ -6,3 +8,6 @@
   %b
     (909) 2-KUWEST
   for more information.
+-content_for :sidebar do
+  = render :partial => 'shared/homesidebar'
+

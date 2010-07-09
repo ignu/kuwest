@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def top
+    @users = User.find(:all, :order=>" xp DESC")
   end
 
   def create

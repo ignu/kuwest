@@ -12,8 +12,11 @@
   .field
     %p=f.label :password_confirmation
     %p=f.password_field :password_confirmation
+  .field
+    %p=f.label :photo
+    %p=f.file_field :photo, {:class=>"file"}
 %a#expand_profile
-  Show profile details....
+  More profile fields....
 .profile
   .field
     %p=f.label :first_name
@@ -36,6 +39,3 @@
   .field
     %p=f.label :url
     %p=f.text_field :url
-  .field
-    %p=f.label :photo
-    %p=f.file_field :photo, {:class=>"file"}
