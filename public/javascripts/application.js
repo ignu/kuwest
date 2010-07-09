@@ -5,7 +5,6 @@ var xpHint = function() {
     $(this).bubbletip($("#" +tipId), {
       deltaDirection: "left" 
     });
-    $(this).fadeOut().fadeIn();
    })
 }
 
