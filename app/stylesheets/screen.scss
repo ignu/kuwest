@@ -75,14 +75,15 @@ div.tip_detail .paragraph { margin-top:11px;}
   padding-top:3px;
   color:$green;
 }
+.image_thumb { padding:10px;}
 #users th {
-  color:$green;
+  color:$blue;
   text-align:left;
-  background-color:$lightBlue;
 }
-#users td {
+#users td, #users th{
+  text-align:left;
   margin:10px;
-  padding:10px;
+  padding:3px 34px;
 }
 div.complete {
   height:7px;

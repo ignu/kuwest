@@ -1,20 +1,35 @@
-%h1
-  Top Users
-%table
-  %tr
-    %th
-      username
-    %th
-      level&nbsp;&nbsp;
-    %th
-      xp
-  -@users.each do |u|
+.panel
+  %h1
+    Top Users
+  .info
+  %br
+  %table#users
     %tr
-    %td
-      %a{:href=>"/users/#{u.username}"}
-        =u.username
-    %td
-      =u.level
-    %td
-      =u.xp || "10"
+      %th
+      %th
+        username
+      %th
+        level&nbsp;&nbsp;
+      %th
+        xp
+      %th
+        twitter
+    -@users.each do |u|
+      %tr
+        %td.image_thumb
+          .image
+            =image_tag u.photo.url(:profile), :class=>"thumb"
+            ;&nbsp;
+        %td
+          %a{:href=>"/users/#{u.username}"}
+            =u.username
+        %td
+          =u.level
+        %td
+          =u.xp || "10"
+        %td
+          %a{:href=>"http://twitter.com/#{u.twitter_name}"}
+            =u.twitter_name
+-content_for :sidebar do
+  =render :partial => 'shared/homesidebar'
 
