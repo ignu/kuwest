@@ -157,6 +157,11 @@ div.complete {
   height:50px;
 }
 
+.tip_detail a, .tip_detail a:visited, .tip_detail a:hover, .tip_detail a:active {
+  color:$lightGreen;
+  font-weight:bold;
+}
+
 .status_image, .profile_image {
   cursor: pointer; }
 a { cursor:pointer;}
