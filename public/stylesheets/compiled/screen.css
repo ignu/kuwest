@@ -113,10 +113,10 @@ blockquote {
   height: 1800px;
   width: 3000px;
   display: none;
-  filter: alpha(opacity=50);
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
   background-color: #eef9fa;
   top: 0px;
   right: 0px;

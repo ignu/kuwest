@@ -10,7 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   map.user_show 'users/:id',    :controller=>"users", :action =>"show"
   map.tos       'tos',          :controller=>"home",  :action =>"tos"
   map.about     'about',        :controller=>"home",  :action =>"about"
-  map.tips      'tips/:action', :controller=>"tips"
   map.root                      :controller=>"wins", :action=>"index"
   
   
