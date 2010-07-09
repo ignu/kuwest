@@ -3,7 +3,12 @@ class WinsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index, :create]
 
   def index
-    @wins = Win.find(:all, :order=>"id desc", :limit=>10)
+    @wins = Win.find(:all, :order=>"id desc", :limit=>12)
+  end
+
+  def edit 
+    @win = Win.find(params[:id])
+    redirect_to "/" if @win.user.id != current_user.id    
   end
 
   def new

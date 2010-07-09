@@ -19,8 +19,11 @@
     %h2 What others are doing right now:
   .clear 
   %table.win
+    -users =[]
     -@wins.each do |w|
-      =render :partial => "shared/status_tr", :locals => {:w=>w}
+      -unless(users.any? { |u| u == w.user.id})
+        =render :partial => "shared/status_tr", :locals => {:w=>w}
+      -users << w.user.id
   .info
     %a{:href=>"/top-users"}
       Top Users
