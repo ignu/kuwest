@@ -18,7 +18,7 @@
       %tr
         %td.image_thumb
           .image
-            =image_tag u.photo.url(:profile), :class=>"thumb"
+            =image_tag u.the_photo("thumb"), :class=>"thumb"
             &nbsp;
         %td
           %a{:href=>"/users/#{u.username}"}
