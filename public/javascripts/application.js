@@ -1,7 +1,6 @@
 var xpHint = function() {
   $(".xp").each(function() {
     var tipId = $(this).attr("id") + "xp";
-    log(tipId)
     $(this).bubbletip($("#" +tipId), {
       deltaDirection: "left" 
     });
