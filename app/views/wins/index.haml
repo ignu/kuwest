@@ -27,6 +27,9 @@
   .info
     %a{:href=>"/top-users"}
       Top Users
+
 -content_for :sidebar do
   = render :partial => 'shared/homesidebar'
+  %iframe{:src=>"http://www.facebook.com/widgets/like.php?href=http://www.facebook.com/pages/Kuwest/123391054359447",  :scrolling=>"no", :frameborder=>"0", :allowTransparency=>"true", :style=>"border:none; overflow:hidden; width:260px; height:82px; padding:10px"}
+
 

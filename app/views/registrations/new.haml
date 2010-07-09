@@ -2,7 +2,7 @@
   %h3 Register now to begin your quest(s)! 
   -form_for @user,  :url => "/users/create", :html => {:multipart => true} do |f|
     =render :partial => "/users/form", :locals => {:f=>f}
-    %p=f.submit "Sign up", {:class=>"button"}
+    %p=f.submit "Sign up", {:class=>"green"}
 -content_for :sidebar do
   = render :partial => 'shared/homesidebar'
 

@@ -103,7 +103,7 @@ var kuwest = function() {
   if ($("#user-information").length) { $("#content").css("float", "right");  };
   $(".tweets").tweet({
       username: "kuwest",
-      count: 3,
+      count: 1,
       loading_text: "loading tweets...", 
       compose_tweet: function(avatar, date, join, text) { return text + '<div class="date">' + date + "</date>"}
     });

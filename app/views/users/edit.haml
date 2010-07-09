@@ -2,4 +2,4 @@
 .panel
   -form_for @user, :url => "/users/update", :html => {:multipart => true} do |f|
     =render :partial => "form", :locals => {:f=>f}
-    %p=f.submit "Update", { :class=>"button" }
+    %p=f.submit "Update", { :class=>"green" }
