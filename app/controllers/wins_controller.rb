@@ -3,7 +3,7 @@ class WinsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index, :create]
 
   def index
-    @wins = Win.find(:all, :order=>"id desc", :limit=>12)
+    @wins = Win.find(:all, :order=>"id desc", :limit=>12, :include=>[:user,:comments])
   end
 
   def edit 
