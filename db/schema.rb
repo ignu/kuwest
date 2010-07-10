@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100704085144) do
+ActiveRecord::Schema.define(:version => 20100709234536) do
 
   create_table "comments", :force => true do |t|
     t.string   "body"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20100704085144) do
     t.string   "twitter_name"
     t.boolean  "image_processing"
     t.integer  "xp"
+    t.boolean  "allow_email"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
