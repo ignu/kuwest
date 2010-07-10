@@ -34,7 +34,7 @@
         %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
     .clear
     -unless @user.followers.empty?
-      %h2 Follower
+      %h2 Followers
 
       %ul#followers
         -@user.followers.each do |follower|
