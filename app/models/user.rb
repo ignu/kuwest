@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     # get the email from URL-parameters or what have you and make lowercase
     email_address = email.downcase
     hash = Digest::MD5.hexdigest(email_address)
-    "http://www.gravatar.com/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
+    "http://www.gravatar.co/m/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
   end
 
   def the_photo(size) 
@@ -56,7 +56,6 @@ class User < ActiveRecord::Base
   def level
     return 0 if not xp
     User.xp_limits.each_index do |i|
-      puts "level #{i} : #{User.xp_limits[i]}"
       return i-1 if User.xp_limits[i] >= xp
     end
   end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100709234536) do
+ActiveRecord::Schema.define(:version => 20100711063040) do
 
   create_table "comments", :force => true do |t|
     t.string   "body"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20100709234536) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "objectives", :force => true do |t|
+    t.integer "amount"
+    t.string  "noun"
+    t.string  "verb"
+    t.integer "quest_id"
+    t.integer "user_id"
+  end
+
+  add_index "objectives", ["user_id", "quest_id"], :name => "index_objectives_on_user_id_and_quest_id"
 
   create_table "quests", :force => true do |t|
     t.string   "name"

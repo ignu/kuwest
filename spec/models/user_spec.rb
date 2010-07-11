@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe User do
   before(:all) do 
     User.delete_all("username='galvatron'")
+    User.delete_all("username='ratbat'")
     Factory(:user)
   end
 
@@ -37,18 +38,18 @@ describe User, "xp" do
   
   it "should add 3 xp for each status update" do
     @win.save!
-    @user.xp.should == 3
+    @user.xp.should == 13
   end
 
   it "should add 5xp for first comment" do 
-    @user.xp.should  == 3
+    @user.xp.should  == 13
     @user.wins.length.should > 0
     comment = Comment.new
     comment.user, comment.body =  @user, "test"
     @user.wins.first.comments << comment
     comment.save!
     comment.save!
-    @user.xp.should == 8
+    @user.xp.should == 18
   end
 
   it "should be able to calculate levels" do 
