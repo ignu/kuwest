@@ -1,5 +1,8 @@
 rails --version 2.3.8
 delayed_paperclip
+twitter-login
+verbs
+friendly_id
 twitter
 delayed_job
 shoulda
