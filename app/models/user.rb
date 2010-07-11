@@ -3,6 +3,7 @@ require 'digest/md5'
 class User < ActiveRecord::Base
 
   has_many :wins
+  has_many :quests
   has_many :comments
   
   has_many :follows, :class_name => 'Following', :foreign_key => "follower_id"
