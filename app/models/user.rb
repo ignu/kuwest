@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     # get the email from URL-parameters or what have you and make lowercase
     email_address = email.downcase
     hash = Digest::MD5.hexdigest(email_address)
-    "http://www.gravatar.co/m/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
+    "http://www.gravatar.com/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
   end
 
   def the_photo(size) 
