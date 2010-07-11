@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20100711063040) do
     t.string  "noun"
     t.string  "verb"
     t.integer "quest_id"
+    t.string  "past_tense_verb"
   end
 
   add_index "objectives", ["quest_id"], :name => "index_objectives_on_quest_id"
