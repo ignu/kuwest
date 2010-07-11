@@ -12,7 +12,7 @@ describe FollowingsController do
       follower = signin_as('sean@example.com', 'sean', '111111')
       following = User.create(:username => 'bob', :email => 'bob@example.com', :password => '111111')
       lambda {post :create, :following_id => following.id}.should change {Following.count}
-      response.should redirect_to user_show_path(:id => following.username)
+      response.should redirect_to user_show_path(:id => following.id)
     end
   end
   
@@ -23,7 +23,7 @@ describe FollowingsController do
       following = User.create(:username => 'bob', :email => 'bob@example.com', :password => '111111')
       f = Following.create(:follower => follower, :following => following)
       lambda {get :destroy, :id => f.id}.should change {Following.count}.by -1
-      response.should redirect_to user_show_path(:id => following.username) 
+      response.should redirect_to user_show_path(:id => following.id) 
     end
   end
 end

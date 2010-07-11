@@ -1,5 +1,4 @@
 -comment ||= @comment
 .comment
-  %a{:href=>"/users/#{comment.user.username}"}
-    =comment.user.username
+  =link_to comment.user.username, user_show_path(comment.user) 
   =comment.body

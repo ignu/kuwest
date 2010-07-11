@@ -21,7 +21,7 @@
             =image_tag u.the_photo("thumb"), :class=>"thumb"
             &nbsp;
         %td
-          %a{:href=>"/users/#{u.username}"}
+          %a{:href => user_show_path(u)}
             =u.username
         %td
           =u.level

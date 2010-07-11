@@ -23,21 +23,21 @@ describe User do
 
 	it {should have_many :wins}
 	it {should have_many :comments}
-	it {should validate_uniqueness_of :username}
+	it do 
+	  Factory(:user)
+	  should validate_uniqueness_of :username
+	end
 end
 
 describe User, "xp" do
   before(:each) do
-    User.delete_all("username='galvatron'")
     @user = Factory.create(:user)
-    @user.save!
     @win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3})
     @win.user = @user
     @win.save!
   end
   
   it "should add 3 xp for each status update" do
-    @win.save!
     @user.xp.should == 13
   end
 
@@ -47,7 +47,6 @@ describe User, "xp" do
     comment = Comment.new
     comment.user, comment.body =  @user, "test"
     @user.wins.first.comments << comment
-    comment.save!
     comment.save!
     @user.xp.should == 18
   end

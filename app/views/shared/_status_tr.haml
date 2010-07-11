@@ -1,10 +1,10 @@
 - w ||= @win
 %tr.status
   %td.profile_picture{:valign=>"top"}
-    %a{:href=>"/users/#{w.user.username}", :class=>"username"}
+    %a{:href => user_show_path(w.user), :class=>"username"}
       =image_tag w.user.the_photo("thumb"), :class=>"thumb"
   %td.detail
     %span.username
-      %a{:href=>"/users/#{w.user.username}", :class=>"username"}
+      %a{:href=> user_show_path(w.user), :class=>"username"}
         =w.user.username
     =render :partial => "shared/status", :locals => {:w=>@win || w}

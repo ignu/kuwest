@@ -15,12 +15,9 @@ ActionController::Routing::Routes.draw do |map|
   map.about     'about',        :controller=>"home",  :action =>"about"
   map.root                      :controller=>"wins", :action=>"index"
   
-  
   map.resources :followings, :only => [:create, :destroy]
+  map.after_twitter_login 'after_twitter_login', :controller => 'after_twitter_login', :action => 'login_to_devise'
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  
-  #map.follow 'follow', :controller => 'followings', :action => 'create'
-  #map.unfollow 'unfollow', :controller => 'followings', :action => 'destroy'
 end
