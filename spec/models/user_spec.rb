@@ -1,12 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe User do
-  before(:all) do 
-    User.delete_all("username='galvatron'")
-    User.delete_all("username='ratbat'")
-    Factory(:user)
-  end
-
   it "can be persisted with valid attributes" do
 		valid_hash = {
 			:email 							=> "test@test.com",
@@ -66,3 +60,4 @@ describe User, "xp" do
     u.level_progress.should == 10/(User.xp_limits[4] - User.xp_limits[3]).to_f
   end
 end
+

@@ -28,6 +28,13 @@ describe  "Quest" do
     quest = Quest.find_by_id(i)
     #quest.objectives.first.id.should == objective.id
   end
+
+  it "can create an objective if objective string is set" do 
+    quest.objectives.length.should == 0
+    quest.objective = "run 5 miles"
+    quest.parse_objective
+    quest.objectives.length.should == 1
+  end
 end
 
 

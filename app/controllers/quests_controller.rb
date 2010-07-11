@@ -1,15 +1,24 @@
 class QuestsController < ApplicationController
+
   def new
     @quest = Quest.new
   end
 
   def create
-    @quest = Quest.create {params[:quest]}
+    require 'ap'
+    ap params[:quest]
+    @quest = Quest.new(params[:quest])
+    @quest.user = current_user
     if @quest.save 
-      redirect_to "/users/#{current_user.username}"
+      flash[:notice] = "Quest Created!"
+      redirect_to user_show_path(current_user)
     else
       render "new"
     end
+  end
+
+  def show
+
   end
 
 end
