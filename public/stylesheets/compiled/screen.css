@@ -747,16 +747,26 @@ input.file {
 }
 
 /* line 447, ../../../app/stylesheets/screen.scss */
+.comment_box {
+  margin-top: 5px;
+}
+
+/* line 450, ../../../app/stylesheets/screen.scss */
+.actions a {
+  padding-right: 5px;
+}
+
+/* line 453, ../../../app/stylesheets/screen.scss */
 noborder {
   border: none;
 }
 
-/* line 450, ../../../app/stylesheets/screen.scss */
+/* line 456, ../../../app/stylesheets/screen.scss */
 .clearFix {
   clear: both;
 }
 
-/* line 455, ../../../app/stylesheets/screen.scss */
+/* line 461, ../../../app/stylesheets/screen.scss */
 body #container {
   background-color: #eef9fa;
   width: 950px;
@@ -768,7 +778,7 @@ body #container {
 body #container {
   display: block;
 }
-/* line 459, ../../../app/stylesheets/screen.scss */
+/* line 465, ../../../app/stylesheets/screen.scss */
 body #header, body #footer {
   display: inline;
   float: left;
@@ -781,12 +791,12 @@ body #header, body #footer {
 * html body #header, * html body #footer {
   overflow-x: hidden;
 }
-/* line 465, ../../../app/stylesheets/screen.scss */
+/* line 471, ../../../app/stylesheets/screen.scss */
 body #footer a, body #footer a:visited, body #footer a:active {
   color: white;
   padding: 0px 10px;
 }
-/* line 469, ../../../app/stylesheets/screen.scss */
+/* line 476, ../../../app/stylesheets/screen.scss */
 body #footer {
   font-size: 12px;
   padding-top: 20px;
@@ -794,7 +804,7 @@ body #footer {
   background-color: #176482;
   color: #DDD;
 }
-/* line 478, ../../../app/stylesheets/screen.scss */
+/* line 484, ../../../app/stylesheets/screen.scss */
 body #logo {
   display: inline;
   float: left;
@@ -806,7 +816,7 @@ body #logo {
 * html body #logo {
   overflow-x: hidden;
 }
-/* line 483, ../../../app/stylesheets/screen.scss */
+/* line 489, ../../../app/stylesheets/screen.scss */
 body #topnav {
   display: inline;
   float: left;
@@ -817,17 +827,17 @@ body #topnav {
 * html body #topnav {
   overflow-x: hidden;
 }
-/* line 487, ../../../app/stylesheets/screen.scss */
+/* line 493, ../../../app/stylesheets/screen.scss */
 body #socialmedia {
   padding-top: 5px;
   padding-right: 13px;
   float: left;
 }
-/* line 493, ../../../app/stylesheets/screen.scss */
+/* line 499, ../../../app/stylesheets/screen.scss */
 body #login a, body #login a:visited, body #login a:active {
   color: #999;
 }
-/* line 497, ../../../app/stylesheets/screen.scss */
+/* line 503, ../../../app/stylesheets/screen.scss */
 body #login {
   padding: 2px;
   margin-right: 0px;
@@ -846,21 +856,21 @@ body #login {
   width: 366px;
   text-align: center;
 }
-/* line 510, ../../../app/stylesheets/screen.scss */
+/* line 517, ../../../app/stylesheets/screen.scss */
 body #login table {
   margin-left: 16px;
 }
-/* line 513, ../../../app/stylesheets/screen.scss */
+/* line 521, ../../../app/stylesheets/screen.scss */
 body #links {
   padding: 10px 35px;
   float: right;
 }
-/* line 517, ../../../app/stylesheets/screen.scss */
+/* line 526, ../../../app/stylesheets/screen.scss */
 body li {
   list-style: none outside none;
   padding: 10px 4px;
 }
-/* line 521, ../../../app/stylesheets/screen.scss */
+/* line 531, ../../../app/stylesheets/screen.scss */
 body #links li {
   border-left: 1px solid #CCCCCC;
   border-right: 1px solid #FFFFFF;
@@ -869,12 +879,12 @@ body #links li {
   list-style: none outside none;
   padding: 0px 9px;
 }
-/* line 529, ../../../app/stylesheets/screen.scss */
+/* line 540, ../../../app/stylesheets/screen.scss */
 body #links li.first {
   border-left: none;
   border-right: none;
 }
-/* line 533, ../../../app/stylesheets/screen.scss */
+/* line 545, ../../../app/stylesheets/screen.scss */
 body #login input[type="text"], body #login input[type="password"] {
   border: 1px solid #DDD;
   font-size: 11px;
@@ -884,30 +894,30 @@ body #login input[type="text"], body #login input[type="password"] {
   padding: 3px;
   margin-right: 5px;
 }
-/* line 537, ../../../app/stylesheets/screen.scss */
+/* line 549, ../../../app/stylesheets/screen.scss */
 body #login input[type="image"] {
   height: auto;
   width: auto;
   border: none;
 }
-/* line 542, ../../../app/stylesheets/screen.scss */
+/* line 554, ../../../app/stylesheets/screen.scss */
 body #container {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 549, ../../../app/stylesheets/screen.scss */
+/* line 561, ../../../app/stylesheets/screen.scss */
 body .details {
   padding: 5px 11px;
 }
-/* line 552, ../../../app/stylesheets/screen.scss */
+/* line 564, ../../../app/stylesheets/screen.scss */
 body #signup {
   margin-bottom: 10px;
   box-shadow: 1 4px 3px #CCC;
   -moz-box-shadow: 1 4px 3px #CCC;
   -webkit-box-shadow: 1 4px 3px #CCC;
 }
-/* line 558, ../../../app/stylesheets/screen.scss */
+/* line 570, ../../../app/stylesheets/screen.scss */
 body #sidebar {
   box-shadow: 0 1px 3px #CCC;
   -moz-box-shadow: 0 1px 3px #CCC;
@@ -924,7 +934,7 @@ body #sidebar {
 * html body #sidebar {
   overflow-x: hidden;
 }
-/* line 569, ../../../app/stylesheets/screen.scss */
+/* line 581, ../../../app/stylesheets/screen.scss */
 body #content {
   display: inline;
   float: left;

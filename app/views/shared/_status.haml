@@ -10,7 +10,7 @@
 .action_wrapper	
   .actions  
     -if (!current_user.nil?)
-      %a.comment.xp{:id=>"cl#{w.id}", :href => ""} Comment
+      %a.comment.xp{:id => "cl#{w.id}", :href => ""} Comment
     -if (!current_user.nil? && current_user.id == w.user.id)
       %a.delete{:href=>"", :status=>w.id} Delete
     -if (!current_user.nil?)
