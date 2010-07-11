@@ -734,36 +734,29 @@ input.file {
   background-color: #F2F2F2;
 }
 
-/* line 438, ../../../app/stylesheets/screen.scss */
-.detail:hover .actions {
-  display: block;
+/* line 439, ../../../app/stylesheets/screen.scss */
+.action_wrapper {
+  padding-bottom: 10px;
 }
 
 /* line 442, ../../../app/stylesheets/screen.scss */
-.action_wrapper {
-  padding-bottom: 10px;
-  height: 17px;
-}
-
-/* line 446, ../../../app/stylesheets/screen.scss */
 .actions {
-  display: none;
   font-size: 10px;
   vertical-align: text-bottom;
   padding-top: 5px;
 }
 
-/* line 452, ../../../app/stylesheets/screen.scss */
+/* line 447, ../../../app/stylesheets/screen.scss */
 noborder {
   border: none;
 }
 
-/* line 455, ../../../app/stylesheets/screen.scss */
+/* line 450, ../../../app/stylesheets/screen.scss */
 .clearFix {
   clear: both;
 }
 
-/* line 460, ../../../app/stylesheets/screen.scss */
+/* line 455, ../../../app/stylesheets/screen.scss */
 body #container {
   background-color: #eef9fa;
   width: 950px;
@@ -775,7 +768,7 @@ body #container {
 body #container {
   display: block;
 }
-/* line 464, ../../../app/stylesheets/screen.scss */
+/* line 459, ../../../app/stylesheets/screen.scss */
 body #header, body #footer {
   display: inline;
   float: left;
@@ -788,12 +781,12 @@ body #header, body #footer {
 * html body #header, * html body #footer {
   overflow-x: hidden;
 }
-/* line 470, ../../../app/stylesheets/screen.scss */
+/* line 465, ../../../app/stylesheets/screen.scss */
 body #footer a, body #footer a:visited, body #footer a:active {
   color: white;
   padding: 0px 10px;
 }
-/* line 474, ../../../app/stylesheets/screen.scss */
+/* line 469, ../../../app/stylesheets/screen.scss */
 body #footer {
   font-size: 12px;
   padding-top: 20px;
@@ -801,7 +794,7 @@ body #footer {
   background-color: #176482;
   color: #DDD;
 }
-/* line 483, ../../../app/stylesheets/screen.scss */
+/* line 478, ../../../app/stylesheets/screen.scss */
 body #logo {
   display: inline;
   float: left;
@@ -813,7 +806,7 @@ body #logo {
 * html body #logo {
   overflow-x: hidden;
 }
-/* line 488, ../../../app/stylesheets/screen.scss */
+/* line 483, ../../../app/stylesheets/screen.scss */
 body #topnav {
   display: inline;
   float: left;
@@ -824,17 +817,17 @@ body #topnav {
 * html body #topnav {
   overflow-x: hidden;
 }
-/* line 492, ../../../app/stylesheets/screen.scss */
+/* line 487, ../../../app/stylesheets/screen.scss */
 body #socialmedia {
   padding-top: 5px;
   padding-right: 13px;
   float: left;
 }
-/* line 498, ../../../app/stylesheets/screen.scss */
+/* line 493, ../../../app/stylesheets/screen.scss */
 body #login a, body #login a:visited, body #login a:active {
   color: #999;
 }
-/* line 502, ../../../app/stylesheets/screen.scss */
+/* line 497, ../../../app/stylesheets/screen.scss */
 body #login {
   padding: 2px;
   margin-right: 0px;
@@ -853,21 +846,21 @@ body #login {
   width: 366px;
   text-align: center;
 }
-/* line 515, ../../../app/stylesheets/screen.scss */
+/* line 510, ../../../app/stylesheets/screen.scss */
 body #login table {
   margin-left: 16px;
 }
-/* line 518, ../../../app/stylesheets/screen.scss */
+/* line 513, ../../../app/stylesheets/screen.scss */
 body #links {
   padding: 10px 35px;
   float: right;
 }
-/* line 522, ../../../app/stylesheets/screen.scss */
+/* line 517, ../../../app/stylesheets/screen.scss */
 body li {
   list-style: none outside none;
   padding: 10px 4px;
 }
-/* line 526, ../../../app/stylesheets/screen.scss */
+/* line 521, ../../../app/stylesheets/screen.scss */
 body #links li {
   border-left: 1px solid #CCCCCC;
   border-right: 1px solid #FFFFFF;
@@ -876,12 +869,12 @@ body #links li {
   list-style: none outside none;
   padding: 0px 9px;
 }
-/* line 534, ../../../app/stylesheets/screen.scss */
+/* line 529, ../../../app/stylesheets/screen.scss */
 body #links li.first {
   border-left: none;
   border-right: none;
 }
-/* line 538, ../../../app/stylesheets/screen.scss */
+/* line 533, ../../../app/stylesheets/screen.scss */
 body #login input[type="text"], body #login input[type="password"] {
   border: 1px solid #DDD;
   font-size: 11px;
@@ -891,30 +884,30 @@ body #login input[type="text"], body #login input[type="password"] {
   padding: 3px;
   margin-right: 5px;
 }
-/* line 542, ../../../app/stylesheets/screen.scss */
+/* line 537, ../../../app/stylesheets/screen.scss */
 body #login input[type="image"] {
   height: auto;
   width: auto;
   border: none;
 }
-/* line 547, ../../../app/stylesheets/screen.scss */
+/* line 542, ../../../app/stylesheets/screen.scss */
 body #container {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 554, ../../../app/stylesheets/screen.scss */
+/* line 549, ../../../app/stylesheets/screen.scss */
 body .details {
   padding: 5px 11px;
 }
-/* line 557, ../../../app/stylesheets/screen.scss */
+/* line 552, ../../../app/stylesheets/screen.scss */
 body #signup {
   margin-bottom: 10px;
   box-shadow: 1 4px 3px #CCC;
   -moz-box-shadow: 1 4px 3px #CCC;
   -webkit-box-shadow: 1 4px 3px #CCC;
 }
-/* line 563, ../../../app/stylesheets/screen.scss */
+/* line 558, ../../../app/stylesheets/screen.scss */
 body #sidebar {
   box-shadow: 0 1px 3px #CCC;
   -moz-box-shadow: 0 1px 3px #CCC;
@@ -931,7 +924,7 @@ body #sidebar {
 * html body #sidebar {
   overflow-x: hidden;
 }
-/* line 574, ../../../app/stylesheets/screen.scss */
+/* line 569, ../../../app/stylesheets/screen.scss */
 body #content {
   display: inline;
   float: left;

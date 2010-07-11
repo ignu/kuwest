@@ -435,16 +435,11 @@ input.file {
 .detail:hover {
   background-color:#F2F2F2;
 }
-.detail:hover .actions {
-  display:block;
-}
 
 .action_wrapper {
   padding-bottom:10px;
-  height:17px;
 }
 .actions {
-  display:none;
   font-size:10px;
   vertical-align:text-bottom;
   padding-top: 5px;
