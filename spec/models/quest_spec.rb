@@ -34,6 +34,9 @@ describe  "Quest" do
     quest.objective = "run 5 miles"
     quest.parse_objective
     quest.objectives.length.should == 1
+    quest.objectives.first.noun.should == "miles"
+    quest.objectives.first.verb.should == "run"
+    quest.objectives.first.past_tense_verb.should == "ran"
   end
 end
 

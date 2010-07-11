@@ -9,6 +9,7 @@ class QuestsController < ApplicationController
     ap params[:quest]
     @quest = Quest.new(params[:quest])
     @quest.user = current_user
+    @quest.parse_objective
     if @quest.save 
       flash[:notice] = "Quest Created!"
       redirect_to user_show_path(current_user)
@@ -18,7 +19,7 @@ class QuestsController < ApplicationController
   end
 
   def show
-
+    @quest = Quest.find(params[:id])
   end
 
 end
