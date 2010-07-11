@@ -43,7 +43,7 @@ class UsersController < ApplicationController
       return
     else
       @title = "#{@user.username}'s profile [kuwest.com]"      
-      @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25}
+      @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25, :order=>"id DESC"}
       @totals = Win.totals_for(@user)
       @data = WinGraphData.new @user
       @can_update_status = !current_user.nil? && current_user.username == @user.username
