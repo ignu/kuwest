@@ -12,5 +12,6 @@ describe Float do
       4.16.pretty.should == "4.2"
       14.12.pretty.should == "14.1"
     end
+
   end 
 end

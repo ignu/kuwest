@@ -1,4 +1,5 @@
 class QuestsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index ]
 
   def new
     @quest = Quest.new
