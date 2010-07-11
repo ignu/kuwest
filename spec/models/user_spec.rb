@@ -1,11 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe User do
-  before(:all) do 
-    User.delete_all("username='galvatron'")
-    Factory(:user)
-  end
-
   it "can be persisted with valid attributes" do
 		valid_hash = {
 			:email 							=> "test@test.com",
@@ -22,33 +17,32 @@ describe User do
 
 	it {should have_many :wins}
 	it {should have_many :comments}
-	it {should validate_uniqueness_of :username}
+	it do 
+	  Factory(:user)
+	  should validate_uniqueness_of :username
+	end
 end
 
 describe User, "xp" do
   before(:each) do
-    User.delete_all("username='galvatron'")
     @user = Factory.create(:user)
-    @user.save!
     @win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3})
     @win.user = @user
     @win.save!
   end
   
   it "should add 3 xp for each status update" do
-    @win.save!
-    @user.xp.should == 3
+    @user.xp.should == 13
   end
 
   it "should add 5xp for first comment" do 
-    @user.xp.should  == 3
+    @user.xp.should  == 13
     @user.wins.length.should > 0
     comment = Comment.new
     comment.user, comment.body =  @user, "test"
     @user.wins.first.comments << comment
     comment.save!
-    comment.save!
-    @user.xp.should == 8
+    @user.xp.should == 18
   end
 
   it "should be able to calculate levels" do 

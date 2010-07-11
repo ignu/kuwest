@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
   def level
     return 0 if not xp
     User.xp_limits.each_index do |i|
-      puts "level #{i} : #{User.xp_limits[i]}"
       return i-1 if User.xp_limits[i] >= xp
     end
   end

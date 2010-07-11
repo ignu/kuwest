@@ -4,6 +4,7 @@
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+#RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 Rails::Initializer.run do |config|
 
@@ -25,5 +26,9 @@ Rails::Initializer.run do |config|
   config.gem "compass", :version => ">= 0.10.1"
   config.gem "mocha"
   config.gem "timecop"
+  
+  config.gem 'twitter-login', :version => '~> 0.2.1', :lib => 'twitter/login'
+  config.middleware.use 'Twitter::Login', :consumer_key => 'FwXG209iTDLYZ0ZTouw', :secret => 'NuOUDsaIF4lyUYaY62YIDDX7qb6JwmMECShrmIMVRM', :return_to => '/after_twitter_login'
+  
   config.active_record.observers = [:win_observer, :comment_observer, :user_observer]
 end

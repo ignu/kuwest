@@ -11,7 +11,7 @@
       %h2=@user.location
     -unless @user.first_name.nil? || !@user.public_name
       %h2="#{@user.first_name} #{@user.last_name}"
-    -if !@user.twitter_name.nil? && @user.twitter_name.length > 0
+    -if @user.twitter_name
       %a{:href=>"http://twitter.com/#{@user.twitter_name}"}
         %h2="@#{@user.twitter_name}"
     -unless @user.url.nil?
