@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20100711052445) do
     t.string   "twitter_name"
     t.boolean  "image_processing"
     t.integer  "xp"
+    t.boolean  "allow_email"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

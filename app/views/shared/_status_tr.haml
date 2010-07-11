@@ -2,7 +2,7 @@
 %tr.status
   %td.profile_picture{:valign=>"top"}
     %a{:href => user_show_path(w.user), :class=>"username"}
-      =image_tag w.user.photo.url(:thumb), :class=>"thumb"
+      =image_tag w.user.the_photo("thumb"), :class=>"thumb"
   %td.detail
     %span.username
       %a{:href=> user_show_path(w.user), :class=>"username"}

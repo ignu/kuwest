@@ -12,11 +12,11 @@
   .field
     %p=f.label :password_confirmation
     %p=f.password_field :password_confirmation
-  .field
-    %p=f.label :photo
-    %p=f.file_field :photo, {:class=>"file"}
-%a#expand_profile
-  More profile fields....
+  %a#expand_profile
+    More profile fields....
+.field
+  %p=f.label :photo
+  %p=f.file_field :photo, {:class=>"file"}
 .profile
   .field
     %p=f.label :first_name
@@ -39,3 +39,6 @@
   .field
     %p=f.label :url
     %p=f.text_field :url
+.field
+  =f.check_box :allow_email
+  =f.label :allow_email, "Allow us to contact you when new features are added to Kuwest!"

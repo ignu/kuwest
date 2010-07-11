@@ -1,6 +1,10 @@
-%h1 Edit Win
--semantic_form_for @win do |f|
-  =f.input :noun
-  =f.input :verb
-  =f.input :date
-  =f.input :amount
+.panel
+  %h1 Edit Status
+  -semantic_form_for @win do |f|
+    =f.input :verb
+    =f.input :amount
+    =f.input :noun
+    =f.submit "Update!", :class=>"green"
+  -content_for :sidebar do
+    = render :partial => 'shared/homesidebar'
+

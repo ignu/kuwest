@@ -6,7 +6,7 @@
     %h1#username=@user.username
     #xp_bar{:progress=>@user.level_progress}
     .profile_image
-      =image_tag @user.photo.url(:profile), :class=>"profile"
+      =image_tag @user.the_photo(:profile), :class=>"profile"
     -unless @user.location.nil?
       %h2=@user.location
     -unless @user.first_name.nil? || !@user.public_name
@@ -34,7 +34,7 @@
         %p{:class=>'selected category', :category=>"#{t.verb}"}= "#{t.verb} #{t.total.to_f.pretty} #{t.noun}"
     .clear
     -unless @user.followers.empty?
-      %h2 Follower
+      %h2 Followers
 
       %ul#followers
         -@user.followers.each do |follower|

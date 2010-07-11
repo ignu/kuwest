@@ -7,12 +7,14 @@
 .comments
   -w.comments.each do |c|
     =render :partial=>"shared/comment", :locals=>{:comment=>c}
-.action_wrapper
-  .actions
+.action_wrapper	
+  .actions  
+    -if (!current_user.nil?)
+      %a.comment.xp{:id => "cl#{w.id}", :href => ""} Comment
     -if (!current_user.nil? && current_user.id == w.user.id)
       %a.delete{:href=>"", :status=>w.id} Delete
     -if (!current_user.nil?)
-      %a.comment.xp{:id=>"cl#{w.id}", :href => ""} Comment
+      %a.edit{:href=>"/wins/edit/#{w.id}", :status=>w.id} Edit
       .xp_value{:id=>"cl#{w.id}xp"} 5 XP
       .comment_box{:class => "comment"} 
         %textarea{:class => "comment_description", :type => "text", :id => "comment_#{w.id}"}

@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 class User < ActiveRecord::Base
 
   has_many :wins
@@ -12,10 +14,11 @@ class User < ActiveRecord::Base
   
   
   attr_accessible :username, :photo, :email, :password, :password_confirmation
-  attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp
+  attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp, :allow_email
   validates_uniqueness_of :username
   validates_presence_of :username
-  
+  @@thumb, @@small, @@profile = "48x48#", "73x73#", "248z248"
+
   has_attached_file :photo,
           :storage        => :s3,
           :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
@@ -34,7 +37,18 @@ class User < ActiveRecord::Base
 					:rememberable,
 					:trackable,
 					:validatable  
-					
+
+  def gravatar_image(email)
+    # get the email from URL-parameters or what have you and make lowercase
+    email_address = email.downcase
+    hash = Digest::MD5.hexdigest(email_address)
+    "http://www.gravatar.com/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
+  end
+
+  def the_photo(size) 
+    photo.exists? ? photo.url(size) : gravatar_image(email)  
+  end
+
   def following?(user)
     followings.include?(user)
   end

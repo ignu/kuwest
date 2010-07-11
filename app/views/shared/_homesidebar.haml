@@ -1,6 +1,8 @@
-%a#signup.xp{:href=>"/users/new", :title=>"sign up"}
-  %img{:src=>"/images/signup.png", :border=>0} 
-#signupxp.xp_value 10XP
+-if !user_signed_in?
+  %a#signup.xp{:href=>"/users/new", :title=>"sign up"}
+    %img{:src=>"/images/signup.png", :border=>0} 
+  #signupxp.xp_value 10XP
+
 .details
   %a.soon{:href=>"/about"}
     %h2 How Kuwest works
@@ -30,4 +32,3 @@
   %a{:href=>"http://twitter.com/kuwest", :target=>"_new"}
     %h2 Twitter Feed
   .tweets.info
-
