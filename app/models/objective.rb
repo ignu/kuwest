@@ -9,4 +9,7 @@ class Objective < ActiveRecord::Base
     o.calculate_past_tense
     o
   end
+  def to_s
+    "#{self.verb} #{self.amount} #{self.noun}"
+  end
 end

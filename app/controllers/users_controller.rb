@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   
   def show
     
-    @user = User.find_by_id(params[:id])
+    @user = User.find(params[:id])
     @page = params[:page]
     @page ||= 1
     if @user.nil?

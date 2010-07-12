@@ -31,7 +31,8 @@
     -if @user.quests && @user.quests.length
       %h2 Quests Created!
       -@user.quests.each do |q|
-        =link_to q.name, quest_path(q)        
+        .info
+          =link_to q.name, quest_path(q)        
     %h2 Totals
     #totals
       -@totals.each do |t|

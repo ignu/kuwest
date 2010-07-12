@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   
   attr_accessible :username, :photo, :email, :password, :password_confirmation
   attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp, :allow_email
+  has_friendly_id :username 
   validates_uniqueness_of :username
   validates_presence_of :username
   @@thumb, @@small, @@profile = "48x48#", "73x73#", "248z248"

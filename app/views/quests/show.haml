@@ -1,5 +1,4 @@
 .panel
-    %h1=@quest.name
-    =@quest.objectives.first.amount
-
-
+  %h1=@quest.name
+  =@quest.objectives.each do |o|
+    =o.to_s
