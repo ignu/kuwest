@@ -6,8 +6,6 @@ class QuestsController < ApplicationController
   end
 
   def create
-    require 'ap'
-    ap params[:quest]
     @quest = Quest.new(params[:quest])
     @quest.user = current_user
     @quest.parse_objective

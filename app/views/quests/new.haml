@@ -1,11 +1,12 @@
-%h1 Add new Quest.
--semantic_form_for @quest do |f|
-  =f.input :name, :title=>"My cool Quest"
-  =f.input :description
-  =f.input :objective
-  -#-f.inputs :name=>"Objective", :for=>:objectives do |o|
-    -#=o.input :name
-    -#=o.input :noun
-    -#=o.input :amount
-    -#=o.input :verb
-  =f.commit_button
+.panel
+  %h1 Add new Quest.
+  -semantic_form_for @quest do |f|
+    =f.input :name, :input_html => {:title=>"(ex: My first Quest)"}
+    =f.input :objective, :input_html => {:title=>"(ex: Run 1000 Miles)"}
+    =f.input :description, :input_html => {:title=>"(ex: Any details on what this quest meants to you)"}
+    -#-f.inputs :name=>"Objective", :for=>:objectives do |o|
+      -#=o.input :name
+      -#=o.input :noun
+      -#=o.input :amount
+      -#=o.input :verb
+    =f.commit_button 
