@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, :with => :user_not_found
   
   before_filter :authenticate_user!, :except => [:new, :show, :create, :top]
   def add_stored_message 
@@ -33,21 +34,16 @@ class UsersController < ApplicationController
   end
   
   def show
-    
     @user = User.find(params[:id])
     @page = params[:page]
     @page ||= 1
-    if @user.nil?
-      @error = "Could not find User '#{params[:id]}'"
-      render(:template => "shared/error404", :status => "404") and return
-    else
-      @title = "#{@user.username}'s profile [kuwest.com]"      
-      @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25, :order=>"id DESC"}
-      @totals = Win.totals_for(@user)
-      @data = WinGraphData.new @user
-      @can_update_status = !current_user.nil? && current_user.username == @user.username
-    end
     
+    @title = "#{@user.username}'s profile [kuwest.com]"      
+    @wins = Win.paginate_by_user_id @user.id, {:page=> @page, :per_page=>25, :order=>"id DESC"}
+    @totals = Win.totals_for(@user)
+    @data = WinGraphData.new @user
+    @can_update_status = !current_user.nil? && current_user.username == @user.username
+   
     respond_to do |format|
       format.html
       format.json { render :json => WinGraphData.new(@user) }
@@ -56,18 +52,12 @@ class UsersController < ApplicationController
   
   #TODO: delete this once we stop messing around with the graph
   def graph
-    throw "Need to supply a username" if params[:id].nil?
-    @user = User.find_by_username params[:id]
-    if @user.nil?
-      @error = "Could not find User '#{params[:id]}'"
-      render(:template => "shared/error404", :status => "404") 
-      return
-    else
-      @totals = Win.totals_for(@user)
-      @data = WinGraphData.new @user
-      @can_update_status = !current_user.nil? && current_user.username == @user.username
-    end
+    @user = User.find params[:id]
     
+    @totals = Win.totals_for(@user)
+    @data = WinGraphData.new @user
+    @can_update_status = !current_user.nil? && current_user.username == @user.username
+  
     respond_to do |format|
       format.html
       format.json { render :json => WinGraphData.new(@user) }
@@ -75,7 +65,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    throw "You need to be logged in to see this page" if current_user.nil?
     @user = current_user
   end
   
@@ -90,5 +79,10 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
-
+  
+  private
+  def user_not_found
+    @error = "Could not find User '#{params[:id]}'"
+    render(:template => "shared/error404", :status => "404")
+  end
 end
