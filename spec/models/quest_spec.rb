@@ -7,7 +7,7 @@ describe  "Quest" do
     :verb => "run",
     :noun => "miles" 
   })}
-  let (:quest) { Quest.new({
+  let (:quest) { QuestDefinition.new({
     :name => "Quest", 
     :description => "Pretty cool quest",
     :user => User.first
@@ -25,7 +25,7 @@ describe  "Quest" do
     objective.save
     objective.id.should > 0
     i = quest.id #HACK: this is baffling, if i don't do this i get .id called on null error
-    quest = Quest.find_by_id(i)
+    quest = QuestDefinition.find_by_id(i)
     #quest.objectives.first.id.should == objective.id
   end
 

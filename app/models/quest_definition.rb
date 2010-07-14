@@ -1,4 +1,4 @@
-class Quest < ActiveRecord::Base
+class QuestDefinition < ActiveRecord::Base
   attr_accessor :objective
   has_many :objectives
   belongs_to :user
