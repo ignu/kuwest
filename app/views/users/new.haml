@@ -1,7 +1,5 @@
--if @user.new? 
-  -@user.allow_email = true;
 .panel
   %h3 Register now to begin your quest(s)!
   -form_for @user,  :url => "/users/create", :html => {:multipart => true} do |f|
-    =render :partial => "form", :locals => {:f=>f}
+    =render :partial => "/users/form", :locals => {:f=>f}
     %p=f.submit "Sign up", {:class=>"green"}

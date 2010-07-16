@@ -42,3 +42,8 @@
 .field
   =f.check_box :allow_email
   =f.label :allow_email, "Allow us to contact you when new features are added to Kuwest!"
+
+:javascript
+  $(function() {
+    #{"$('a#expand_profile').click();"  unless @user.twitter_name.blank?}
+  });
