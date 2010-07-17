@@ -72,6 +72,7 @@ class User < ActiveRecord::Base
     def xp_limits
       [-1, 15, 20, 45, 80, 110, 150, 200, 275, 375, 500, 750, 1000, 1275, 1600, 1900, 2300]
     end
+
     def populate(user)
       user.password_confirmation = user.password = "abc123"
       user.email = "twitter_#{user.username}@twitter.com"

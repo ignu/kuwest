@@ -5,15 +5,15 @@
 .field
   %p=f.label :email 
   %p=f.text_field :email
--if @user.new_record?
+-if @user.new_record? && !params[:hide_password]
   .field
     %p=f.label :password 
     %p=f.password_field :password
   .field
     %p=f.label :password_confirmation
     %p=f.password_field :password_confirmation
-  %a#expand_profile
-    More profile fields....
+%a#expand_profile
+  More profile fields....
 .field
   %p=f.label :photo
   %p=f.file_field :photo, {:class=>"file"}

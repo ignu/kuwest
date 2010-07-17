@@ -496,17 +496,18 @@ body {
   }
 
   #logo {
-    @include column(floor(($blueprint-grid-columns/2)));
+    @include column(10);
     margin-top:10px;
   }
 
   #topnav {
-    @include column(floor(($blueprint-grid-columns/2)), true)
+    @include column(floor(14), true);
   }
 
   #socialmedia {
     padding-top:5px;
-    padding-right:13px;
+    padding-right:10px;
+    padding-left:36px;
     float:left;
   }
 
@@ -524,7 +525,7 @@ body {
     font-size:11px;
     color:#999;
     vertical-align:top;
-    width:366px;
+    width:346px;
     text-align:center;
   }
 

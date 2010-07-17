@@ -20,7 +20,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
+    @user = User.new(params[:user])
+    if (@user.password.nil? || @user.password.length <1)
+      @user.password = @user.password_confirmation = 'abc12345##'
+    end
     @user.update_attributes(params[:username])
 	
     if @user.save
