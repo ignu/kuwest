@@ -4,7 +4,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :users
   map.resources :wins
   map.resources :quest_definitions
-  map.wtf       'api.twitter.com/oauth/authenticate', 'https://api.twitter.com/oauth/authenticate'
 
   map.profile   'profile',      :controller=>"users", :action =>"edit"
   map.new_user  'users/new',    :controller=>"users", :action =>"new"
@@ -18,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :followings, :only => [:create, :destroy]
   map.after_twitter_login 'after_twitter_login', :controller => 'after_twitter_login', :action => 'login_to_devise'
+  map.wtf       'api.twitter.com/oauth/authenticate', :controller=>"after_twitter_login", :action => "twitter_hack" 
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
