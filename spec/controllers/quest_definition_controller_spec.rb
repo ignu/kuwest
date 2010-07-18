@@ -7,28 +7,16 @@ describe QuestDefinitionsController do
     before(:each) do
       p = {
             :quest_definition => { 
-                :description    => "Run 100 Miles"
-                },
-             :quest_objectives => { :description => "run 100 miles" }
+                :name          => "Run 100 Miles",
+                :description   => "Run 100 Miles",
+                :objective     => "run 100 miles" }
           }
       @current_user = signin_as('len@kuwest.com', 'len', '111111')
       post(:create, p) 
     end
 
     it "assigns that quest to the user" do
-      pending
-    end
-
-    it "asks that user if they are going to complete that quest" do
-      pending
-    end
-
-    it "asks the user for a description of why they want to finish the quest" do
-      pending
-    end
-
-    it "breaks up the objective into three pieces" do
-      pending
+      @current_user.quests.first.quest_definition.name.should == "Run 100 Miles"
     end
 
   end
