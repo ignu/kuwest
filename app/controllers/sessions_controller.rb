@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
     render_with_scope :new
   end
 
+
   # POST /resource/sign_in
   def create
     if resource = authenticate(resource_name)

@@ -1,6 +1,5 @@
 class AfterTwitterLoginController < ApplicationController
   def twitter_hack
-    throw "WLKASJDLKAJSLDKJS"
     redirect_to "https://api.twitter.com/oauth/authenticate?oauth_token=#{params[:oauth_token]}"
   end
 
