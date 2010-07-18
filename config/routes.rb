@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :users
   map.resources :wins
   map.resources :quest_definitions
+  map.wtf       'api.twitter.com/oauth/authenticate', 'https://api.twitter.com/oauth/authenticate'
 
   map.profile   'profile',      :controller=>"users", :action =>"edit"
   map.new_user  'users/new',    :controller=>"users", :action =>"new"
