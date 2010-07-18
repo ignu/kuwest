@@ -28,11 +28,11 @@
         -else
           = link_to 'Follow', followings_path(:following_id => @user.id), :method => 'post'
           
-    -if @user.quests && @user.quests.length
+    -if @user.quest_definitions && @user.quest_definitions.length
       %h2 Quests Created!
-      -@user.quests.each do |q|
+      -@user.quest_definitions.each do |q|
         .info
-          =link_to q.name, quest_path(q)        
+          =link_to q.name, quest_definition_path(q)        
     %h2 Totals
     #totals
       -@totals.each do |t|

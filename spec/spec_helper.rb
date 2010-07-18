@@ -21,4 +21,10 @@ class ActionController::TestCase
     sign_in user
     user
   end
+
+  def signin_mock
+    user = mock_model(User) 
+    sign_in user
+    user
+  end
 end

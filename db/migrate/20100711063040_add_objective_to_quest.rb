@@ -8,9 +8,9 @@ class AddObjectiveToQuest < ActiveRecord::Migration
       t.integer   :quest_id
       t.string    :past_tense_verb
     end
-    add_column :quests, :user_id, :integer
-    add_index :objectives, :quest_id
-    add_index :quests, :user_id
+    add_column    :quests, :user_id, :integer
+    add_index     :objectives, :quest_id
+    add_index     :quests, :user_id
   end
 
   def self.down

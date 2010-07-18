@@ -3,6 +3,7 @@ require 'digest/md5'
 class User < ActiveRecord::Base
 
   has_many :wins
+  has_many :quest_definitions
   has_many :quests
   has_many :comments
   

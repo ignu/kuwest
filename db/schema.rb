@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100711052445) do
+ActiveRecord::Schema.define(:version => 20100717191234) do
 
   create_table "comments", :force => true do |t|
     t.string   "body"
@@ -44,12 +44,52 @@ ActiveRecord::Schema.define(:version => 20100711052445) do
     t.datetime "updated_at"
   end
 
-  create_table "quests", :force => true do |t|
+  create_table "objectives", :force => true do |t|
+    t.string  "name"
+    t.integer "amount"
+    t.string  "noun"
+    t.string  "verb"
+    t.integer "quest_definition_id"
+    t.string  "past_tense_verb"
+  end
+
+  add_index "objectives", ["quest_definition_id"], :name => "index_objectives_on_quest_id"
+
+  create_table "quest_definitions", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "quest_definitions", ["user_id"], :name => "index_quests_on_user_id"
+
+  create_table "quest_objectives", :force => true do |t|
+    t.string  "noun"
+    t.string  "verb"
+    t.integer "amount"
+    t.integer "completed"
+    t.integer "quest_id"
+    t.integer "objective_id"
+    t.integer "target1"
+    t.integer "target2"
+    t.integer "target3"
+  end
+
+  add_index "quest_objectives", ["noun"], :name => "index_quest_objectives_on_noun"
+  add_index "quest_objectives", ["quest_id"], :name => "index_quest_objectives_on_quest_id"
+  add_index "quest_objectives", ["verb"], :name => "index_quest_objectives_on_verb"
+
+  create_table "quests", :force => true do |t|
+    t.string   "why"
+    t.integer  "quest_definition_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quests", ["quest_definition_id"], :name => "index_quests_on_quest_definition_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -80,6 +120,18 @@ ActiveRecord::Schema.define(:version => 20100711052445) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

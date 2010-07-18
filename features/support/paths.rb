@@ -12,7 +12,7 @@ module NavigationHelpers
       '/'
 		when /the wins page/
 			'/wins/index'
-    when /the new quest page/
+    when /the new quest definition page/
       '/quest_definitions/new'
     when /the new user page/
       '/users/new'

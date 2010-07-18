@@ -1,18 +1,17 @@
 class QuestDefinitionsController < ApplicationController
 
   def new
-    @quest = QuestDefinition.new
+    @quest_definition = QuestDefinition.new
   end
 
   def create
-    require 'ap'
-    ap params[:quest]
-    @quest = QuestDefinition.new(params[:quest])
-    @quest.user = current_user
-    @quest.parse_objective
-    if @quest.save 
+    @quest_definition = QuestDefinition.new(params[:quest_definition])
+    @quest_definition.user = current_user
+    @quest_definition.parse_objective
+    @quest_definition.start_quest(current_user, params[:why])
+    if @quest_definition.save 
       flash[:notice] = "Quest Created!"
-      redirect_to user_show_path(curren<D-1>t_user)
+      redirect_to user_show_path(current_user)
     else
       render "new"
     end

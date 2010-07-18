@@ -2,6 +2,7 @@ class Activity
   attr_accessor :noun, :amount, :verb
   
   def initialize(body)
+    throw "You can't initialize an Activity with a nil body!" if body.nil?
     @amount = get_amount(body)
     @noun = get_noun(body, @amount.to_s == "1") 
     @verb = get_verb(body)
