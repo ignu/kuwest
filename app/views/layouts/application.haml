@@ -32,8 +32,8 @@
         #socialmedia
           -unless user_signed_in?
             %a{:href=>"/login", :title=>"Login with Twitter"}
-              login with twitter
-
+              %img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png", :border=>0}
+              /%img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l-sm.png", :border=>0}
         #login
           -unless user_signed_in?
             %form.login{:method=>"post", :action=>"/users/login"}
