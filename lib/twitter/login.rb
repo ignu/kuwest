@@ -91,7 +91,6 @@ class Twitter::Login
     
     request.session[:request_token] = [oauth.request_token.token, oauth.request_token.secret]
     redirect_url = oauth.request_token.authorize_url.gsub(/http:\/\/.*heroku\.com\//, "http://")
-    raise "show me error"
     # redirect to Twitter authorization page
     redirect redirect_url
   end
