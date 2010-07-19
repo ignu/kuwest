@@ -1,0 +1,34 @@
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+
+describe QuestObjective do
+
+  let(:quest_objective) { QuestObjective.new({
+      :noun      => "miles", 
+      :verb      => "run", 
+      :amount    => 100,
+      :completed => 5
+      })}
+
+
+  it "should calculate objectives at 10, 25 and 50%" do 
+    quest_objective.current_target.should  == 10
+    quest_objective.completed = 15
+    quest_objective.current_target.should  == 25
+    quest_objective.completed = 35
+    quest_objective.current_target.should  == 50
+    quest_objective.completed = 55
+    quest_objective.current_target.should  == 100
+  end
+
+  it "should give a percent of the current progress" do 
+    quest_objective.completed = 5
+    quest_objective.percent.should == 50
+    quest_objective.completed = 34.2
+    quest_objective.percent.should == 68
+    quest_objective.completed = 0
+    quest_objective.percent.should == 0
+    quest_objective.completed = 100
+    quest_objective.percent.should == 100
+  end
+
+end

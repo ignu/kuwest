@@ -30,12 +30,12 @@
           %img{:src=>"/images/logo.png", :alt=>"Kuwest.com"}
       #topnav
         #socialmedia
-          %a{:href=>"/login", :title=>"Login with Twitter"}
-            %img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png", :border=>0}
-            /%img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l-sm.png", :border=>0}
-        
+          -unless user_signed_in?
+            %a{:href=>"/login", :title=>"Login with Twitter"}
+              %img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png", :border=>0}
+              /%img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l-sm.png", :border=>0}
         #login
-          -if !user_signed_in?
+          -unless user_signed_in?
             %form.login{:method=>"post", :action=>"/users/login"}
               %table 
                 %tr

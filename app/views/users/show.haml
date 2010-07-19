@@ -52,11 +52,20 @@
         -@user.followings.each do |following|
           %li
             %img{:src => following.photo.url(:thumb)}
-#graph-container{:style=>'width: 680px; height: 270px'}
+.panel      
+  %h1="#{@user.username}'s Quests"
+  -@user.quests.each do |q|
+    %h2
+      =q.quest_definition.name
+    -q.quest_objectives.each do |qo|
+      =qo.to_s
+-if(@user.level > 2)
+  #graph-container{:style=>'width: 680px; height: 270px'}
+-else 
+  (Graph Unlocks at Level 3)
 
-      
-%h1 Activity
 .info
+
 #pages
   -@wins.reverse.each do |w|
     .status
