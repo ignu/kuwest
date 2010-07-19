@@ -29,7 +29,7 @@
           = link_to 'Follow', followings_path(:following_id => @user.id), :method => 'post'
           
     -if @user.quest_definitions && @user.quest_definitions.length
-      %h2 Quests Created!
+      %h2 Quests Created:
       -@user.quest_definitions.each do |q|
         .info
           =link_to q.name, quest_definition_path(q)        

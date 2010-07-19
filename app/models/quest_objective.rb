@@ -30,6 +30,10 @@ class QuestObjective < ActiveRecord::Base
     ((self.completed / current_target.to_f) *100).to_i
   end
 
+  def process_update(win)
+    self.completed = self.completed + win.amount
+  end
+
   def to_s
     "#{self.verb} #{self.current_target} #{self.noun}"
   end

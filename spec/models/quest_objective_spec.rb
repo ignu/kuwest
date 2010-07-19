@@ -31,4 +31,15 @@ describe QuestObjective do
     quest_objective.percent.should == 100
   end
 
+
+  describe "processing wins" do
+    it "should update the completed amount correctly" do 
+      quest_objective.completed=2
+      win = Win.new({:amount=>5})
+      quest_objective.process_update(win)
+      quest_objective.completed.should == 7
+    end
+  end
+
 end
+
