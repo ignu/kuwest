@@ -1,8 +1,4 @@
 class AfterTwitterLoginController < ApplicationController
-  def twitter_hack
-    redirect_to "https://api.twitter.com/oauth/authenticate?oauth_token=#{params[:oauth_token]}"
-  end
-
   def login_to_devise
     if twitter_user
       unless user = User.find_by_twitter_name(twitter_user.screen_name)
@@ -18,10 +14,6 @@ class AfterTwitterLoginController < ApplicationController
         sign_in :user, user
         redirect_to root_path
       end
-    else
-      flash[:error] = "Something is wrong!"
-      redirect_to root_path
-    end
+   end
   end
-  
 end
