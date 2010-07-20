@@ -31,7 +31,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'twitter'
   config.gem 'twitter-login', :version => '~> 0.2.1', :lib => 'twitter/login'
-  #config.middleware.use 'Twitter::Login', :consumer_key => 'FwXG209iTDLYZ0ZTouw', :secret => 'NuOUDsaIF4lyUYaY62YIDDX7qb6JwmMECShrmIMVRM', :return_to => '/after_twitter_login'
+  config.middleware.use 'Twitter::Login', :consumer_key => 'FwXG209iTDLYZ0ZTouw', :secret => 'NuOUDsaIF4lyUYaY62YIDDX7qb6JwmMECShrmIMVRM', :return_to => '/after_twitter_login'
   
   config.active_record.observers = [:win_observer, :comment_observer, :user_observer]
 end

@@ -8,14 +8,14 @@ class AfterTwitterLoginController < ApplicationController
   end
   
   def login_to_devise
-    if request[:oauth_verifier]
-      twitter_user = Hashie::Mash[handle_twitter_authorization(request)] 
-      # request.session[:twitter_user] = Hashie::Mash[session[:twitter_user]]
-    elsif request[:denied]
-      # user refused to log in with Twitter, so give up
-      handle_denied_access(request)
-      redirect_to root_path and return
-    end
+    # if request[:oauth_verifier]
+    #     twitter_user = Hashie::Mash[handle_twitter_authorization(request)] 
+    #     # request.session[:twitter_user] = Hashie::Mash[session[:twitter_user]]
+    #   elsif request[:denied]
+    #     # user refused to log in with Twitter, so give up
+    #     handle_denied_access(request)
+    #     redirect_to root_path and return
+    #   end
     
     if twitter_user
       unless user = User.find_by_twitter_name(twitter_user.screen_name)
