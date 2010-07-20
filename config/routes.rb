@@ -16,7 +16,6 @@ ActionController::Routing::Routes.draw do |map|
   map.root                      :controller=>"wins", :action=>"index"
   
   map.resources :followings, :only => [:create, :destroy]
-  map.new_twitter_login 'new_twitter_login', :controller => 'after_twitter_login', :action => 'new'
   map.after_twitter_login 'after_twitter_login', :controller => 'after_twitter_login', :action => 'login_to_devise'
   #map.wtf       'api.twitter.com/oauth/authenticate', :controller=>"after_twitter_login", :action => "twitter_hack" 
   
