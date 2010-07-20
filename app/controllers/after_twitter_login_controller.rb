@@ -6,6 +6,7 @@ class AfterTwitterLoginController < ApplicationController
   def new
     redirect_to_twitter(request)
   end
+  
   def login_to_devise
     if request[:oauth_verifier]
       twitter_user = Hashie::Mash[handle_twitter_authorization(request)] 
@@ -43,7 +44,7 @@ class AfterTwitterLoginController < ApplicationController
     request.session[:request_token] = [oauth.request_token.token, oauth.request_token.secret]
     redirect_url = oauth.request_token.authorize_url#.gsub(/http:\/\/.*heroku\.com\//, "http://")
     # redirect to Twitter authorization page
-    redirect_to redirect_url
+    redirect_to "http://google.com"
   end
   
   def handle_twitter_authorization(request)
