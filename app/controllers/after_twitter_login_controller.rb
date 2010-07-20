@@ -42,9 +42,9 @@ class AfterTwitterLoginController < ApplicationController
     oauth.set_callback_url(after_twitter_login_url)
     
     request.session[:request_token] = [oauth.request_token.token, oauth.request_token.secret]
-    redirect_url = oauth.request_token.authorize_url#.gsub(/http:\/\/.*heroku\.com\//, "http://")
+    @redirect_url = oauth.request_token.authorize_url#.gsub(/http:\/\/.*heroku\.com\//, "http://")
     # redirect to Twitter authorization page
-    redirect_to "http://google.com"
+    
   end
   
   def handle_twitter_authorization(request)
