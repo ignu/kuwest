@@ -6,28 +6,28 @@ var xpHint = function() {
         });
     })
 }
-
 $(xpHint);
+var reloadBrokenImages = function() {
+    $('img').each(function() {
+        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+            var src = $(this).attr("src");
+            var new_src = src.replace(/thumb|small/, "original");
+            $(this).attr("src", new_src);
+            var fixSizes = function() {
+                $("img.thumb").css("max-width", "73px");
+                $("img.profile").css("max-width", "248px");
+                $("img.status").css("max-width", "180px");
+            };
+            setTimeout(fixSizes, 100);
+        }
+    });
+};
+
+
+$(function() {setTimeout(reloadBrokenImages, 1300);});
 
 var kuwest = function() {
     var self = {};
-
-    var reloadBrokenImages = function() {
-        $('img').each(function() {
-            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                var src = $(this).attr("src");
-                var new_src = src.replace(/thumb|small/, "original");
-                $(this).attr("src", new_src);
-
-                var fixSizes = function() {
-                    $("img.thumb").css("max-width", "73px");
-                    $("img.profile").css("max-width", "248px");
-                    $("img.status").css("max-width", "180px");
-                };
-                setTimeout(fixSizes, 100);
-            }
-        });
-    };
 
     var setupLevelMeter = function() {
         var bar = $("#xp_bar");
@@ -36,18 +36,6 @@ var kuwest = function() {
         bar.append(percent_complete);
         var w = bar.attr("progress") * bar.width();
         percent_complete.css("width", w);
-    };
-    var setupBubbleTip = function() {
-        $('<div id="stupidDiv">').css({
-            position: "absolute",
-            left: "-9999"
-        }).appendTo($("body"));
-
-        $("#stupidDiv").bubbletip($("#flashBubble"), {
-            deltaDirection: 'right',
-            positionAtElement: $("#logo img"),
-            bindShow: "click"
-        });
     };
 
     var appendMessageDiv = function(klass, message) {
@@ -129,7 +117,6 @@ var kuwest = function() {
         $("#bubbleTip").click(function() {
             window.location("/users/new");
         })
-        setTimeout(reloadBrokenImages, 1300);
         setTimeout(fadeoutAlerts, 5000);
     };
 
