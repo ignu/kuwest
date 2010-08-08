@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       sign_in :user, @user
       add_stored_message
       flash[:notice] = "Your account has been created!"
-      redirect_to user_show_path(@user) 
+      redirect_to user_path(@user) 
     else
       render :action => :new
     end
@@ -77,7 +77,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       @user.save!
       flash[:notice] = "Profile updated."
-      redirect_to user_show_path(@user) 
+      redirect_to user_path @user
     else
       render :action => :edit
     end

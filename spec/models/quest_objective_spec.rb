@@ -38,9 +38,7 @@ describe QuestObjective do
       win = Win.new({:amount=>5})
       quest_objective.process_update(win)
       quest_objective.completed.should == 7
-      1.should == 2
     end
-
   end
 
 end

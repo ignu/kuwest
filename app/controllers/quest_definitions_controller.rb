@@ -11,7 +11,7 @@ class QuestDefinitionsController < ApplicationController
     @quest_definition.start_quest(current_user, params[:why])
     if @quest_definition.save 
       flash[:notice] = "Quest Created!"
-      redirect_to user_show_path(current_user)
+      redirect_to "/users/#{current_user.username}"
     else
       render "new"
     end

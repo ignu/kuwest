@@ -8,7 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-  config.gem 'devise'
+  config.gem 'devise', :version => "=1.0.8"
   config.gem 'friendly_id'
   config.gem 'verbs'
   config.gem 'paperclip'
