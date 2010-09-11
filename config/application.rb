@@ -15,7 +15,6 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Kuwest
   class Application < Rails::Application
-    config.middleware.use "PDFKit::Middleware", :print_media_type => true
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.observers = [:win_observer, :comment_observer, :user_observer]

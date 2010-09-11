@@ -34,13 +34,13 @@ class User < ActiveRecord::Base
 
   process_in_background :photo
   
-  devise 	:database_authenticatable,
-					:registerable,
-					:recoverable,
-					:rememberable,
-					:trackable,
-					:validatable  
-
+#  devise 	:database_authenticatable,
+#					:registerable,
+#					:recoverable,
+#					:rememberable,
+#					:trackable,
+#					:validatable  
+#
   def gravatar_image(email)
     # get the email from URL-parameters or what have you and make lowercase
     email_address = email.downcase
