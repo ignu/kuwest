@@ -1,17 +1,13 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe User do
+describe User, "Validations" do
   subject{User.new}
-
-	it {should have_many :wins}
-	it {should have_many :comments}
-	it do 
-	  Factory(:user)
-	  should validate_uniqueness_of :username
-	end
+	it { should have_many :wins}
+	it { should have_many :comments}
+	it { should validate_uniqueness_of :username}
 end
 
-describe User, "xp" do
+describe User, "#xp" do
   before(:each) do
     @user = Factory.create(:user)
     @win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3})
@@ -19,11 +15,11 @@ describe User, "xp" do
     @win.save!
   end
   
-  it "should add 3 xp for each status update" do
+  it "adds 3 xp for each status update" do
     @user.xp.should == 13
   end
 
-  it "should add 5xp for first comment" do 
+  it "adds 5xp for first comment" do 
     @user.xp.should  == 13
     @user.wins.length.should > 0
     comment = Comment.new
@@ -33,7 +29,7 @@ describe User, "xp" do
     @user.xp.should == 18
   end
 
-  it "should be able to calculate levels" do 
+  it "calculate levels based on xp_limits array" do 
     u = User.new
     User.xp_limits.each_index do |i| 
       u.xp = User.xp_limits[i]
@@ -41,7 +37,7 @@ describe User, "xp" do
     end
   end
 
-  it "can calculate percent to next level" do 
+  it "calculates the percent to next level" do 
     u = User.new
     u.xp = User.xp_limits[3] + 10
     u.level.should == 3

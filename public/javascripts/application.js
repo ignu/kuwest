@@ -7,6 +7,7 @@ var xpHint = function() {
     })
 }
 $(xpHint);
+
 var reloadBrokenImages = function() {
     $('img').each(function() {
         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -94,7 +95,6 @@ var kuwest = function() {
     self.init = function() {
         loadTypeKit();
         setupLevelMeter();
-        setupBubbleTip();
         if ($("#user-information").length) {
             $("#content").css("float", "right");
         };
