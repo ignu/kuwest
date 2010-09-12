@@ -6,9 +6,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :quest_definitions
 
   map.profile   'profile',      :controller=>"users", :action =>"edit"
-  map.new_user  'users/new',    :controller=>"users", :action =>"new"
-  map.update    'users/update', :controller=>"users", :action =>"update"
-  map.create    'users/create', :controller=>"users", :action =>"create"
   map.top_users 'top-users',    :controller=>"users", :action =>"top"
   #hack
   map.user_show      'users/:id',    :controller=>"users", :action =>"show"

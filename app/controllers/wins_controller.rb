@@ -54,6 +54,8 @@ class WinsController < ApplicationController
       :body=>params[:body])
     @win = win_view_model.to_win
     @win.save!
+    return redirect_to "/users/#{current_user.username}" unless request.xhr? 
+
     render "shared/_status_tr", :layout=>false
   end
 

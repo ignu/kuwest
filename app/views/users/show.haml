@@ -54,6 +54,7 @@
             %img{:src => following.photo.url(:thumb)}
   =link_to "Create a new Quest", new_quest_definition_path 
 .panel      
+  =render :partial=>"/shared/new_status"
   %h1="#{@user.username}'s Quests"
   -@user.quests.each do |q|
     %h2

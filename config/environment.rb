@@ -4,7 +4,7 @@
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-#RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 Rails::Initializer.run do |config|
 
@@ -19,8 +19,8 @@ Rails::Initializer.run do |config|
   config.gem 'warden'
   config.gem 'will_paginate'
   config.gem 'formtastic'
-  config.gem "rspec", :lib => false, :version => ">= 1.2.0"
-  config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
+  config.gem "rspec", :lib => false, :version => "= 1.3.0"
+  config.gem "rspec-rails", :lib => false, :version => "= 1.3.2"
   config.gem 'shoulda'  
   config.gem 'haml'
   config.gem 'mocha'

@@ -29,6 +29,18 @@ $(function() {setTimeout(reloadBrokenImages, 1300);});
 
 var kuwest = function() {
     var self = {};
+ var setupBubbleTip = function() {
+        $('<div id="stupidDiv">').css({
+            position: "absolute",
+            left: "-9999"
+        }).appendTo($("body"));
+
+        $("#stupidDiv").bubbletip($("#flashBubble"), {
+            deltaDirection: 'right',
+            positionAtElement: $("#logo img"),
+            bindShow: "click"
+        });
+    };
 
     var setupLevelMeter = function() {
         var bar = $("#xp_bar");

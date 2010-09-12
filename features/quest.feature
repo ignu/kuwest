@@ -16,4 +16,9 @@ I want to be able to create a Quest
 		And I should have the quest definition "1000 Mile runner quest"
 		And my quest definition should have the objective "Run 100 Miles" 
 		And I should have the quest "1000 Mile runner quest"
-		And my objectives should contain "Run 100 Miles" 
+		And my objectives should contain "Run 10 Miles" 
+
+    When I fill in "body" with "Ran 9 Miles"
+    And I press "submit_activity"
+    Then I should see "1 mile remaining"
+

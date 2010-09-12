@@ -9,4 +9,10 @@ class WinObserver < ActiveRecord::Observer
     user.xp = user.xp+xp
     user.save!
   end
+
+  def check_wins(win)
+    win.user.quest.quest_objectives.each do |o|
+      o.process_update(win)
+    end
+  end
 end
