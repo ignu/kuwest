@@ -1,3 +1,5 @@
+require 'factory_girl'
+
 Factory.define :user do |ba|
   ba.add_attribute :username, "galvatron"
   ba.add_attribute :email, "megatron1@bot.com"

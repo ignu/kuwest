@@ -23,14 +23,14 @@ describe User do
 	it {should have_many :wins}
 	it {should have_many :comments}
 	it do 
-	  Factory(:user)
+    User.make
 	  should validate_uniqueness_of :username
 	end
 end
 
 describe User, "#xp" do
   before(:each) do
-    @user = Factory.create(:user)
+    @user = User.make
     @win = Win.new({:noun=>"autobots", :verb=>"killed", :amount=>3})
     @win.user = @user
     @win.save!
