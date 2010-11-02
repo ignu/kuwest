@@ -11,19 +11,6 @@ RSpec.configure do |config|
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
   config.use_instantiated_fixtures  = false
   config.mock_with :mocha
-end
-
-class ActionController::TestCase
-  include Devise::TestHelpers
-  def signin_as(email, username, password)
-    user = User.create(:email => email, :password => password, :password_confirmation => password, :username => username)
-    sign_in user
-    user
-  end
-
-  def signin_mock
-    user = mock_model(User) 
-    sign_in user
-    user
-  end
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend SessionHelpers,       :type => :controller
 end

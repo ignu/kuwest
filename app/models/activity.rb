@@ -1,6 +1,6 @@
 class Activity
   attr_accessor :noun, :amount, :verb
-  
+
   def initialize(body)
     throw "You can't initialize an Activity with a nil body!" if body.nil?
     @amount = get_amount(body)
@@ -38,13 +38,13 @@ class Activity
     return units.pluralize if pluralize
     units
   end
-  
+
   def get_amount(message)
     return 1 unless message.match(/(\w+\sa)/).nil?
     rv = message.first_match(/(\d+.?\d?\d?)/)
     rv = get_number_string(message) if rv.nil?
     rv.to_s.rstrip
-  end  
+  end
 end
 
 class String

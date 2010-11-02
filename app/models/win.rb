@@ -6,7 +6,7 @@ class Win < ActiveRecord::Base
   
   has_attached_file :photo,
         :storage        => :s3,
-        :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+        :s3_credentials => "#{Rails.root}/config/s3.yml",
         :path           => ":attachment/comment/:id/:style.:extension",
         :styles         =>  {:small  => "240x180>"},
         :default_url    => ":attachment/defaults/clear.gif"

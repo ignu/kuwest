@@ -2,6 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestDefinitionsController do
 
+  include SessionHelpers
+
   describe "when a user defines a quest" do 
 
     before(:each) do

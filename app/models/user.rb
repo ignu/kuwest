@@ -6,25 +6,25 @@ class User < ActiveRecord::Base
   has_many :quest_definitions
   has_many :quests
   has_many :comments
-  
+
   has_many :follows, :class_name => 'Following', :foreign_key => "follower_id"
   has_many :followed_by, :class_name => 'Following', :foreign_key => "following_id"
-  
+
   has_many :followers, :through => :followed_by
   has_many :followings, :through => :follows
-  
-  
-  
+
+
+
   attr_accessible :username, :photo, :email, :password, :password_confirmation
   attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp, :allow_email
-  has_friendly_id :username 
+  has_friendly_id :username
   validates_uniqueness_of :username
   validates_presence_of :username
   @@thumb, @@small, @@profile = "48x48#", "73x73#", "248z248"
 
   has_attached_file :photo,
           :storage        => :s3,
-          :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+          :s3_credentials => "#{Rails.root}/config/s3.yml",
           :path           => ":attachment/user/:id/:style.:extension",
           :styles         =>  {
                               :thumb=> "48x48#",
@@ -33,13 +33,17 @@ class User < ActiveRecord::Base
           :default_url    => "/images/:attachment/defaults/user_avatar_:style.gif"
 
   process_in_background :photo
-  
-  devise 	:database_authenticatable,
-					:registerable,
-					:recoverable,
-					:rememberable,
-					:trackable,
-					:validatable  
+
+  devise  :database_authenticatable,
+          :registerable,
+          :recoverable,
+          :rememberable,
+          :trackable,
+          :validatable
+
+  def to_s
+    self.username
+  end
 
   def gravatar_image(email)
     # get the email from URL-parameters or what have you and make lowercase
@@ -48,14 +52,14 @@ class User < ActiveRecord::Base
     "http://www.gravatar.com/avatar/#{hash}?d=http://kuwest.com/images/photos/defaults/user_avatar_thumb.gif"
   end
 
-  def the_photo(size) 
-    photo.exists? ? photo.url(size) : gravatar_image(email)  
+  def the_photo(size)
+    photo.exists? ? photo.url(size) : gravatar_image(email)
   end
 
   def following?(user)
     followings.include?(user)
   end
-  
+
   def level
     return 0 if not xp
     User.xp_limits.each_index do |i|
@@ -63,9 +67,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def level_progress 
+  def level_progress
     return 0 if xp.nil?
-    extra_xp = xp - User.xp_limits[level] 
+    extra_xp = xp - User.xp_limits[level]
     extra_xp/(User.xp_limits[level+1]-User.xp_limits[level]).to_f
   end
 
@@ -83,7 +87,7 @@ class User < ActiveRecord::Base
 
     # This will generate all the needed methods for devise
     def find_or_generate_by_username(username)
-      user = find_or_create_by_username(username) 
+      user = find_or_create_by_username(username)
       populate(user) if (user.new_record?)
       user
     end
