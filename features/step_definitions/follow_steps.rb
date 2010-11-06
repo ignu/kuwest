@@ -11,7 +11,8 @@ end
 Then /^(.*) should be in my following list$/ do |following|
   When "I am on #{@current_user.username}'s profile page"
   following = User.find_by_username(following)
-  response.should have_selector('ul#followings li img', :src => following.photo.url(:thumb))
+  selector = "ul#followings li img[src^='#{following.photo.url(:thumb)}']"
+  page.should have_css(selector)
 end
 
 Given /^I have no followers$/ do
@@ -22,12 +23,12 @@ end
 
 
 Then /^I should not see any followers$/ do
-  response.should_not have_selector('ul#followers li')
+  page.should_not have_css('ul#followers li')
 end
 
 
 Then /^I should not see any followings$/ do
-  response.should_not have_selector('ul#followings li')
+  page.should_not have_css('ul#followings li')
 end
 
 Given /^I have followed (.*)$/ do |following|
