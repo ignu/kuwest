@@ -222,8 +222,4 @@ Then /^pause/ do
   sleep 10
 end
 
-Then /^show me the page$/ do
-  p "got here | "*99
-  save_and_open_page
-end
 

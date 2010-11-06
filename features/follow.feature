@@ -28,12 +28,9 @@ Feature: Follow
     When I am on my profile page
     Then I should not see "Follow"
 
-  @javascript
   Scenario: Unfollow
     Given bob signed up as "bob@example.com/111111"
     And I am on 'login page'
-    Then show me the page
-    And pause
     And I am signed in as "sean@example.com/111111"
     And I have followed bob
     When I am on bob's profile page

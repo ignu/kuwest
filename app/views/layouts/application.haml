@@ -2,11 +2,11 @@
 %html
   %head
     - @title ||= "Kuwest [BETA]- tackle your real life quest_definitions."
-    %title 
+    %title
       =@title
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'jquery-ui-1.8'
-    = javascript_include_tag 'mustache'     
+    = javascript_include_tag 'mustache'
     = javascript_include_tag 'common'
     = javascript_include_tag 'jquery.upload'
     = javascript_include_tag 'slimbox2'
@@ -38,7 +38,7 @@
         #login
           -unless user_signed_in?
             %form.login{:method=>"post", :action=>"/users/login"}
-              %table 
+              %table
                 %tr
                   %td
                     Already a member? Login:&nbsp;
@@ -49,20 +49,20 @@
                   %td
                     %input.noborder{:type=>"image", :src=>"/images/yellow-go.png", :value=>"Go!", :border=>"0"}
           -else
-            %ul#links 
+            %ul#links
               %li.first
                 %a{:href=>"/wins/new"}
                   new status
               %li
-                =link_to 'profile', user_show_path(current_user)
+                =link_to 'profile', user_path(current_user)
               %li
                 %a{:href=>'/profile'}
                   edit profile
               %li
                 %a{:href=>'/users/logout'}
                   logout
-              
-    .clearFix 
+
+    .clearFix
     .bar
     #tip.chalk
       .close X
@@ -88,9 +88,9 @@
         %a{:href=>"/tos"}
           Terms of Use
         %a.soon{:href=>"/terms"}
-          Developers 
+          Developers
         %a{:href=>"/about"}
-          Business 
+          Business
         %a{:href=>"/about"}
           About
     =render :partial => "shared/google_analytics"

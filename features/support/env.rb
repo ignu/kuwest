@@ -14,7 +14,7 @@ require 'capybara/cucumber'
 require 'capybara/session'
 require 'cucumber/rails/capybara_javascript_emulation' # Lets you click links with onclick javascript handlers without using @culerity or @javascript
 Capybara.default_selector = :css
-
+Capybara.javascript_driver = :akephalos
 ActionController::Base.allow_rescue = false
 
 #Cucumber::Rails::World.use_transactional_fixtures = true
