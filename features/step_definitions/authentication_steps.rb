@@ -3,8 +3,8 @@ Given /^I am signed in as "([^\"]*)"$/ do |crendentials|
   @current_user = Given %Q{I signed up as "#{crendentials}"}
   And 'I am on login page'
   fill_in("Email", :with => email)
-	fill_in("Password", :with => password)
-	click_button("Sign in")
+  fill_in("Password", :with => password)
+  click_button("Sign in")
 end
 
 Given /^([^\"]*) signed up as "([^\"]*)"$/ do |name, crendentials|
