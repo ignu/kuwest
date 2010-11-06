@@ -3,12 +3,7 @@ class QuestDefinition < ActiveRecord::Base
   has_many :objectives
   belongs_to :user
   has_friendly_id :name, :use_slug => true
-
-  def parse_objective
-    o = Objective.from(Activity.new(self.objective)) 
-    self.objectives << o
-    o.save
-  end
+  before_save :parse_objective
 
   def start_quest(user, why)
     quest = Quest.new
@@ -21,4 +16,14 @@ class QuestDefinition < ActiveRecord::Base
     user.quests << quest
     quest
   end
+
+  private
+
+  def parse_objective
+    return if self.objective.nil?
+    o = Objective.from(Activity.new(self.objective))
+    self.objectives << o
+    self.objective = nil if o.save
+  end
+
 end
