@@ -18,7 +18,7 @@ end
 
 Then /^my objectives should contain "([^\"]*)"$/ do |objective|
   @current_user.quests.first.quest_objectives.length.should == 1
-  @current_user.quests.first.quest_objectives.to_s.should == objective
+  @current_user.quests.first.quest_objectives.first.to_s.should == objective
 end
 
 

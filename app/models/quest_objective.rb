@@ -42,7 +42,7 @@ class QuestObjective < ActiveRecord::Base
     return self.target1 unless self.completed > self.target1
     return self.target2 unless self.completed > self.target2
     return self.target3 unless self.completed > self.target3
-    amount 
+    amount
   end
 
 end

@@ -9,7 +9,7 @@ module NavigationHelpers
     when /the new quest definition page/
       '/quest_definitions/new'
     when /the new user page/
-      '/users/new'
+      '/register'
     when /login page/
       new_user_session_path
     when /^(.*)'s profile page/

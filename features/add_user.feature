@@ -5,6 +5,7 @@ Feature: Register
 
 Scenario: Normal Registration
   Given I am on the new user page
+  Then show me the page
   When I fill in "Username" with "ratbat"
   And I fill in "Email" with "ratbat@decepticons.com"
   And I fill in "Password" with "ihateautobots"
@@ -18,6 +19,7 @@ Scenario: Remember status
   And I press "submit_activity"
   #Don't know why this doesn't read my flash message
   #Then I should see "You have to be registered to do that"
+  Then show me the page
   Then I should see "Register now"
   When I fill in "Username" with "ratbat"
   And I fill in "Email" with "ratbat@decepticons.com"

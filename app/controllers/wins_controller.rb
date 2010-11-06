@@ -6,9 +6,9 @@ class WinsController < ApplicationController
     @wins = Win.find(:all, :order=>"id desc", :limit=>12, :include=>[:user,:comments])
   end
 
-  def edit 
+  def edit
     @win = Win.find(params[:id])
-    redirect_to "/" if @win.user.id != current_user.id    
+    redirect_to "/" if @win.user.id != current_user.id
   end
 
   def new
@@ -20,14 +20,14 @@ class WinsController < ApplicationController
     throw "Can Not Delete Another's Status" unless win.user.id == current_user.id
     win.destroy
     render :json => {:message => "Status deleted." }
-  end 
+  end
 
   def update
     win = Win.find(params[:id])
     win.update_attributes(params[:win])
     redirect_to({:action=>"index", :controller=>"wins"})
   end
-  
+
   def picture
     @win = Win.find(params[:id])
     @win.photo = params[:photo]
@@ -42,32 +42,33 @@ class WinsController < ApplicationController
         r.json {render :text=> "Must log in", :status => 302}
         r.html do
           flash[:error] = "You have to be registered to do that"
-          redirect_to({:action=>"new", :controller=>"users"})
+          #TOD: FUCK
+          redirect_to "/register"
         end
       end
 
       return
-    end    
+    end
 
     win_view_model = WinViewModel.new(
       :username=>current_user.username,
       :body=>params[:body])
     @win = win_view_model.to_win
     @win.save!
-    return redirect_to "/users/#{current_user.username}" unless request.xhr? 
+    return redirect_to "/users/#{current_user.username}" unless request.xhr?
 
     render "shared/_status_tr", :layout=>false
   end
 
   def comment
     throw "need to be signed in" if current_user.nil?
-		comment = Comment.new(
+    comment = Comment.new(
       :user => current_user,
-			:body => params[:body],
-			:win => Win.find_by_id(params[:id]))				
-		comment.save
-		@comment = comment
-		render "shared/_comment", :layout=>false
+      :body => params[:body],
+      :win => Win.find_by_id(params[:id]))
+    comment.save
+    @comment = comment
+    render "shared/_comment", :layout=>false
   end
 
 end
