@@ -7,6 +7,10 @@ Factory.define :user do |user|
   user.password_confirmation { "testing123"            }
 end
 
+Factory.define :quest do |quest|
+  quest.why        { "because i want to"     }
+end
+
 Factory.define :objective do |objective|
   objective.name   { "run 1000 miles"  }
   objective.amount { 2                 }
