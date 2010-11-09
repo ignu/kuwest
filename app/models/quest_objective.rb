@@ -6,9 +6,6 @@ class QuestObjective < ActiveRecord::Base
   def initialize(attributes=nil)
     if(attributes && attributes[:amount])
       amount = attributes[:amount]
-      attributes[:target1] = amount/10
-      attributes[:target2] = amount/4
-      attributes[:target3] = amount/2
     end
     super(attributes)
   end
@@ -19,11 +16,20 @@ class QuestObjective < ActiveRecord::Base
     rv.verb = objective.verb
     rv.amount = objective.amount
     rv.objective = objective
-    rv.target1 = rv.amount/10
-    rv.target2 = rv.amount/4
-    rv.target3 = rv.amount/2
     rv.completed = 0
     rv
+  end
+
+  def target1
+    self.amount/10
+  end
+
+  def target2
+    self.amount/4
+  end
+
+  def target3
+    self.amount/2
   end
 
   def percent
@@ -39,6 +45,7 @@ class QuestObjective < ActiveRecord::Base
   end
 
   def current_target
+    return self.target1 if self.completed.nil?
     return self.target1 unless self.completed > self.target1
     return self.target2 unless self.completed > self.target2
     return self.target3 unless self.completed > self.target3

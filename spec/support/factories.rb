@@ -32,6 +32,12 @@ Factory.define :quest_definition_with_objective, :parent => :quest_definition do
   end
 end
 
+Factory.define :quest_objective do |q|
+  q.noun    { "miles" }
+  q.verb    { "ran"   }
+  q.amount  { 100     }
+end
+
 Factory.define :win do |win|
   win.add_attribute :amount, 1
   win.add_attribute :noun, "things"

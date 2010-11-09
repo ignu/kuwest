@@ -2,15 +2,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestObjective do
 
-  let(:quest_objective) { QuestObjective.new({
-      :noun      => "miles", 
-      :verb      => "run", 
-      :amount    => 100,
-      :completed => 5
-      })}
+  let(:quest_objective) { Factory.build(:quest_objective, :amount => 100, :completed=>10) }
 
-
-  it "should calculate objectives at 10, 25 and 50%" do 
+  it "should calculate objectives at 10, 25 and 50%" do
     quest_objective.current_target.should  == 10
     quest_objective.completed = 15
     quest_objective.current_target.should  == 25
@@ -20,7 +14,7 @@ describe QuestObjective do
     quest_objective.current_target.should  == 100
   end
 
-  it "should give a percent of the current progress" do 
+  it "should give a percent of the current progress" do
     quest_objective.completed = 5
     quest_objective.percent.should == 50
     quest_objective.completed = 34.2
@@ -31,9 +25,8 @@ describe QuestObjective do
     quest_objective.percent.should == 100
   end
 
-
   describe "processing wins" do
-    it "should update the completed amount correctly" do 
+    it "should update the completed amount correctly" do
       quest_objective.completed=2
       win = Win.new({:amount=>5})
       quest_objective.process_update(win)
