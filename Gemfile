@@ -21,7 +21,7 @@ gem 'twitter-login', '~> 0.2.1', :require=>"twitter/login"
 gem 'compass', '>= 0.10.1'
 
 group(:test, :development) do 
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
 end
 
 group(:test) do
