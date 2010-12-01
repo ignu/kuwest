@@ -1,6 +1,7 @@
 class WinObserver < ActiveRecord::Observer
   def before_save(win)
     add_xp(win.user || User.load(win.user_id), 3) unless win.id
+    update_objectives win
   end
 
   def add_xp(user, xp)
@@ -10,9 +11,12 @@ class WinObserver < ActiveRecord::Observer
     user.save!
   end
 
-  def check_wins(win)
-    win.user.quest.quest_objectives.each do |o|
-      o.process_update(win)
+  def update_objectives(win)
+    win.user.quests.each do |quest|
+      quest.quest_objectives.each do |o|
+        o.process_update(win)
+        o.save!
+      end
     end
   end
 end

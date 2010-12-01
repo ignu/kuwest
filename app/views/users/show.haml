@@ -1,7 +1,7 @@
--content_for :sidebar do 
+-content_for :sidebar do
   #user-information
     #level
-      Level 
+      Level
       =@user.level
     %h1#username=@user.username
     #xp_bar{:progress=>@user.level_progress}
@@ -27,12 +27,12 @@
           = link_to 'Unfollow', following_path(:id => current_user.follows.find_by_following_id(@user.id)), :method => 'delete'
         -else
           = link_to 'Follow', followings_path(:following_id => @user.id), :method => 'post'
-          
+
     -if @user.quest_definitions && @user.quest_definitions.length
       %h2 Quests Created:
       -@user.quest_definitions.each do |q|
         .info
-          =link_to q.name, quest_definition_path(q)        
+          =link_to q.name, quest_definition_path(q)
     %h2 Totals
     #totals
       -@totals.each do |t|
@@ -47,13 +47,13 @@
             %img{:src => follower.photo.url(:thumb)}
     -unless @user.followings.empty?
       %h2 Following
-          
+
       %ul#followings
         -@user.followings.each do |following|
           %li
             %img{:src => following.photo.url(:thumb)}
-  =link_to "Create a new Quest", new_quest_definition_path 
-.panel      
+  =link_to "Create a new Quest", new_quest_definition_path
+.panel
   =render :partial=>"/shared/new_status"
   %h1="#{@user.username}'s Quests"
   -@user.quests.each do |q|
@@ -61,13 +61,13 @@
       =q.quest_definition.name
     -q.quest_objectives.each do |qo|
       =qo.to_s
+      .remaining
+        =qo.remaining_text
 -if(@user.level > 2)
   #graph-container{:style=>'width: 680px; height: 270px'}
--else 
+-else
   (Graph Unlocks at Level 3)
-
 .info
-
 #pages
   -@wins.reverse.each do |w|
     .status

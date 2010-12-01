@@ -19,7 +19,7 @@ I want to be able to create a Quest
     And I should have the quest "1000 Mile runner quest"
     And my objectives should contain "Run 10 Miles"
 
-    When I fill in "body" with "Ran 9 Miles"
+    When I fill in "body" with "Ran 8 Miles"
     And I press "submit_activity"
-    Then I should see "1 mile remaining"
+    Then I should see "2 miles remaining"
 

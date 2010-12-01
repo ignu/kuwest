@@ -4,7 +4,7 @@ describe QuestObjective do
 
   let(:quest_objective) { Factory.build(:quest_objective, :amount => 100, :completed=>10) }
 
-  it "should calculate objectives at 10, 25 and 50%" do
+  it "creates objectives at 10, 25 and 50%" do
     quest_objective.current_target.should  == 10
     quest_objective.completed = 15
     quest_objective.current_target.should  == 25
@@ -14,7 +14,13 @@ describe QuestObjective do
     quest_objective.current_target.should  == 100
   end
 
-  it "should give a percent of the current progress" do
+  it "shows the amount remaining" do
+    quest_objective.completed = 6
+    quest_objective.noun = "miles"
+    quest_objective.remaining_text.should == "4 miles remaining"
+  end
+
+  it "gives a percent of the current progress" do
     quest_objective.completed = 5
     quest_objective.percent.should == 50
     quest_objective.completed = 34.2
@@ -22,6 +28,8 @@ describe QuestObjective do
     quest_objective.completed = 0
     quest_objective.percent.should == 0
     quest_objective.completed = 100
+    quest_objective.percent.should == 100
+    quest_objective.completed = 109
     quest_objective.percent.should == 100
   end
 

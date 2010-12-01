@@ -326,7 +326,7 @@ body {
   background-image:url(/images/background.jpg);
   height:100%;
 }
-img.status {max-width:240px, max-height:180px}
+img.status {max-width:240px; max-height:180px}
 .content {
   width:960px;
   @include center;

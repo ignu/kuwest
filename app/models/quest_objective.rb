@@ -32,7 +32,12 @@ class QuestObjective < ActiveRecord::Base
     self.amount/2
   end
 
+  def remaining_text
+    "#{self.current_target - self.completed} #{noun.downcase} remaining"
+  end
+
   def percent
+    return 100 if self.completed > self.current_target
     ((self.completed / current_target.to_f) *100).to_i
   end
 

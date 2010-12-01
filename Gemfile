@@ -25,6 +25,7 @@ group(:test, :development) do
 end
 
 group(:test) do
+  gem 'fuubar'
   gem 'mocha'
   gem 'machinist'
   gem 'factory_girl'
