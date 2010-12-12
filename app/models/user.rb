@@ -13,14 +13,13 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :followed_by
   has_many :followings, :through => :follows
 
-
-
   attr_accessible :username, :photo, :email, :password, :password_confirmation
   attr_accessible :first_name, :last_name, :public_name, :twitter_name, :url, :xp, :allow_email
   has_friendly_id :username
   validates_uniqueness_of :username
   validates_presence_of :username
   @@thumb, @@small, @@profile = "48x48#", "73x73#", "248z248"
+  before_save :ensure_password_hack_for_twitter_accounts
 
   has_attached_file :photo,
           :storage        => :s3,
@@ -33,6 +32,12 @@ class User < ActiveRecord::Base
           :default_url    => "/images/:attachment/defaults/user_avatar_:style.gif"
 
   process_in_background :photo
+
+  def ensure_password_hack_for_twitter_accounts
+    if (self.password.nil? || self.password.length <1)
+      self.password = self.password_confirmation = 'abc12345##'
+    end
+  end
 
   devise  :database_authenticatable,
           :registerable,

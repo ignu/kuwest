@@ -1,12 +1,12 @@
 .field
-  %p=f.label :username 
+  %p=f.label :username
   %p=f.text_field :username
 .field
-  %p=f.label :email 
+  %p=f.label :email
   %p=f.text_field :email
 -if @user.new_record? && !params[:hide_password]
   .field
-    %p=f.label :password 
+    %p=f.label :password
     %p=f.password_field :password
   .field
     %p=f.label :password_confirmation

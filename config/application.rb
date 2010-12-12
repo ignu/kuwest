@@ -18,6 +18,7 @@ module Kuwest
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.observers = [:win_observer, :comment_observer, :user_observer]
+    config.action_controller.allow_forgery_protection = false
   end
 end
 

@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-include Devise::TestHelpers 
+include Devise::TestHelpers
 
 describe UsersController do
 
@@ -16,26 +16,30 @@ describe UsersController do
     it { should respond_with(:not_found) }
   end
 
-# describe "view another profile" do
+#describe "view another profile" do
+#  before(:each) do
+#    @current_user= User.find_or_create_by_username 'megatron'
+#  end
 #
-#   before(:each) do
-#     Win.stubs(:totals_for).returns(:whatever)   
-#     User.stubs(:find_by_username).returns(@current_user)
-#     get(:show, {:id=>"megatron"})
-#   end
+#  before(:each) do
+#    Win.stubs(:totals_for).returns(:whatever)
+#    User.stubs(:find_by_username).returns(@current_user)
+#    get(:show, { :id=>"megatron" })
+#  end
 #
 #
-#   it "doesn't show the update status field" do
-#     assigns[:can_update_status].should be false
-#   end
+#  it "doesn't show the update status field" do
+#    assigns[:can_update_status].should be false
+#  end
 #
-#   it { should respond_with(:success) }
-# end     
+#  it { should respond_with(:success) }
+#end
+#
 #
 # describe "view my own profile" do
 #
 #   before(:each) do
-#     Win.stubs(:totals_for).returns(:whatever)   
+#     Win.stubs(:totals_for).returns(:whatever)
 #     @ignu = User.find_or_create_by_username 'ignu'
 #     User.stubs(:find_by_username).returns(@ignu)
 #     get(:show, {:id=>"ignu"})
@@ -46,8 +50,8 @@ describe UsersController do
 #   end
 #
 #   it { should respond_with(:success) }
-# end     
-# 
+# end
+#
   describe "routing" do
     it "should route /users/ignu to ignu's profile" do
       { :get => "/users/ignu" }.should route_to(:controller => 'users', :action => 'show', :id => "ignu")

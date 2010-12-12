@@ -180,7 +180,7 @@ form.quest input.create {
 .action_wrapper input:submit {
   font-size:10px; height:24px; width:100px; }
 
-.comment_description { 
+.comment_description {
   width:450px;
   height:50px;
 }
@@ -421,8 +421,10 @@ div.standout {
 .clearfix {
   clear:both;
 }
-.comment-box{
-  background-color:white
+
+.comment_box{
+  display:none;
+  background-color:white;
 }
 
 input.file {

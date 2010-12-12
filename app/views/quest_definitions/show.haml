@@ -1,4 +1,7 @@
 .panel
   %h1=@quest.name
-  =@quest.objectives.each do |o|
+  .created_by
+    =@quest.user
+  = profile_badge_for @quest.user
+  -@quest.objectives.each do |o|
     =o.to_s

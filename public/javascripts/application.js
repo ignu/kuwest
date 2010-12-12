@@ -5,7 +5,7 @@ var xpHint = function() {
             deltaDirection: "left"
         });
     })
-}
+};
 $(xpHint);
 
 var reloadBrokenImages = function() {
@@ -23,55 +23,54 @@ var reloadBrokenImages = function() {
         }
     });
 };
-
-
 $(function() {setTimeout(reloadBrokenImages, 1300);});
 
+
 var kuwest = function() {
-    var self = {};
- var setupBubbleTip = function() {
-        $('<div id="stupidDiv">').css({
-            position: "absolute",
-            left: "-9999"
-        }).appendTo($("body"));
+  var self = {};
+  var setupBubbleTip = function() {
+    $('<div id="stupidDiv">').css({
+        position: "absolute",
+        left: "-9999"
+    }).appendTo($("body"));
 
-        $("#stupidDiv").bubbletip($("#flashBubble"), {
-            deltaDirection: 'right',
-            positionAtElement: $("#logo img"),
-            bindShow: "click"
-        });
-    };
+    $("#stupidDiv").bubbletip($("#flashBubble"), {
+        deltaDirection: 'right',
+        positionAtElement: $("#logo img"),
+        bindShow: "click"
+    });
+  };
 
-    var setupLevelMeter = function() {
-        var bar = $("#xp_bar");
-        if (!bar.length) return;
-        var percent_complete = $('<div class="complete">');
-        bar.append(percent_complete);
-        var w = bar.attr("progress") * bar.width();
-        percent_complete.css("width", w);
-    };
+  var setupLevelMeter = function() {
+    var bar = $("#xp_bar");
+    if (!bar.length) return;
+    var percent_complete = $('<div class="complete">');
+    bar.append(percent_complete);
+    var w = bar.attr("progress") * bar.width();
+    percent_complete.css("width", w);
+  };
 
-    var appendMessageDiv = function(klass, message) {
-        return $("<div class=\"" + klass + "\">").appendTo("body").text(message);
-    };
+  var appendMessageDiv = function(klass, message) {
+      return $("<div class=\"" + klass + "\">").appendTo("body").text(message);
+  };
 
-    var showMessage = function(message) {
-        $(".bubbletip").show();
-        $("#flashBubble").html(message);
-        $("#stupidDiv").trigger("click");
-    };
-    var hideMessage = function() {
-        $(".bubbletip").fadeOut()
-    };
-    var displayMessage = function(klass) {
-        return function(message) {
-            showMessage(message);
-            setTimeout(function() {
-                hideMessage
-            },
-            3500);
-        };
-    };
+  var showMessage = function(message) {
+      $(".bubbletip").show();
+      $("#flashBubble").html(message);
+      $("#stupidDiv").trigger("click");
+  };
+  var hideMessage = function() {
+      $(".bubbletip").fadeOut()
+  };
+  var displayMessage = function(klass) {
+      return function(message) {
+          showMessage(message);
+          setTimeout(function() {
+              hideMessage
+          },
+          3500);
+      };
+  };
 
     var give_first_input_focus = function() {
         $("input.focus:first").focus();
