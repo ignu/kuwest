@@ -2,9 +2,9 @@ class TwitterDownloader
 
   class << self
     @@last_tweet = 0;
-    def twitter_name 
+    def twitter_name
       "@kuwest"
-    end 
+    end
 
     def sync
       tweets = unprocessed_tweets
@@ -25,7 +25,7 @@ class TwitterDownloader
     end
 
     def parse(tweet)
-      body = tweet.text.gsub!(/#{twitter_name} /, '')  
+      body = tweet.text.gsub!(/#{twitter_name} /, '')
       begin
         win = WinViewModel.new({:body=>body, :username => tweet.from_user}).to_win
         win.save!
@@ -44,12 +44,12 @@ class TwitterDownloader
        return tweets
     end
 
-    def __RESET__ 
+    def __RESET__
       @@last_tweet = nil
     end
 
     def __RELOAD__
-      __RESET__ 
+      __RESET__
       Win.delete_all
       Settings.delete_all
       sync

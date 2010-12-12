@@ -1,4 +1,4 @@
 -comment ||= @comment
 .comment
-  =link_to comment.user.username, user_show_path(comment.user) 
+  =link_to comment.user.username, user_path(comment.user)
   =comment.body

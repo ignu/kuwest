@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://merbi.st'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'aws-s3'
@@ -20,7 +20,7 @@ gem 'twitter'
 gem 'twitter-login', '~> 0.2.1', :require=>"twitter/login"
 gem 'compass', '>= 0.10.1'
 
-group(:test, :development) do 
+group(:test, :development) do
   #gem 'ruby-debug19'
 end
 
