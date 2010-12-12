@@ -1,15 +1,7 @@
 require 'spec_helper'
 
 describe WinViewModel do
-  #TODO: use machinist
-  before(:each) do
-    @user = User.find_or_create_by_username("megatron")
-    @user.email = "megatron@decepticons.com"
-    @user.password = "ihateautobots"
-    @user.password_confirmation = "ihateautobots"
-    @user.save!
-  end
-
+  let(:user) { User.make }
 
   it "can be initialized from hash" do
     win_view_model = WinViewModel.new({:body=>"ran 3 miles", :username=>"ignu"})
@@ -18,7 +10,7 @@ describe WinViewModel do
   end
 
   it "can persist a valid win" do
-    win_view_model = WinViewModel.new(:body=>"ran 3 miles", :username=>"megatron")
+    win_view_model = WinViewModel.new(:body=> "ran 3 miles", :username => user.username)
     win = win_view_model.to_win
     win.verb.should == "ran"
     win.amount.should == 3
@@ -30,18 +22,10 @@ end
 
 describe WinViewModel, "parsing status updates" do
 
-  #TODO: use machinist
-  before(:each) do
-    @user = User.find_or_create_by_username("megatron")
-    @user.email = "megatron@decepticons.com"
-    @user.password = "ihateautobots"
-    @user.password_confirmation = "ihateautobots"
-    @user.save!
-  end
-
+  let(:user) { User.make }
 
   def get_win(status)
-    WinViewModel.new({:body=>status, :username=>"megatron"}).to_win
+    WinViewModel.new({:body=>status, :username => user.username}).to_win
   end
 
   it "can hand plural and singular nouns" do

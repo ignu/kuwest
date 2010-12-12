@@ -1,5 +1,11 @@
 require 'machinist/active_record'
 
+class Object
+  def self.build
+    self.make_unsaved
+  end
+end
+
 User.blueprint do
   username               { "Galvatron"         }
   email                  { "megatron1@bot.com" }
@@ -12,9 +18,21 @@ Quest.blueprint do
 end
 
 Objective.blueprint do
-  objective.name   { "run 1000 miles"  }
-  objective.amount { 2                 }
-  objective.verb   { "run"             }
-  objective.noun   { "miles"           }
+  name   { "run 1000 miles"  }
+  amount { 2                 }
+  verb   { "run"             }
+  noun   { "miles"           }
 end
 
+QuestDefinition.blueprint do
+  user
+  name          { "Kill 100 Autbots" }
+  description   { "For Megatron"     }
+end
+
+Win.blueprint do
+  amount      { 1          }
+  noun        { "things"   }
+  verb        { "actioned" }
+  created_at  { Time.new   }
+end

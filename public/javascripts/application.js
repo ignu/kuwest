@@ -25,7 +25,6 @@ var reloadBrokenImages = function() {
 };
 $(function() {setTimeout(reloadBrokenImages, 1300);});
 
-
 var kuwest = function() {
   var self = {};
   var setupBubbleTip = function() {
