@@ -2,11 +2,11 @@
   Pick a Quest...
 #ku_form
   .quests
-    %a{:href=>"/users/new"}
-      .green Write 100 Blog Posts 
-    %a{:href=>"/users/new"}
+    %a{:href=>"/register"}
+      .green Write 100 Blog Posts
+    %a{:href=>"/register"}
       .green Read 1000 Pages
-    %a{:href=>"/users/new"}
+    %a{:href=>"/register"}
       .green Run 1000 Miles
   #what
     Enter what you've done to get started now...
@@ -17,7 +17,7 @@
     %img{:src=>"/images/rocket.png"}
   .others
     %h2 What others are doing right now:
-  .clear 
+  .clear
   %table.win
     -users =[]
     -@wins.each do |w|

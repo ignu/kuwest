@@ -24,7 +24,6 @@
           -unless user_signed_in?
             %a{:href=> '/login', :title=>"Login with Twitter"}
               %img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l.png", :border=>0}
-              /%img{:src=>"http://a0.twimg.com/images/dev/buttons/sign-in-with-twitter-l-sm.png", :border=>0}
         #login
           -unless user_signed_in?
             %form.login{:method=>"post", :action=>"/users/login"}
@@ -41,13 +40,11 @@
           -else
             %ul#links
               %li.first
-                %a{:href=>"/wins/new"}
-                  new status
+                =link_to "new status", new_win_path
               %li
                 =link_to 'profile', user_path(current_user)
               %li
-                %a{:href=>'/profile'}
-                  edit profile
+                =link_to "edit profile", edit_profile_path
               %li
                 %a{:href=>'/users/logout'}
                   logout

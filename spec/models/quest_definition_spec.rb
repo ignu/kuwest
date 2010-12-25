@@ -2,8 +2,12 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestDefinition do
 
-  subject { Factory.build(:quest_definition_with_objective) }
-  let     (:quest_definition) { Factory.build(:quest_definition) }
+  subject { QuestDefinition.make  }
+  let     (:quest_definition) { QuestDefinition.build }
+
+  before do
+    subject.objectives.make
+  end
 
   it "can save a valid quest" do
     subject.save.should == true
@@ -12,7 +16,6 @@ describe QuestDefinition do
   it "can have an objective" do
     subject.objectives.length.should > 0
   end
-
 
   describe "#objective" do
 

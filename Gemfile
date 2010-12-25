@@ -28,7 +28,6 @@ group(:test) do
   gem 'fuubar'
   gem 'mocha'
   gem 'machinist'
-  gem 'factory_girl'
   gem "webrat"
   gem "rspec", ">= 2.0.0.0"
   gem "rspec-rails", ">= 2.0.0.0"

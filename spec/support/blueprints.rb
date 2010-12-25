@@ -1,8 +1,8 @@
 require 'machinist/active_record'
 
 class Object
-  def self.build
-    self.make_unsaved
+  def self.build(hash=nil)
+    self.make_unsaved hash
   end
 end
 
@@ -14,7 +14,7 @@ User.blueprint do
 end
 
 Quest.blueprint do
-  quest.why        { "because i want to"     }
+  why        { "because i want to"     }
 end
 
 Objective.blueprint do
@@ -22,6 +22,13 @@ Objective.blueprint do
   amount { 2                 }
   verb   { "run"             }
   noun   { "miles"           }
+end
+
+QuestObjective.blueprint do
+  amount    { 9                 }
+  completed { 2                 }
+  verb      { "run"             }
+  noun      { "miles"           }
 end
 
 QuestDefinition.blueprint do

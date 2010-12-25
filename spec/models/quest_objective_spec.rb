@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestObjective do
 
-  let(:quest_objective) { Factory.build(:quest_objective, :amount => 100, :completed=>10) }
+  let(:quest_objective) { QuestObjective.build(:amount => 100, :completed=>10) }
 
   it "creates objectives at 10, 25 and 50%" do
     quest_objective.current_target.should  == 10
